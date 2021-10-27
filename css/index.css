@@ -1,0 +1,28 @@
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-family: "Lato", sans-serif;
+	line-height: 1;
+
+  }
+ 
+  body {
+	background-color:  #252525 !important;;
+
+  }
+
+
+.bg-green{
+   background-color: #8CBF3A; 
+}
+  .ml{
+      margin-left: 65%;
+  }
+  .m0{
+      margin: 0px!important;
+  }
+
+  .hide{
+    display: none;
+  }
