@@ -1,3 +1,7 @@
+<?php
+ include ("config/Conexion.php");
+ $con=new Conexion();
+?>
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="en">
