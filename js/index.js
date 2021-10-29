@@ -121,16 +121,16 @@ function verComentarios(idProducto) {
         `;
       });//${comentario.idComentario}
       template+=`
-      <hr class="hr-style">
+ 
       <div class="row">
       <div class="col">
          
         <div   class="form_comentarios d-flex justify-content-center">
         
-              <input type="text" name="cvEntrega" id="nombre${idProducto}" placeholder="Nombre" value="">
+              <input class="form-control" type="text" name="cvEntrega" id="nombre${idProducto}" placeholder="Nombre" value="">
              <br>
-              <textarea name="contenido" id="contenido${idProducto}" class="contenido" placeholder="Comentario" required></textarea>
-              <button onClick="javascript:insertarComentarios(${idProducto})" class="btn btn-info">Comentar</button>
+              <textarea class="form-control contenido" name="contenido" id="contenido${idProducto}"  placeholder="Comentario" required></textarea>
+              <button   class="button-53" role="button" onClick="javascript:insertarComentarios(${idProducto})" ><i class="fa fa-comments" aria-hidden="true"></i> Comentar</button>
          </div> 
         
       </div>
