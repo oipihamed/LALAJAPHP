@@ -68,6 +68,7 @@ function mostrarArticulos() {
         });
         template += `</div>`;
         $('#row-card-prod').html(template);
+        
       }
     },
     error: function (XMLHttpRequest, textStatus, errorThrown) {
@@ -105,6 +106,7 @@ function verComentarios(idProducto) {
       var comentarios=JSON.parse(respuesta);
       comentarios.forEach(comentario => {
         template+=`
+     
         <div class="row media">
         
         <div class="col media_body">
@@ -114,9 +116,12 @@ function verComentarios(idProducto) {
          
         </div>
     </div>
+       <hr class="hr-style">
+    
         `;
       });//${comentario.idComentario}
       template+=`
+      <hr class="hr-style">
       <div class="row">
       <div class="col">
          

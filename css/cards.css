@@ -283,9 +283,18 @@ h1 {
     border: 1px solid gray ;
   
   } 
-  
+  .hr-style{
+  background: #FFC312;
+	width: 90%;
+	height: 5px;
+	border-radius: 50px;
+  }
   #tex-act{
   background-color: lavender;
+  }
+  .form_comentarios{
+    margin: 20px;
+    padding: 10px!important;
   }
   .form_comentarios textarea, input{
     width: 90%;
@@ -293,8 +302,9 @@ h1 {
     max-width: 100%;
     min-height: 80px;
     max-height: 300px;
-    padding: 10px!important;
-   margin: 4px;
+    
+    margin:10px;
+  
   }
   .media{
       
@@ -313,6 +323,7 @@ h1 {
      
   } 
   .divcomentarios{
+  transition: "all 2s";
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.2);
@@ -320,6 +331,14 @@ h1 {
     position:relative;
     
     
+  }
+  .divcomentarios::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .divcomentarios::-webkit-scrollbar-thumb {
+    background: #FFC312;
+    border-radius: 5px;
   }
 
 @media only screen and (max-width: 1000px) and (min-width: 400px) {
