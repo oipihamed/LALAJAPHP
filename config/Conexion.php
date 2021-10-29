@@ -1,10 +1,9 @@
 <?php
     class Conexion{
-
         private $host= "localhost";
-        private $usuario= "gds0s231";
+        private $usuario= "gds0231";
         private $clave= "gds0231";
-        private $db= "a";
+        private $db= "lalaja";
         private $conexion;
 
         public function conectar(){
@@ -17,9 +16,9 @@
                 );
                 if(!($this->conexion)){
                     die("fallo la conexion".mysqli_connect_error());
-                    return "-1";
+                    return "<script type=\"text/javascript\">console.log(\"La conexion fallo\")</script>";
                 }else{
-                    return "La conexion fue exitosa";
+                    return "<script type=\"text/javascript\">console.log(\"La conexion fue exitosa\")</script>";
                 }
                 $this->conexion->set_charset("utf8");
         }

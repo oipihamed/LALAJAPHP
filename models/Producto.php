@@ -1,6 +1,7 @@
 <?php
     class Producto{
         private $nombre;
+        private $descripcion;
         private $peso;
         private $precio;
         private $imagen;
@@ -10,8 +11,9 @@
         private $numLikes;
       
         
-    public function set_Datos($nombre,$peso,$precio,$imagen,$descuento,$tipo,$estado,$numLikes){
+    public function set_Datos($nombre,$descripcion,$peso,$precio,$imagen,$descuento,$tipo,$estado,$numLikes){
         $this->nombre=$nombre;
+        $this->descripcion=$descripcion;
         $this->peso=$peso;
         $this->precio=$precio;
         $this->imagen=$imagen;

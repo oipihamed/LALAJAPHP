@@ -1,7 +1,4 @@
-<?php
- include ("config/Conexion.php");
- $con=new Conexion();
-?>
+
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,6 +19,7 @@
 </head>
 
 <body>
+
     <nav id="myNavbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
@@ -100,113 +98,17 @@
    </div>
    
   <div class="row green-back">
-    <div class="row-card">
-        <div class="example-1 card">
-            <div class="wrapper">
-                <div class="date">
-                    <span class="day">10%</span>
-                    <span class="month">DESC</span>
-                    <span class="year"><strike>$100</strike></span>
-                    <span class="day"><b>$90</b></span>
-                </div>
-                <div class="data">
-                    <div class="content">
-                     
-                        <h1 class="title"><a href="./paginas/mockupconocer.html">Queso Oaxaca la laja 1 KG</a></h1>
-                        <p class="text">Queso tipo oaxaca hecho puro de vaca.</p>
-                        <label for="show-menu-1" class="menu-button"><span></span></label>
-                    </div>
-                    <input type="checkbox" id="show-menu-1" />
-                    <ul class="menu-content">
-                        <li>
-                            <a href="./paginas/mockupcompra.html" class="fa fa-shopping-cart"></a>
-                        </li>
-                        <li><a href="#" class="fa fa-heart-o"><span>47</span></a></li>
-                        <li><a href="#" class="fa fa-comment-o"><span>8</span></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="example-2 card">
-            <div class="wrapper img-1">
-                <div class="header">
-                    <div class="date">
-                        <span class="day">12</span>
-                        <span class="month">Agosto</span>
-                        <span class="year">2021</span>
-                    </div>
-                    <ul class="menu-content">
-                        <li>
-                        </li>
-                        <li><a href="#" class="fa fa-heart-o"><span>18</span></a></li>
-                        <li><a href="#" class="fa fa-comment-o"><span>3</span></a></li>
-                    </ul>
-                </div>
-                <div class="data">
-                    <div class="content">
-                        <span class="author">La Laja</span>
-                        <h1 class="title"><a href="#">Unete a nuestro grupo de trabajo</a></h1>
-                        <p class="text">Se parte del grupo de trabajo quesos LaLaja, ofrecemos sueldo competitivo, capacitacion y beneficios, solo es necesario traer tu documentacion y seguir los pasos en descritos ...</p>
-                        <a href="#" class="button">Leer mas</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+      <div class="row" id="row-card-prod">
+
+    
+     
+        
     </div> 
-    <div class="row-card">
-        <div class="example-1 card">
-            <div class="wrapper img-2">
-                <div class="date">
-                    <span class="day">10%</span>
-                    <span class="month">DESC</span>
-                    <span class="year"><strike>$150</strike></span>
-                    <span class="day"><b>$135</b></span>
-                </div>
-                <div class="data">
-                    <div class="content">
-                      
-                        <h1 class="title"><a href="#">Yoghurt Lari 4 KG</a></h1>
-                        <p class="text">Yoghurt hecho a base de leche de cabra en distintos sabores.</p>
-                        <label for="show-menu" class="menu-button"><span></span></label>
-                    </div>
-                    <input type="checkbox" id="show-menu" />
-                    <ul class="menu-content">
-                        <li>
-                            <a href="#" class="fa fa-shopping-cart"></a>
-                        </li>
-                        <li><a href="#" class="fa fa-heart-o"><span>47</span></a></li>
-                        <li><a href="#" class="fa fa-comment-o"><span>8</span></a></li>
-                    </ul>
-                </div>
-            </div>
+    </div>
+    <div class="row" id="row-card-not">
+   
         </div>
-        <div class="example-1 card">
-            <div class="wrapper img-3">
-                <div class="date">
-                    <span class="day">10%</span>
-                    <span class="month">DESC</span>
-                    <span class="year"><strike>$40</strike></span>
-                    <span class="day"><b>$36</b></span>
-                </div>
-                <div class="data">
-                    <div class="content">
-                  
-                        <h1 class="title"><a href="#">Queso Panela la laja 1.6 KG</a></h1>
-                        <p class="text">Queso panela bajo en calorias, hecho con leche pura de vaca.</p>
-                        <label for="show-menu-4" class="menu-button"><span></span></label>
-                    </div>
-                    <input type="checkbox" id="show-menu-4"/>
-                    <ul class="menu-content">
-                        <li>
-                            <a href="#" class="fa fa-shopping-cart"></a>
-                        </li>
-                        <li><a href="#" class="fa fa-heart-o"><span>27</span></a></li>
-                        <li><a href="#" class="fa fa-comment-o"><span>5</span></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>  
+     
   </div>
 </div>
 
@@ -322,11 +224,11 @@
 
 
     <!--Scripts JS Bootstrap-->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    <script src="./js/jquery-3.5.1.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
         integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
@@ -337,3 +239,31 @@
 </body>
 
 </html>
+
+<!--Card Noticia
+       <div class="example-2 card">
+            <div class="wrapper img-1">
+                <div class="header">
+                    <div class="date">
+                        <span class="day">12</span>
+                        <span class="month">Agosto</span>
+                        <span class="year">2021</span>
+                    </div>
+                    <ul class="menu-content">
+                        <li>
+                        </li>
+                        <li><a href="#" class="fa fa-heart-o"><span>18</span></a></li>
+                        <li><a href="#" class="fa fa-comment-o"><span>3</span></a></li>
+                    </ul>
+                </div>
+                <div class="data">
+                    <div class="content">
+                        <span class="author">La Laja</span>
+                        <h1 class="title"><a href="#">Unete a nuestro grupo de trabajo</a></h1>
+                        <p class="text">Se parte del grupo de trabajo quesos LaLaja, ofrecemos sueldo competitivo, capacitacion y beneficios, solo es necesario traer tu documentacion y seguir los pasos en descritos ...</p>
+                        <a href="#" class="button">Leer mas</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+-->
