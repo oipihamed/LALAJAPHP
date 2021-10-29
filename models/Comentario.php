@@ -2,14 +2,15 @@
 
  class Comentario{
     private $contenido;
-    private $idUsuario;
-    private $producto;
+    private $idProducto;
+    private $fecha;
     
-    public function set_Datos($contenido,$idUsuario,$producto){
+    
+    public function set_Datos($contenido,$idProducto,$fecha){
         $this->contenido=$contenido;
-        $this->idUsuario=$idUsuario;
-        $this->producto=$producto;
+        $this->idProducto=$idProducto;
+        $this->fecha=$fecha;
     }
-    
+
 }
 ?>

@@ -152,6 +152,7 @@ h1 {
   background-color: gray;
   color: gray;
   position: relative;
+  
   display: inline-block;
   border-radius: 50%;
 }
@@ -264,7 +265,62 @@ h1 {
 .example-2 .button:hover::after {
   transform: translate(5px, -50%);
   opacity: 1;
-}
+} 
+
+/*Estilo comentarios*/
+
+
+ .t-e{
+      color:  rgb(0, 26, 29);
+  }
+  #act{
+    color:  rgb(0, 26, 29);
+  
+  }
+   #cont-act{
+    background-color: whitesmoke;
+    border-radius: 10pt;
+    border: 1px solid gray ;
+  
+  } 
+  
+  #tex-act{
+  background-color: lavender;
+  }
+  .form_comentarios textarea, input{
+    width: 90%;
+    height: 80px;
+    max-width: 100%;
+    min-height: 80px;
+    max-height: 300px;
+    padding: 10px!important;
+   margin: 4px;
+  }
+  .media{
+      
+      padding-top: 20px;
+     
+  }
+  .media .nombre{
+      color: gray!important;
+     font-weight: bold;
+      text-align: justify;
+      margin-left: 25px;
+  }
+  
+  .media .nombre span{
+      font-size: 12px;
+     
+  } 
+  .divcomentarios{
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+    position:relative;
+    
+    
+  }
 
 @media only screen and (max-width: 1000px) and (min-width: 400px) {
   .card {
@@ -272,5 +328,6 @@ h1 {
     padding: 0 1.7rem;
     width: 100%;
     margin: 0px 40px 10px 0px;
+    
   }
 }

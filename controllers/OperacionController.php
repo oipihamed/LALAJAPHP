@@ -23,7 +23,7 @@ require $dir.'/config/Conexion.php';
       
 
         public function buscar($columnas,$tabla,$inner,$condicion,$orden){
-            $sql= " SELECT $columnas FROM $tabla $inner $condicion $orden";
+            $sql= " SELECT  $columnas FROM $tabla $inner $condicion $orden";
             $con = new Conexion();
             $con->conectar();
             $conect= $con->get_conexion();
@@ -43,6 +43,31 @@ require $dir.'/config/Conexion.php';
                         'numLikes'=>$row['numLikes'],
                         'descripcion'=>$row['descripcion'],
                         'idProducto'=>$row['idProducto']
+                    );
+                }
+                $json;
+                return $json;
+            }else{
+                return "-1";
+            }  
+          
+        }
+        public function buscarComentarios($columnas,$tabla,$inner,$condicion,$orden){
+            $sql= " SELECT  $columnas FROM $tabla $inner $condicion $orden";
+            $con = new Conexion();
+            $con->conectar();
+            $conect= $con->get_conexion();
+            $result=mysqli_query($conect,$sql);
+           
+            $num_rows=mysqli_num_rows($result);
+            if($num_rows>0){
+                while($row=mysqli_fetch_array($result)){
+                    $json[]=array(
+                        'nombre'=>$row['nombre'],
+                        'fecha'=>$row['fecha'],
+                        'idComentario'=>$row['idComentario'],
+                        'idProducto'=>$row['idProducto'],
+                        'contenido'=>$row['contenido'],
                     );
                 }
                 $json;

@@ -14,7 +14,7 @@
     $tabla="Producto";
     $inner="";
     $condicion="";
-    $orden="";
+    $orden="ORDER BY numLikes desc LIMIT 4 ";
      $result =$op->buscar($columnas,$tabla,$inner,$condicion,$orden);
    
             echo json_encode($result);
