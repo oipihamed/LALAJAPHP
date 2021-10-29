@@ -27,39 +27,40 @@
         <link rel="stylesheet" type="text/css" href="../css/stylemockup.css">
         <script src='https://www.google.com/recaptcha/api.js'></script>
         <script src="https://use.fontawesome.com/39d942f213.js"></script>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         </head>
 
     <body style="color: #34495E;">
-        <nav id="myNavbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand logo" href="http://www.lacteoslalaja.com"><img src="http://www.lacteoslalaja.com/core/img/logo.png" alt="Logo"></a>
-                </div>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="active"><a href="http://www.lacteoslalaja.com">Inicio</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Productos <i class="icon-angle-down"></i></a>
-                            <ul class="dropdown-menu">
-                               <li><a href="acerca.html">Novedades</a></li>                            
-                                <li class="divider"></li>
-                                <li><a href="privacidad.html">Promociones</a></li>
-                                <li class="divider"></li>
-                                <li><a href="privacidad.html">General</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="contacto.html">Contacto</a></li>
-                        <li><a href=""><i class="fa fa-search"></i> Buscar</a></li>
-                    </ul>
-                </div>
+      <nav id="myNavbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand logo" href="./index.css"><img src="http://www.lacteoslalaja.com/core/img/logo.png" alt="Logo"></a>
             </div>
-        </nav>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="./index.css">Inicio</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Productos <i class="icon-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                           <li><a href="./paginas/mockupcompra.html">Novedades</a></li>                            
+                            <li class="divider"></li>
+                            <li><a href="#">Promociones</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">General</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href=""><i class="fa fa-search"></i> Buscar</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
         <div class="row">
           <div class="green-back">
               <br><h1>Disfruta de la mejor calidad</h1><br>
@@ -67,74 +68,56 @@
           <div class="row grey-back">
               <div class="container">
                   <div class="status alert alert-success" style="display: none"></div>
-                  <form id="main-contact-form">
-                    <div class="col-12"><h3>Información de contacto</h3></div><br>
+                    <div class="col-12"><h3>Información de contacto</h3> <h4>Por Favor ingresa tus datos.</h4></div><br>
                     <nav aria-label="Ruta de Navegación">
                       <ol class="breadcrumb" role="list">
                         <li class="breadcrumb__item breadcrumb__item--current" aria-current="step">
-                          <span class="breadcrumb__text">Información</span>
-                          <svg class="icon-svg icon-svg--color-adaptive-light icon-svg--size-10 breadcrumb__chevron-icon" aria-hidden="true" focusable="false">
-                            <use xlink:href="#chevron-right"></use>
-                          </svg>
+                          <span class="breadcrumb__text"><b>Información</b></span>
+                          <i class="fa fa-chevron-right" aria-hidden="true"></i>
                         </li>
                         <li class="breadcrumb__item breadcrumb__item--completed">
-                          <a class="breadcrumb__link" href="mockupcompra2.html">Envíos</a>
-                          <svg class="icon-svg icon-svg--color-adaptive-light icon-svg--size-10 breadcrumb__chevron-icon" aria-hidden="true" focusable="false">
-                            <li class="breadcrumb__item breadcrumb__item--blank">
-                              <a class="breadcrumb__link" href="mockupcompra3.html">Pago</a>
-                            </li>
-                            <use xlink:href="#chevron-right"></use>
-                          </svg>
-                        </li>
+                          <a class="breadcrumb__link disabled" href="compra.php">Envíos</a>
                       </ol>
                     </nav>
+                  <form action="compra.php" method="post">
                     <div class=" col-sm-12 col-md-8">
                     <div class="form-row">
                       <div class="form-group col-md-6">
                         <label for="inputEmail">Email</label>
-                        <input type="email" class="form-control" id="inputEmail" placeholder="Ejemplo@lalaja.com" required>
+                        <input type="email" class="form-control" id="inputEmail" placeholder="Ejemplo@lalaja.com" name="email" required>
                       </div>
                       <div class="form-group col-md-6">
                         <label for="inputName">Nombre y Apellido</label>
-                        <input type="text" class="form-control" id="inputName" placeholder="Juan perez" required>
+                        <input type="text" class="form-control" id="inputName" placeholder="Juan pérez" name="full_name" required>
                       </div>
                     </div>
                     <div class="form-group col-md-6">
                       <label for="inputEnter">Empresa</label>
-                      <input type="text" class="form-control" id="inputEnter" placeholder="empresa(opcional)" >
+                      <input type="text" class="form-control" id="inputEnter" name="empresa" placeholder="empresa(opcional)" >
                     </div>
                     <div class="form-group col-md-6">
-                      <label for="inputStreet">Dirección</label>
-                      <input type="text" class="form-control" id="inputStreet" placeholder="Calle y Numero" required>
+                      <label for="inputStreet">Calle y Numero de casa</label>
+                      <input type="text" class="form-control" id="inputStreet" name="domicilio" placeholder="Calle y Numero de casa" required>
                     </div>
                     <div class="form-row">
                       <div class="form-group col-md-6">
                         <label for="inputAp">Apartamento, Local, etc</label>
-                        <input type="text" class="form-control" id="inputAp" placeholder="(Opcional)">
+                        <input type="text" class="form-control" id="inputAp" name="tipoV" placeholder="(Opcional)">
                       </div>
-<div class="form-group col-md-6">
-                      <label for="inputStreet">¿Entre que calles se encuentra?</label>
-                      <input type="text" class="form-control" id="inputStreet" placeholder="Calles" required>
-                    </div>
                       <div class="form-group col-md-6">
                         <label for="inputCP">Codigo Postal</label>
-                        <input type="text" class="form-control" id="inputCP" placeholder="Codigo Postal" required>
+                        <input type="text" class="form-control" id="inputCP" name="CP" placeholder="Codigo Postal" required>
                       </div>
-                 
-<div class="form-group col-md-6">
-                      <label for="inputStreet">Indicaciones adicionales para las entregas</label>
-                      <input type="text" class="form-control" id="inputStreet" placeholder="Referencia para encontrarla, etc" required>
                     </div>
-   </div>
                     <div class="form-row">
                       <div class="form-group col-md-6">
                         <label for="inputCity">Ciudad</label>
-                        <input type="text" class="form-control" id="inputCity" placeholder="Ciudad" required>
+                        <input type="text" class="form-control" id="inputCity" name="City" placeholder="Ciudad" required>
                       </div>
                       <div class="form-group col-md-6">
                         <label for="inputState">Estado</label>
-                        <select type="text" class="form-control" id="inputState" aria-placeholder="Estado" required>
-                          <option selected>Elegir...</option>
+                        <select type="text" class="form-control" id="inputState" name="State" aria-placeholder="Estado" required>
+                          <option selected>Escoger...</option>
                           <option>Aguascalientes</option>
                           <option>Baja California</option>
                           <option>Baja California Sur</option>
@@ -170,29 +153,52 @@
                         </select>
                       </div>
                     </div>
-                    <div class="form-row">
+                    <div cl
+                    ass="form-row">
                       <div class="form-group col-md-6">
                         <label for="inputCountry">Pais/Region</label>
-
-                        <select type="text" class="form-control" id="inputCountry" aria-placeholder="País" required>
+                        <select type="text" class="form-control" id="inputCountry" name="Country" aria-placeholder="País" required>
                           <option>México</option>
                         </select> 
                       </div>
                       <div class="form-group col-md-6">
-                        <label for="inputTel">Teléfono de contacto</label>
-                        <input type="number" class="form-control" id="inputTel" placeholder="Teléfono" required>
+                        <label for="inputTel">Teléfono</label>
+                        <input type="text" class="form-control" id="inputTel" name="telefono" placeholder="Teléfono" required>
                       </div>
+                    </div> 
+                    
                     </div>
-                    <a href="mockupcompra2.html" role="button" class="btn btn-primary">Continuar con el envio</a>
-                    </div>
-                  </form>
-                  <div class="col-sm-12 col-md-4"><br>
-                      <div><a href=""><img src="../images/iconoimagen.png" alt="Queso Oaxaca" width="300" height="300"></a></div>
-                  </div>
-              </div><br>
-          </div><br>
 
-          <footer class="footer">
+                  <div class="col-sm-12 col-md-4"><br>
+                      <div class="w3-dark-grey" style="width:100%">
+                        &nbsp;
+                        <div class="w3-container w3-center">
+                          <a href=""><img src="../images/queso_oaxaca.jpg" alt="Queso Oaxaca" width="300" height="200"></a>
+                          <p>Queso Oaxaca La Laja 1kg</p>
+                    
+                          <div class="w3-section">
+                            <h5><b>¿Tienes un codigo de descuento?</b></h5>
+                            <h6><b>Puedes usarlo aqui.</b></h6>
+                            <input style="color: black;" type="text" name="descuento" placeholder="Codigó de descuento">
+                          </div>
+
+                          <div class="w3-section">
+                            <p><b>Precio por pieza: </b> $217,50</p>
+                            <p><b>Envió</b> Gratis</p>
+                          </div>
+
+                          <div class="w3-section">
+                            <label for="quantity"><b>Número de Quesos:</b></label><input style="color:black" type="number" id="quantity" name="cantidad" min="1" max="999" placeholder="0" required>
+                            <!-- <p><b style="font-size: larger;">Total</b> MXN<b style="font-size: larger;">$217,50</b></p> -->
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                  <input type="submit" role="button" name="enviar" class="btn btn-success" value='Continuar con el envio'>
+                </form>
+                </div><br>
+          </div><br>
+          <footer class="footer" style="color: white;">
             <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
             <!-- Left -->
             <div class="me-5 d-none d-lg-block">
@@ -295,6 +301,7 @@
             © 2021 Copyright:
             <a class="text-reset fw-bold" href="http://www.lacteoslalaja.com/">Lacteos La Laja</a>
           </div>
+          
           <!-- Copyright -->
         </footer>
         </div>
