@@ -119,16 +119,16 @@ if (isset($_POST['enviar'])) {
           <nav aria-label="Ruta de Navegación">
             <ol class="breadcrumb" role="list">
               <li class="breadcrumb__item breadcrumb__item--completed">
-                <a class="breadcrumb__link" href="mockupcompra.html">Información</a>
-                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                <a class="breadcrumb__link" href="mockupcompra.html" style="display: block;">Información <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+
               </li>
               <li class="breadcrumb__item breadcrumb__item--current" aria-current="step">
                 <span class="breadcrumb__text"><b>Envío</b></span>
               </li>
             </ol>
           </nav>
-      <div class="container p-3 my-3 bg-dark text-whitep-3 my-3 bg-dark text-white" style="font-size:medium;">
-         <div class="status" style="font-size:medium;">
+      <div class="container" style="font-size:medium; border-radius:15px; font-family:inherit; font-size: inherit; background-color: #fafafa; box-shadow:4px 4px 10px rgba(0,0,0,0.06);">
+         <div class="status" style="font-size:medium; text-align: left">
             <br>
             <h1 class="<?php echo $ordStatus; ?>" style="font-size:medium;"><?php echo $statusMsg; ?></h1>
             <?php if (!empty($email)) { ?>
@@ -145,15 +145,16 @@ if (isset($_POST['enviar'])) {
                 <br>
                 <p>Garantizamos el 100% de nuestras entregas si llegara a ocurrir un incoveniente</p>
         </div>
-        <a href="./inicio.html" type="button" class="btn btn-info btn-lg btn-block " style="font-size: xx-large;">Continua conocinedo nuestros productos <i class="fa fa-cart-plus" aria-hidden="true"></i></i> </a>
+        <a href="../index.html" type="button" class="btn btn-success btn-lg btn-block " style="font-size: large;"><i class="fa fa-cart-plus" aria-hidden="true"></i> Continua conocinedo nuestros productos</a>
             <?php } else { ?>
-                <a href="./mockupcompra.html" type="button" class="btn btn-info btn-lg btn-block" style="font-size: xx-large;">Lo sentimos vuelva a intentarlo <i class="fa fa-fast-backward" aria-hidden="true"></i> </a> 
+                <a href="./mockupcompra.html" type="button" class="btn btn-success btn-lg btn-block" style="font-size: large;"><i class="fa fa-fast-backward" aria-hidden="true"></i> Lo sentimos vuelva a intentarlo</a> 
             <?php } ?>
+        <br>
     </div>
       </div><br>
     </div><br>
 
-    <footer class="footer" style="color: white;">
+    <footer class="footer" style="color: white; background:#252525;">
       <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
         <!-- Left -->
         <div class="me-5 d-none d-lg-block">
