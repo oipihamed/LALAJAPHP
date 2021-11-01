@@ -66,7 +66,7 @@
               <br><h1>Disfruta de la mejor calidad</h1><br>
           </div>
           <div class="row grey-back">
-              <div class="container">
+              <div class="container" style="border-radius:15px; font-family:inherit; font-size: inherit; background-color: #fafafa; box-shadow:4px 4px 10px rgba(0,0,0,0.06);">
                   <div class="status alert alert-success" style="display: none"></div>
                     <div class="col-12"><h3>Información de contacto</h3> <h4>Por Favor ingresa tus datos.</h4></div><br>
                     <nav aria-label="Ruta de Navegación">
@@ -80,7 +80,7 @@
                       </ol>
                     </nav>
                   <form action="compra.php" method="post">
-                    <div class=" col-sm-12 col-md-8">
+                    <div class=" col-sm-12 col-md-8" >
                     <div class="form-row">
                       <div class="form-group col-md-6">
                         <label for="inputEmail">Email</label>
@@ -170,16 +170,15 @@
                     </div>
 
                   <div class="col-sm-12 col-md-4"><br>
-                      <div class="w3-dark-grey" style="width:100%">
+                      <div class="w3-dark-gray" style="width:100%; border-radius:15px; font-family:inherit; font-size: inherit; box-shadow:4px 4px 10px rgba(0,0,0,0.06);">
                         &nbsp;
                         <div class="w3-container w3-center">
-                          <a href=""><img src="../images/queso_oaxaca.jpg" alt="Queso Oaxaca" width="300" height="200"></a>
+                          <a href=""><img src="../images/queso_oaxaca.jpg" style="border-radius: 8px;" alt="Queso Oaxaca" width="300" height="200"></a>
                           <p>Queso Oaxaca La Laja 1kg</p>
-                    
                           <div class="w3-section">
                             <h5><b>¿Tienes un codigo de descuento?</b></h5>
                             <h6><b>Puedes usarlo aqui.</b></h6>
-                            <input style="color: black;" type="text" name="descuento" placeholder="Codigó de descuento">
+                            <input style="color: black; margin-left: 15px; position:inherit;" class="form-control" type="text" name="descuento" placeholder="Codigó de descuento">
                           </div>
 
                           <div class="w3-section">
@@ -188,13 +187,16 @@
                           </div>
 
                           <div class="w3-section">
-                            <label for="quantity"><b>Número de Quesos:</b></label><input style="color:black" type="number" id="quantity" name="cantidad" min="1" max="999" placeholder="0" required>
+                            <label for="quantity"><b>Número de Quesos:</b></label><input style="color:black; border-radius: 8px;" type="number" id="quantity" name="cantidad" min="1" max="999" placeholder="0" required>
                             <!-- <p><b style="font-size: larger;">Total</b> MXN<b style="font-size: larger;">$217,50</b></p> -->
                           </div>
                         </div>
                     </div>
                   </div>
-                  <input type="submit" role="button" name="enviar" class="btn btn-success" value='Continuar con el envio'>
+                  &nbsp;
+                  <br>
+                  <button type="submit" style="text-align: center;" role="button" name="enviar" class="btn btn-success btn-lg btn-block"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Continuar con el envio</button>
+                  <hr>
                 </form>
                 </div><br>
           </div><br>
