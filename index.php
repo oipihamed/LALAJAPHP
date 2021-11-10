@@ -33,7 +33,7 @@
             </div>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="./index.css">Inicio</a></li>
+                    <li class="active"><a href="./index.php">Inicio</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Productos <i class="icon-angle-down"></i></a>
                         <ul class="dropdown-menu">
@@ -52,28 +52,29 @@
     </nav>
 <div class="container-fluid">
    <div class="row ">
-    <div class="container txt-wh">
-        <div class="center gap">
+    <div class="container-fluid txt-wh">
+        <div class="wrap-iconos">
             <h3>Lacteos La Laja te ofrece</h3>
             <p>Distintos productos lácteos de alta calidad elaborados por manos guanajuatenses, en la región Laja-Bajío.</p>
         </div><br>
         <div class="row">
-            <div class="row-fluid icons">
-                <div class="col-sm-4 col-md-4">
+            <div class="row- icons">
+                <div class="col-sm-12 col-md-12 icon-con">
                     <div class="media">
                         <div class="pull-left">
-                            <i class="icon-small"><img src="http://www.lacteoslalaja.com/core/img/queso.png"></i>
+                            <i class="icon-medium"><img class="img-i" src="images/queso.png"></i>
                         </div>
                         <div class="media-body">
                             <h4 class="media-heading">Quesos</h4>
                             <p>Amplia variedad de quesos, así como distintas presentaciones para deleitar tu paldar.</p>
+                            <p class="txt-bl">El mundo de los quesos  es inmenso y delicioso, conócelos y enamórate. Te invitamos a incluirlos en las opciones del día a día y usarlos incluso para preparar platillos locales, logrando una nueva mezcla de sabores.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-4 col-md-4">
+                <div class="col-sm-12 col-md-12 icon-con">
                     <div class="media">
                         <div class="pull-left">
-                            <i class="icon-medium"><img src="http://www.lacteoslalaja.com/core/img/crema.png"></i>
+                            <i class="icon-medium"><img class="img-i" src="http://www.lacteoslalaja.com/core/img/crema.png"></i>
                         </div>
                         <div class="media-body">
                             <h4 class="media-heading">Crema</h4>
@@ -81,10 +82,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-4 col-md-4">
+                <div class="col-sm-12 col-md-12 icon-con">
                     <div class="media">
                         <div class="pull-left">
-                            <i class="icon-medium"><img src="http://www.lacteoslalaja.com/core/img/yogh.png"></i>
+                            <i class="icon-medium"><img class="img-i" src="http://www.lacteoslalaja.com/core/img/yogh.png"></i>
                         </div>
                         <div class="media-body">
                             <h4 class="media-heading">Yoghurt</h4>
