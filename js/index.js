@@ -4,6 +4,16 @@ $(document).ready(function () {
     $('li').removeClass('active');
     $(this).addClass('active');
   });
+  $(function(){
+    $(window).scroll(function(){
+        var winTop= $(window).scrollTop();
+        if(winTop>=50){
+            $("body").addClass("sticky-header");
+        }else{
+          $("body").removeClass("sticky-header");
+        }
+    })  
+  })
   mostrarArticulos();
 
 });
@@ -41,7 +51,7 @@ function mostrarArticulos() {
                 <div class="data">
                     <div class="content">
                      
-                        <h1 class="title"><a href="./paginas/mockupconocer.html">${producto.nombre} ${producto.peso}</a></h1>
+                        <h3 class="title"><a href="./paginas/mockupconocer.html">${producto.nombre} ${producto.peso}</a></h3>
                         <p class="text">${producto.descripcion}</p>
                         <label for="show-menu-${producto.idProducto}" class="menu-button"><span></span></label>
 
@@ -93,6 +103,7 @@ function darLike(idProducto) {
 }
 
 function verComentarios(idProducto) {
+  
   var html=$('#comentario'+idProducto).html();
   if(html==""){
   $.ajax({
