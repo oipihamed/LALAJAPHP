@@ -82,23 +82,23 @@ if (isset($_POST['enviar'])) {
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand logo" href="http://www.lacteoslalaja.com"><img
+        <a class="navbar-brand logo" href="../index.php"><img
             src="http://www.lacteoslalaja.com/core/img/logo.png" alt="Logo"></a>
       </div>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="nav navbar-nav navbar-right">
-          <li class="active"><a href="http://www.lacteoslalaja.com">Inicio</a></li>
+          <li class="active"><a href="../index.php">Inicio</a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Productos <i class="icon-angle-down"></i></a>
             <ul class="dropdown-menu">
-              <li><a href="acerca.html">Novedades</a></li>
+              <li><a href="./mockupcompra.html">Novedades</a></li>
               <li class="divider"></li>
-              <li><a href="privacidad.html">Promociones</a></li>
+              <li><a href="#">Promociones</a></li>
               <li class="divider"></li>
-              <li><a href="privacidad.html">General</a></li>
+              <li><a href="#">General</a></li>
             </ul>
           </li>
-          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="#">Contacto</a></li>
           <li><a href=""><i class="fa fa-search"></i> Buscar</a></li>
         </ul>
       </div>
@@ -119,7 +119,7 @@ if (isset($_POST['enviar'])) {
           <nav aria-label="Ruta de Navegación">
             <ol class="breadcrumb" role="list">
               <li class="breadcrumb__item breadcrumb__item--completed">
-                <a class="breadcrumb__link" href="mockupcompra.html" style="display: block;">Información <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                <a class="breadcrumb__link" href="compra.html" style="display: block;">Información <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 
               </li>
               <li class="breadcrumb__item breadcrumb__item--current" aria-current="step">
