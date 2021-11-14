@@ -1,5 +1,6 @@
 <?php
-require_once('conexion.php');
+require_once('../config/Conexion.php');
+require_once('./conexion.php');
 
 $payment_id = $statusMsg = $api_error = '';
 $ordStatus = 'error';
@@ -145,7 +146,7 @@ if (isset($_POST['enviar'])) {
                 <br>
                 <p>Garantizamos el 100% de nuestras entregas si llegara a ocurrir un incoveniente</p>
         </div>
-        <a href="../index.html" type="button" class="btn btn-success btn-lg btn-block " style="font-size: large;"><i class="fa fa-cart-plus" aria-hidden="true"></i> Continua conocinedo nuestros productos</a>
+        <a href="../index.php" type="button" class="btn btn-success btn-lg btn-block " style="font-size: large;"><i class="fa fa-cart-plus" aria-hidden="true"></i> Continua conocinedo nuestros productos</a>
             <?php } else { ?>
                 <a href="./mockupcompra.html" type="button" class="btn btn-success btn-lg btn-block" style="font-size: large;"><i class="fa fa-fast-backward" aria-hidden="true"></i> Lo sentimos vuelva a intentarlo</a> 
             <?php } ?>
