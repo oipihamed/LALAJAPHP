@@ -6,41 +6,57 @@ $payment_id = $statusMsg = $api_error = '';
 $ordStatus = 'error';
 
 if (isset($_POST['enviar'])) {
-    if (!empty($_POST['email']) && !empty($_POST['full_name']) && !empty($_POST['domicilio']) && !empty($_POST['CP']) && !empty($_POST['City']) && !empty($_POST['State']) && !empty($_POST['Country']) && !empty($_POST['telefono'])) {
-        $email = $_POST['email'];
-        $name = $_POST['full_name'];
-        $domicilio = $_POST['domicilio'];
-        $CP = $_POST['CP'];
-        $City = $_POST['City'];
-        $State = $_POST['State'];
-        $country = $_POST['Country'];
-        $telefono = $_POST['telefono'];
-        $cantidad = $_POST['cantidad'];
-        $descuento = $_POST['descuento'];
+  if (!empty($_POST['email']) && !empty($_POST['full_name']) && !empty($_POST['domicilio']) && !empty($_POST['CP']) && !empty($_POST['City']) && !empty($_POST['State']) && !empty($_POST['Country']) && !empty($_POST['telefono'])) {
+    $email = $_POST['email'];
+    $name = $_POST['full_name'];
+    $domicilio = $_POST['domicilio'];
+    $CP = $_POST['CP'];
+    $City = $_POST['City'];
+    $State = $_POST['State'];
+    $country = $_POST['Country'];
+    $telefono = $_POST['telefono'];
+    $cantidad = $_POST['cantidad'];
+    $descuento = $_POST['descuento'];
+    $price = $_POST['price'];
 
-        $date = date("Y-m-d H:i:s");
-        $hours = '24:00:00';
+    $date = date("Y-m-d H:i:s");
+    $hours = '24:00:00';
 
-        $d0 = strtotime(date('Y-m-d 00:00:00'));
-        $d1 = strtotime(date('Y-m-d ').$hours);
+    $d0 = strtotime(date('Y-m-d 00:00:00'));
+    $d1 = strtotime(date('Y-m-d ') . $hours);
 
-        $sumTime = strtotime($date) + ($d1 - $d0);
-        $new_time = date("Y-m-d H:i:s", $sumTime);
+    $sumTime = strtotime($date) + ($d1 - $d0);
+    $new_time = date("Y-m-d H:i:s", $sumTime);
 
-        $price = 217.50;
-        $product = "Queso Oaxaca La Laja 1kg";
-        $total = $price * $cantidad;
-        
+    $subtotal = $price * $cantidad;
 
-        $sqlgrabar = "INSERT INTO compra(email, name, domicilio, CP, City, State, Country, telefono, fechapedido, fechaentrega, cantidad, producto, codigoDescuento, total) values ('$email', '$name','$domicilio','$CP','$City','$State','$country','$telefono','$date','$new_time','$cantidad','$product','$descuento','$total')";
-        if (mysqli_query($conn, $sqlgrabar)) {
-          $ordStatus = 'success';
-          $statusMsg = 'Muchas gracias por tu compra!!';
-        } else {
-          $statusMsg = "Error al momento de subir formulario, por favor vuelva a intentarlo.";
-        }
+    if ($subtotal >= 100) {
+      $envio = 0;
+    } else {
+      $envio = 99;
     };
-}; 
+
+    if ($price == 90) {
+      $namep = "Queso la laja 1kg";
+    } else if ($price == 140) {
+      $namep = "Yoghurt Lari 4kg";
+    } else if ($price == 30) {
+      $namep = "Queso panela 1kg ";
+    };
+
+    $total = ($price * $cantidad) + $envio;
+    $product = $namep;
+
+
+    $sqlgrabar = "INSERT INTO compra(email, name, domicilio, CP, City, State, Country, telefono, fechapedido, fechaentrega, cantidad, producto, codigoDescuento, total) values ('$email', '$name','$domicilio','$CP','$City','$State','$country','$telefono','$date','$new_time','$cantidad','$product','$descuento','$total')";
+    if (mysqli_query($conn, $sqlgrabar)) {
+      $ordStatus = 'success';
+      $statusMsg = 'Muchas gracias por tu compra!!';
+    } else {
+      $statusMsg = "Error al momento de subir formulario, por favor vuelva a intentarlo.";
+    }
+  };
+};
 ?>
 
 <!DOCTYPE html>
@@ -83,8 +99,7 @@ if (isset($_POST['enviar'])) {
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand logo" href="../index.php"><img
-            src="http://www.lacteoslalaja.com/core/img/logo.png" alt="Logo"></a>
+        <a class="navbar-brand logo" href="../index.php"><img src="http://www.lacteoslalaja.com/core/img/logo.png" alt="Logo"></a>
       </div>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="nav navbar-nav navbar-right">
@@ -120,38 +135,46 @@ if (isset($_POST['enviar'])) {
           <nav aria-label="Ruta de Navegación">
             <ol class="breadcrumb" role="list">
               <li class="breadcrumb__item breadcrumb__item--completed">
-                <a class="breadcrumb__link" href="compra.html" style="display: block;">Información <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-
+                <a class="breadcrumb__link" href="../index.php">Inicio <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+              </li>
+              <li class="breadcrumb__item breadcrumb__item--completed">
+                <a class="breadcrumb__link" href="../index.php">Productos <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+              </li>
+              <li class="breadcrumb__item breadcrumb__item--completed">
+                <a class="breadcrumb__link" href="mockupcompra.html" style="display: block;">Información <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
               </li>
               <li class="breadcrumb__item breadcrumb__item--current" aria-current="step">
                 <span class="breadcrumb__text"><b>Envío</b></span>
               </li>
             </ol>
           </nav>
-      <div class="container" style="font-size:medium; border-radius:15px; font-family:inherit; font-size: inherit; background-color: #fafafa; box-shadow:4px 4px 10px rgba(0,0,0,0.06);">
-         <div class="status" style="font-size:medium; text-align: left">
-            <br>
-            <h1 class="<?php echo $ordStatus; ?>" style="font-size:medium;"><?php echo $statusMsg; ?></h1>
-            <?php if (!empty($email)) { ?>
+          <div class="container" style="font-size:medium; border-radius:15px; font-family:inherit; font-size: inherit; background-color: #fafafa; box-shadow:4px 4px 10px rgba(0,0,0,0.06);">
+            <div class="status" style="font-size:medium; text-align: left">
+              <br>
+              <b><h1 class="<?php echo $ordStatus; ?>" style="font-size:medium;"><?php echo $statusMsg; ?></h1></b>
+              <?php if (!empty($email)) { ?>
                 <h3>Recuerda tomar captura de pantallas, por si acaso.</h3>
                 <h4>Información de la orden</h4>
-                <p><b>Domicilio de entrega:</b> <?php echo $domicilio . ' ' . $CP . ' ' . $City . ' ' . $State . ' ' . $country; ?></p>
-                <p><b>Contacto:</b> <?php echo $email. ' ' . $telefono; ?></p>
-                <p><b>Fecha de orden:</b> <?php echo $date; ?></p>
-                <p><b>Fecha de entrega(estimada):</b> <?php echo $new_time; ?></p>
+                <p><b>Domicilio de entrega: </b> <?php echo $domicilio . ' ' . $CP . ' ' . $City . ' ' . $State . ' ' . $country; ?></p>
+                <p><b>Contacto: </b> <?php echo $email . ' ' . $telefono; ?></p>
+                <p><b>Fecha de orden: </b> <?php echo $date; ?></p>
+                <p><b>Fecha de entrega(estimada): </b> <?php echo $new_time; ?></p>
                 <h1><b>Costo</h1>
-                <p><b>Cantidad:</b> <?php echo $cantidad ?></p>
+                <p><b>Producto: </b> <?php echo $namep ?></p>
+                <p><b>Cantidad: </b> <?php echo $cantidad ?></p>
                 <p><b>Costo de Envió: </b> Si el precio de tu compra es mayor a 100$ el envio va de nuestra parte(Gratis)</p>
-                <p><b>Costo Total:</b> <?php echo $total;?></p>
+                <p><b>Envio: </b> <?php echo $envio ?></p>
+                <p><b>Subtotal: </b> <?php echo $subtotal ?></p>
+                <p><b>Costo Total: </b> <?php echo $total; ?></p>
                 <br>
                 <p>Garantizamos el 100% de nuestras entregas si llegara a ocurrir un incoveniente</p>
-        </div>
-        <a href="../index.php" type="button" class="btn btn-success btn-lg btn-block " style="font-size: large;"><i class="fa fa-cart-plus" aria-hidden="true"></i> Continua conocinedo nuestros productos</a>
-            <?php } else { ?>
-                <a href="./mockupcompra.html" type="button" class="btn btn-success btn-lg btn-block" style="font-size: large;"><i class="fa fa-fast-backward" aria-hidden="true"></i> Lo sentimos vuelva a intentarlo</a> 
-            <?php } ?>
-        <br>
-    </div>
+            </div>
+            <a href="../index.php" type="button" class="btn btn-success btn-lg btn-block " style="font-size: large;"><i class="fa fa-cart-plus" aria-hidden="true"></i> Continua conocinedo nuestros productos</a>
+          <?php } else { ?>
+            <a href="./mockupcompra.html" type="button" class="btn btn-success btn-lg btn-block" style="font-size: large;"><i class="fa fa-fast-backward" aria-hidden="true"></i> Lo sentimos vuelva a intentarlo</a>
+          <?php } ?>
+          <br>
+          </div>
       </div><br>
     </div><br>
 
@@ -258,11 +281,12 @@ if (isset($_POST['enviar'])) {
         © 2021 Copyright:
         <a class="text-reset fw-bold" href="http://www.lacteoslalaja.com/">Lacteos La Laja</a>
       </div>
-      
+
       <!-- Copyright -->
     </footer>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
+
 </html>
