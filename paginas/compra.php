@@ -1,6 +1,16 @@
 <?php
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
 require_once('../config/Conexion.php');
 require_once('./conexion.php');
+
+require_once('../vendor/autoload.php');
+require '../phpmailer/src/PHPMailer.php';
+require '../phpmailer/src/SMTP.php';
+require '../phpmailer/src/Exception.php';
 
 $payment_id = $statusMsg = $api_error = '';
 $ordStatus = 'error';
@@ -47,11 +57,99 @@ if (isset($_POST['enviar'])) {
     $total = ($price * $cantidad) + $envio;
     $product = $namep;
 
+    $mensajeCliente = "<html>" .
+    "<head><title>Gracias por tu preferencia</title>" .
+    "<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-size: 16px;
+  font-weight: 300;
+  color: #888;
+  background-color:rgba(230, 225, 225, 0.5);
+  line-height: 30px;
+  text-align: center;
+}
+.contenedor{
+  width: 80%;
+  min-height:auto;
+  text-align: center;
+  margin: 0 auto;
+  padding: 40px;
+  background: #ececec;
+  border-top: 3px solid #84e619;
+}
+.bold{
+  color:#333;
+  font-size:25px;
+  font-weight:bold;
+}
+img{
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  padding:0px 0px 20px 0px;
+}
+</style>
+</head>" .
+    "<body>" .
+    "<div class='contenedor'>" .
+    "<p>&nbsp;</p>" .
+    "<p>&nbsp;</p>" .
+    "<span>Felicitaciones <strong class='bold'>" . $name . " ...</strong></span>" .
+    "<p>&nbsp;</p>" .
+    "<p>Su compra esta en camino...</p> " .
+    "<p>&nbsp;</p>" .
+    "<p>&nbsp;</p>" .
+    "<p><strong>Su(s) producto(s): </strong> " . $namep . " </p>" .
+    "<p><strong>Aproximadamente llegara el dia: </strong> " . $new_time . " </p>" .
+    "<p>&nbsp;</p>" .
+    "<p>¡Gracias por su preferencia.</p>" .
+    "<p>&nbsp;</p>" .
+    "<p><span class='bold'> Un saludo de parte de toda la familia de la laja! </span></p>" .
+    "<p>&nbsp;</p>" .
+    "<p>" .
+    "<a title='lalaja' href='http://www.lacteoslalaja.com/'>" .
+    "<img src='http://www.lacteoslalaja.com/core/img/logo.png' alt='Logo' width='100px'/>" .
+    "</a>" .
+    "</p>" .
+    "<p><strong>En caso de incoveniente comunicate con nosotros por: (461) 6164147, o por email: lalajacelaya@gmail.com</strong> </p>" .
+    "</div>" .
+    "</body>" .
+    "</html>";
+
 
     $sqlgrabar = "INSERT INTO compra(email, name, domicilio, CP, City, State, Country, telefono, fechapedido, fechaentrega, cantidad, producto, codigoDescuento, total) values ('$email', '$name','$domicilio','$CP','$City','$State','$country','$telefono','$date','$new_time','$cantidad','$product','$descuento','$total')";
     if (mysqli_query($conn, $sqlgrabar)) {
       $ordStatus = 'success';
       $statusMsg = 'Muchas gracias por tu compra!!';
+
+      $mail = new PHPMailer(true);
+
+      try {
+        //$mail->SMTPDebug =SMTP::DEBUG_SERVER;
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'lalajacelaya@gmail.com';
+        $mail->Password = 'quesoderancho';
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port = 587;
+
+        $mail->setFrom('lalajacelaya@gmail.com', 'La laja');
+        $mail->addAddress($email, $name);
+
+        $mail->isHTML(true);
+        $mail->Subject = 'Gracias por tu compra';
+        $mail->Body = $mensajeCliente;
+        $mail->send();
+
+      } catch (Exception $e) {
+        echo 'Mensaje ' . $mail->ErrorInfo;
+      }
     } else {
       $statusMsg = "Error al momento de subir formulario, por favor vuelva a intentarlo.";
     }
@@ -151,7 +249,9 @@ if (isset($_POST['enviar'])) {
           <div class="container" style="font-size:medium; border-radius:15px; font-family:inherit; font-size: inherit; background-color: #fafafa; box-shadow:4px 4px 10px rgba(0,0,0,0.06);">
             <div class="status" style="font-size:medium; text-align: left">
               <br>
-              <b><h1 class="<?php echo $ordStatus; ?>" style="font-size:medium;"><?php echo $statusMsg; ?></h1></b>
+              <b>
+                <h1 class="<?php echo $ordStatus; ?>" style="font-size:medium;"><?php echo $statusMsg; ?></h1>
+              </b>
               <?php if (!empty($email)) { ?>
                 <h3>Recuerda tomar captura de pantallas, por si acaso.</h3>
                 <h4>Información de la orden</h4>
