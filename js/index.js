@@ -21,9 +21,11 @@ $(document).ready(function () {
   //}); 
   $('.media').click(function(){
     $(this).toggleClass('flipped');
-    
-    
     });
+    $('.back').click(function(){
+      $(this).removeClass('show');
+      $(this).addClass('hide');
+      });
     
   mostrarArticulos();
  
