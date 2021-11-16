@@ -69,7 +69,7 @@
                             <p class="">Amplia variedad de quesos, así como distintas presentaciones para deleitar tu paldar.</p>
                         </div>
                     </div>
-                    <div class="m-back hide">
+                    <div class="media back hide">
                         <div class="pull-left">
                             <i class="icon-medium"></i>
                         </div>
