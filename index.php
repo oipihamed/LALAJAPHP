@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="./css/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="./css/stylemockup.css">  
     <link rel="stylesheet" href="./css/cards.css">
+    <link rel="stylesheet" href="./css/index.css" ></link>
 </head>
 
 <body>
@@ -58,20 +59,27 @@
             <p>Distintos productos lácteos de alta calidad elaborados por manos guanajuatenses, en la región Laja-Bajío.</p>
         </div><br>
         <div class="row">
-            <div class="row- icons">
-                <div class="col-sm-12 col-md-12 icon-con">
-                    <div class="media">
+            <div class="row icons">
+                  <div class="media  show" >
                         <div class="pull-left">
                             <i class="icon-medium"><img class="img-i" src="images/queso.png"></i>
                         </div>
                         <div class="media-body">
                             <h4 class="media-heading">Quesos</h4>
-                            <p>Amplia variedad de quesos, así como distintas presentaciones para deleitar tu paldar.</p>
-                            <p class="txt-bl">El mundo de los quesos  es inmenso y delicioso, conócelos y enamórate. Te invitamos a incluirlos en las opciones del día a día y usarlos incluso para preparar platillos locales, logrando una nueva mezcla de sabores.</p>
+                            <p class="">Amplia variedad de quesos, así como distintas presentaciones para deleitar tu paldar.</p>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-12 col-md-12 icon-con">
+                    <div class="m-back hide">
+                        <div class="pull-left">
+                            <i class="icon-medium"></i>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Recetas</h4>
+                            <p class="">El mundo de los quesos  es inmenso y delicioso, conócelos y enamórate. Te invitamos a incluirlos en las opciones del día a día y usarlos incluso para preparar platillos locales, logrando una nueva mezcla de sabores.</p>
+                            <p> Los quesos, crema y mantequillas de Francia serán tus mejores aliados a la hora de cocinar. Aprende a preparar deliciosos platillos con estas recetas.</p>
+                        </div>
+                    </div>
+             
                     <div class="media">
                         <div class="pull-left">
                             <i class="icon-medium"><img class="img-i" src="http://www.lacteoslalaja.com/core/img/crema.png"></i>
@@ -81,9 +89,8 @@
                             <p>Contamos con crema natural y media crema, deliciosa y fresca.</p>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-12 col-md-12 icon-con">
-                    <div class="media">
+                
+                   <div class="media">
                         <div class="pull-left">
                             <i class="icon-medium"><img class="img-i" src="http://www.lacteoslalaja.com/core/img/yogh.png"></i>
                         </div>
@@ -92,7 +99,7 @@
                             <p>Delicioso yoghurt en diversas presentaciones, ideal para tu familia y tu negocio.</p>
                         </div>
                     </div>
-                </div>
+               
             </div>
         </div>
     </div>

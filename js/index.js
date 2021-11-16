@@ -1,21 +1,26 @@
 
 $(document).ready(function () {
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
   $('ul li').on('click', function () {
     $('li').removeClass('active');
     $(this).addClass('active');
-  });
-  $(function(){
-    $(window).scroll(function(){
-        var winTop= $(window).scrollTop();
-        if(winTop>=50){
-            $("body").addClass("sticky-header");
-        }else{
-          $("body").removeClass("sticky-header");
-        }
-    })  
-  })
+  }); 
+  $('.media').on('click', function () {
+    $(this).removeClass('show');
+    $(this).addClass('hide');
+    $('.m-back').removeClass('hide');
+    $('.m-back').addClass('show');
+  }); 
+  $('.m-back').on('click', function () {
+    $(this).removeClass('show');
+    $(this).addClass('hide');
+    $('.media').removeClass('hide');
+    $('.media').addClass('show');
+  }); 
   mostrarArticulos();
-
+ 
 });
 
 

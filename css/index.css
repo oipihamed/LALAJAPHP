@@ -7,14 +7,17 @@
 
   }
  
-  body {
-	background-color:  #252525 !important;;
-
-  }
 
 
 .bg-green{
    background-color: #8CBF3A; 
+}
+.bg-wh{
+  background-color: white;
+  color:#252525;
+}
+.bg-bl{
+background-color: #252525;
 }
   .ml{
       margin-left: 65%;
@@ -26,3 +29,37 @@
   .hide{
     display: none;
   }
+  .show{
+    display: block;
+  }
+  .media
+ {
+    padding: 20px;
+      border-radius: 10px;
+      transition: all 2s;
+      margin: 0px !important;
+  }
+  .media-heading{
+    font-size: 50px;
+    text-shadow:2px 3px 0px gray;
+    font-weight: bold;
+  }
+ 
+  .media:hover{
+    color: goldenrod;
+    background-color: white;
+    box-shadow: 10px 10px 10px goldenrod;
+    font-size: 25px!important;
+    padding: 80px;
+    cursor: pointer;
+
+  }
+
+
+  
+  .img-i{
+    width: 200px;
+    height: 200px;
+  }
+  
+  
