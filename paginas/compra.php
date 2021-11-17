@@ -46,11 +46,11 @@ if (isset($_POST['enviar'])) {
       $envio = 99;
     };
 
-    if ($price == 90) {
+    if ($price == 100) {
       $namep = "Queso la laja 1kg";
-    } else if ($price == 140) {
+    } else if ($price == 150) {
       $namep = "Yoghurt Lari 4kg";
-    } else if ($price == 30) {
+    } else if ($price == 50) {
       $namep = "Queso panela 1kg ";
     };
 
@@ -239,7 +239,7 @@ img{
                 <a class="breadcrumb__link" href="../index.php">Productos <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
               </li>
               <li class="breadcrumb__item breadcrumb__item--completed">
-                <a class="breadcrumb__link" href="mockupcompra.html" style="display: block;">Información <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                <a class="breadcrumb__link" href="mockupcompra.php" style="display: block;">Información <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
               </li>
               <li class="breadcrumb__item breadcrumb__item--current" aria-current="step">
                 <span class="breadcrumb__text"><b>Envío</b></span>
