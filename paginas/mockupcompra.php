@@ -1,3 +1,25 @@
+<?php
+  require_once ('../models/Producto.php');
+  require_once('./conexion.php');
+
+  $sqlgrabar = "SELECT * FROM producto WHERE IdProducto = '".$_POST['id_p']."'";
+    if (mysqli_query($conn, $sqlgrabar)) {
+      $ordStatus = 'success';
+      $resultado = mysqli_query($conn, $sqlgrabar);
+      $datos=mysqli_fetch_array($resultado);
+    } else {
+      $statusMsg = "Error al momento de subir formulario, por favor vuelva a intentarlo.";
+    };
+
+    if ($_POST['id_p'] == 1) {
+      $img = "../images/queso_oaxaca.jpg";
+    } else if ($_POST['id_p'] == 2) {
+      $img = "../images/productos-16.jpg";
+    } else if ($_POST['id_p']== 3) {
+      $img = "../images/productos-06.jpg";
+    };
+
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -88,7 +110,7 @@
               <a class="breadcrumb__link" href="../index.php">Productos <i class="fa fa-chevron-right"
                   aria-hidden="true"></i></a>
             </li>
-            <li class="breadcrumb__item breadcrumb__item--current" aria-current="step">
+            <li class="breadcrumb__item breadcrumb__item--current breadcrumb__item--completed" aria-current="step">
               <span class="breadcrumb__text"><b>Información</b></span>
               <i class="fa fa-chevron-right" aria-hidden="true"></i>
             </li>
@@ -195,10 +217,11 @@
               style="width:100%; border-radius:15px; font-family:inherit; font-size: inherit; box-shadow:4px 4px 10px rgba(0,0,0,0.06);">
               &nbsp;
               <div class="w3-container w3-center">
-                <a href=""><img src="../images/queso_oaxaca.jpg" style="border-radius: 8px;" alt="Queso Oaxaca"
-                    width="300" height="200"></a>
-                <p>Queso Oaxaca La Laja 1kg</p>
+              <a href="#"><img src="<?php echo $img; ?>" style="border-radius: 8px;" alt="imagen producto" width="300" height="200"></a>
+                
+                <p><?php echo $datos['nombre']; ?> <?php echo $datos['peso']; ?></p>
                 <div class="w3-section">
+                  <p><b><?php echo $datos['descripcion']; ?></b></p>
                   <p><b>¿Tienes un codigo de descuento?</b></p>
                   <p><b>Puedes usarlo aqui.</b></p>
                   <input style="color: black; margin-left: 15px; position:inherit;" class="form-control" type="text"
@@ -206,12 +229,12 @@
                 </div>
 
                 <div class="w3-section">
-                  <p><b>Precio por pieza: </b> $90</p>
+                  <p><b>Precio por pieza: </b>$<?php echo $datos['precio'];?></p>
                   <p><b>Envió</b> $99</p>
                 </div>
 
                 <div class="container" style="opacity: 0; display: none;">
-                  <input type="number" class="form-control" id="price" name="price" value="90" required>
+                  <input type="number" class="form-control" id="price" name="price" value="<?php echo $datos['precio']; ?>" required>
                 </div>
 
                 <div class="w3-section">
