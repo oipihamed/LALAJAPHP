@@ -71,6 +71,68 @@ background-color: #252525;
     width: 200px;
     height: 200px;
   }
+  #buscador{
+    margin: 5px 0px 5px 30px;
+   
+  }
+ .fa-search{
+   margin-top:15px !important;
+   
+ }
+ #respuesta{
+   position: absolute;
+   border-radius: 10px;
+   background-color: #fafafa;
   
-  
+   top: 68%;
+   left: 74.5%;
+   max-width: 215px;
+   min-width: 215px;
+   z-index: 1;
+   max-height: 190px;
+   overflow-y: scroll;
+   overflow-x: hidden;
+ }
+
+ #respuesta::-webkit-scrollbar {
+  width: 6px;
+}
+
+#respuesta::-webkit-scrollbar-thumb {
+  background: #FFC312;
+  border-radius: 5px;
+}
+.busc-card{
+  padding: 20px;
+  background-color: rgba(235, 232, 232, 0.233);
+  box-shadow: 4px 4px 10px gray;
+
+}
+.img-bus{
+ 
+  border-radius: 40px;
+  margin-left:-10px;
+}
+.icono-busc-a{
+  text-decoration: none!important;
+  color:black;
+  font-size: 15px;
+}
+.icono-busc-a:hover{
+  color:white;
+}
+.icono-busc{
+  text-decoration: none;
+  color: white;
+  font-size: 20px!important;
+}
+.col-bus{
+  margin-top: 40px;
+  border-radius: 20px;
+  transition: all .5s;
+  background-color: rgba(240, 228, 228, 0.5);
+}
+.col-bus:hover{
+  background-color: rgb(98, 209, 68);
+}
 /*TOOL*/

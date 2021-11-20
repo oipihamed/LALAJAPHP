@@ -6,11 +6,16 @@ use PHPMailer\PHPMailer\Exception;
 
 require_once('../config/Conexion.php');
 require_once('./conexion.php');
-
-$query = "SELECT * FROM producto WHERE IdProducto = '".$_POST['id_p']."'";
+$ip_p=0;
+if(isset($_GET['id_p'])){
+  $ip_p=$_GET['id_p'];
+}else{
+  $ip_p=$_POST['id_p'];
+}
+$query = "SELECT * FROM producto WHERE IdProducto = '$ip_p'";
 $resultado=mysqli_query($conn, $query);
 $row = mysqli_fetch_assoc($resultado);
-$img = $row["imagen"]; 
+$img = $row["imagen"].".jpg"; 
 $producto = $row["nombre"];    
 $descripcion = $row["descripcion"]; 
 $peso = $row["peso"];
@@ -123,9 +128,9 @@ $id = $row["idProducto"];
                 </div>
                 <div class="col-md-3 agregar">
                   <h3  class="contador">$ <?php echo $precio; ?> / Kg</h3>
-                  <div class="cantidad">
+                 <!-- <div class="cantidad">
                     <input class="form-control " type="number" placeholder="1">
-                  </div>
+                  </div>-->
                   <br>
                   
                     <div class="container" style="opacity: 0; display: none;">

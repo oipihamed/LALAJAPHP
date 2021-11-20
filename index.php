@@ -38,15 +38,18 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Productos <i class="icon-angle-down"></i></a>
                         <ul class="dropdown-menu">
-                           <li><a href="./paginas/mockupcompra.html">Novedades</a></li>                            
+                           <li><a href="./paginas/conocer_producto.php">Novedades</a></li>                            
                             <li class="divider"></li>
-                            <li><a href="#">Promociones</a></li>
+                            <li><a href="./paginas/conocer_producto.php">Promociones</a></li>
                             <li class="divider"></li>
-                            <li><a href="#">General</a></li>
+                            <li><a href="./paginas/conocer_producto.php">General</a></li>
                         </ul>
                     </li>
                     <li><a href="contacto.html">Contacto</a></li>
-                    <li><a href=""><i class="fa fa-search"></i> Buscar</a></li>
+                  
+                    <li><input type="text" id="buscador" class="form-control my-2"></input></li>
+                    <li><i class="fa fa-search"></i></li>
+<div id="respuesta" ></div>
                 </ul>
             </div>
         </div>
