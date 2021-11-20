@@ -7,13 +7,12 @@
  $u= new Producto();
  $op= new OperacionController();
 
- $columnas=" * ";
+ $columnas=" idComentario,contenido,fecha,idProducto,nombre ";
 
  $tabla="Comentario";
  $inner="";
  $condicion="WHERE idProducto=$idProducto";
  $orden="ORDER BY fecha desc";
   $result =$op->buscarComentarios($columnas,$tabla,$inner,$condicion,$orden);
-
          echo json_encode($result);
 ?>

@@ -96,14 +96,16 @@ h1 {
 }
 
 .example-1 .wrapper {
-  background: url(http://www.lacteoslalaja.com/core/img/portfolio/quesos/productos-01.jpg) 20% 1%/cover no-repeat;
+  background: url(../images/leche.jpg) 20% 1%/cover no-repeat;
 }
 .img-2 {
-  background: url(http://www.lacteoslalaja.com/core/img/portfolio/yoghurt/productos-16.jpg) 20% 1%/cover no-repeat!important;
+  background: url(../images/img-2.jpg) 20% 1%/cover no-repeat!important;
 }
-
+.img-4 {
+  background: url(../images/img-4.jpg) 20% 1%/cover no-repeat!important;
+}
 .img-1 {
-  background: url(../images/leche.jpg) 20% 1%/cover no-repeat!important;
+  background: url(../images/img-1.jpg) 20% 1%/cover no-repeat!important;
 }
 .example-1 .date {
   position: absolute;
@@ -200,7 +202,7 @@ h1 {
 }
 
 .img-3 {
-  background: url(http://www.lacteoslalaja.com/core/img/portfolio/quesos/productos-06.jpg) center/cover no-repeat!important;
+  background: url(../images/img-3.jpg) center/cover no-repeat!important;
 }
 .example-2 .wrapper:hover .menu-content span {
   transform: translate(-50%, -10px);
@@ -288,6 +290,7 @@ h1 {
 	width: 90%;
 	height: 5px;
 	border-radius: 50px;
+  
   }
   #tex-act{
   background-color: lavender;

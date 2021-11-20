@@ -1,8 +1,10 @@
 
 $(document).ready(function () {
-  $(function () {
-    $('[data-toggle="tooltip"]').tooltip()
-  })
+  const productos=[
+    {nombre:'Queso Oaxaca 1 KG' ,id:1,img:'img-1'},
+    {nombre:'Yogurt 4 KG' ,id:2,img:'img-2'},
+    {nombre:'Queso Panela 1.6 KG' ,id:3,img:'img-3'}
+  ]
   $('ul li').on('click', function () {
     $('li').removeClass('active');
     $(this).addClass('active');
@@ -13,12 +15,7 @@ $(document).ready(function () {
     $('.back').removeClass('hide');
     $('.back').addClass('show');
   }); 
-  //$('.back').on('click', function () {
-   // $(this).removeClass('show');
-   // $(this).addClass('hide');
-  //  $('.media').removeClass('hide');
-  //  $('.media').addClass('show');
-  //}); 
+ 
   $('.media').click(function(){
     $(this).toggleClass('flipped');
     });
@@ -28,7 +25,33 @@ $(document).ready(function () {
       });
     
   mostrarArticulos();
+ const buscador=document.querySelector('#buscador');
+ const respuesta=document.querySelector('#respuesta');
  
+ const filtrar=()=>{
+  respuesta.innerHTML="";
+   const text=buscador.value.toLowerCase();
+   for(let producto of productos){
+     let nombre=producto.nombre.toLocaleLowerCase();
+     if(nombre.indexOf(text)!==-1 && text!==""){
+       
+      respuesta.innerHTML+=`<div class="row align-items-center busc-card">
+      <div class="col-sm-6 ">
+      <img class="img-bus" src="images/${producto.img}.jpg" style="height:90px;"></img>
+      </div>
+     
+      <div class="col-sm-6 col-bus">
+      <a class="icono-busc-a" href="paginas/mockupcompra.php?id_p=${producto.id}">${producto.nombre}</br</a>
+      </div>
+     
+      </div>
+      `;
+      
+     }
+
+   }
+ };
+ buscador.addEventListener('keyup',filtrar);
 });
 
 
@@ -41,6 +64,7 @@ function mostrarArticulos() {
     processData: false,
     contentType: false,
     success: function (respuesta) {
+      console.log("respuesta: "+respuesta);
       var template = `<h1>Productos</h1>
       <div class="row-card">
         
@@ -64,7 +88,7 @@ function mostrarArticulos() {
                 <div class="data">
                     <div class="content">
                      
-                        <h3 class="title"><a href="./paginas/mockupconocer.html">${producto.nombre} ${producto.peso}</a></h3>
+                        <h3 class="title"><a href="paginas/conocer_producto.php?id_p=${producto.idProducto}">${producto.nombre} ${producto.peso}</a></h3>
                         <p class="text">${producto.descripcion}</p>
                         <label for="show-menu-${producto.idProducto}" class="menu-button"><span></span></label>
 
@@ -73,10 +97,10 @@ function mostrarArticulos() {
                     <input type="checkbox" id="show-menu-${producto.idProducto}" />
                     <ul class="menu-content">
                         <li>
-                            <a href="./paginas/mockupcompra.html" class="fa fa-shopping-cart"></a>
+                            <a href="paginas/mockupcompra.php?id_p=${producto.idProducto}" class="fa fa-shopping-cart"></a>
                         </li>
                         <li><a onClick="javascript:darLike(${producto.idProducto})" class="fa fa-heart-o"><span>${producto.numLikes}</span></a></li>
-                        <li><a onClick="javascript:verComentarios(${producto.idProducto})" class="fa fa-comment-o"><span>${numCom}</span></a></li>
+                        <li><a onClick="javascript:verComentarios(${producto.idProducto})" class="fa fa-comment-o"><span>${producto.totalComentarios}</span></a></li>
                     </ul>
                 </div>
                 
@@ -125,7 +149,7 @@ function verComentarios(idProducto) {
     method: 'POST',
     datatype: 'json',
     success: function (respuesta) {
-     
+     console.log("Hola mundo"+respuesta);
       var template="";
       var comentarios=JSON.parse(respuesta);
       comentarios.forEach(comentario => {
@@ -193,7 +217,11 @@ console.log(nombre);
           }
       }
   });
+
+  
+
 }
+
 /*
 $('.navbar-toggler').on('click',function(){
 

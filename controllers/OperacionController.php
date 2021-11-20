@@ -24,6 +24,7 @@ require $dir.'/config/Conexion.php';
 
         public function buscar($columnas,$tabla,$inner,$condicion,$orden){
             $sql= " SELECT  $columnas FROM $tabla $inner $condicion $orden";
+           
             $con = new Conexion();
             $con->conectar();
             $conect= $con->get_conexion();
@@ -42,10 +43,11 @@ require $dir.'/config/Conexion.php';
                         'estado'=>$row['estado'],
                         'numLikes'=>$row['numLikes'],
                         'descripcion'=>$row['descripcion'],
-                        'idProducto'=>$row['idProducto']
+                        'idProducto'=>$row['idProducto'],
+                        'totalComentarios'=>$row['totalComentarios']
                     );
                 }
-                $json;
+            
                 return $json;
             }else{
                 return "-1";

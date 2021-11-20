@@ -1,8 +1,14 @@
 <?php
   require_once ('../models/Producto.php');
   require_once('./conexion.php');
+  $ip_p=0;
+  if(isset($_POST['id_p'])){
+    $ip_p=$_POST['id_p'];
+  }else{
+    $ip_p=$_GET['id_p'];
+  }
 
-  $sqlgrabar = "SELECT * FROM producto WHERE IdProducto = '".$_POST['id_p']."'";
+  $sqlgrabar = "SELECT * FROM producto WHERE IdProducto = '$ip_p'";
     if (mysqli_query($conn, $sqlgrabar)) {
       $ordStatus = 'success';
       $resultado = mysqli_query($conn, $sqlgrabar);
@@ -11,12 +17,14 @@
       $statusMsg = "Error al momento de subir formulario, por favor vuelva a intentarlo.";
     };
 
-    if ($_POST['id_p'] == 1) {
-      $img = "../images/queso_oaxaca.jpg";
-    } else if ($_POST['id_p'] == 2) {
-      $img = "../images/productos-16.jpg";
-    } else if ($_POST['id_p']== 3) {
-      $img = "../images/productos-06.jpg";
+    if ($ip_p== 1) {
+      $img = "../images/img-1.jpg";
+    } else if ($ip_p == 2) {
+      $img = "../images/img-2.jpg";
+    } else if ($ip_p== 3) {
+      $img = "../images/img-3.jpg";
+    }elseif($ip_p== 4){
+      $img = "../images/img-4.jpg";
     };
 
 ?>

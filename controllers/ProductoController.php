@@ -9,12 +9,11 @@
     $u= new Producto();
     $op= new OperacionController();
 
-    $columnas=" * ";
-
-    $tabla="Producto";
+    $columnas=" nombre,tipo, peso, precio, imagen,descuento,imagen,estado,numLikes,descripcion,idProducto,(SELECT COUNT(idComentario) FROM Comentario c WHERE c.idProducto=p.idProducto) as totalComentarios ";
+    $tabla=" Producto p ";
     $inner="";
     $condicion="";
-    $orden="ORDER BY numLikes desc LIMIT 4 ";
+    $orden=" ORDER BY numLikes desc LIMIT 4 ";
      $result =$op->buscar($columnas,$tabla,$inner,$condicion,$orden);
    
             echo json_encode($result);
