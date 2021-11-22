@@ -17,6 +17,7 @@ $ordStatus = 'error';
 
 if (isset($_POST['enviar'])) {
   if (!empty($_POST['email']) && !empty($_POST['full_name']) && !empty($_POST['domicilio']) && !empty($_POST['CP']) && !empty($_POST['City']) && !empty($_POST['State']) && !empty($_POST['Country']) && !empty($_POST['telefono'])) {
+    $id = $_POST['id'];
     $email = $_POST['email'];
     $name = $_POST['full_name'];
     $domicilio = $_POST['domicilio'];
@@ -29,6 +30,15 @@ if (isset($_POST['enviar'])) {
     $descuento = $_POST['descuento'];
     $price = $_POST['price'];
 
+    $sqlgrabar = "SELECT * FROM producto WHERE IdProducto = ' $id '";
+    if (mysqli_query($conn, $sqlgrabar)) {
+      $ordStatus = 'success';
+      $resultado = mysqli_query($conn, $sqlgrabar);
+      $datos = mysqli_fetch_array($resultado);
+    } else {
+      $statusMsg = "Error al momento de subir formulario, por favor vuelva a intentarlo.";
+    };
+
     $date = date("Y-m-d H:i:s");
     $hours = '24:00:00';
 
@@ -38,7 +48,7 @@ if (isset($_POST['enviar'])) {
     $sumTime = strtotime($date) + ($d1 - $d0);
     $new_time = date("Y-m-d H:i:s", $sumTime);
 
-    $subtotal = $price * $cantidad;
+    $subtotal = ($price - ($price * $datos['descuento'])) * ($cantidad);
 
     if ($subtotal >= 100) {
       $envio = 0;
@@ -46,20 +56,13 @@ if (isset($_POST['enviar'])) {
       $envio = 99;
     };
 
-    if ($price == 100) {
-      $namep = "Queso la laja 1kg";
-    } else if ($price == 150) {
-      $namep = "Yoghurt Lari 4kg";
-    } else if ($price == 50) {
-      $namep = "Queso panela 1kg ";
-    };
 
-    $total = ($price * $cantidad) + $envio;
-    $product = $namep;
+    $total = $subtotal + $envio;
+    $product = $datos['nombre'];
 
     $mensajeCliente = "<html>" .
-    "<head><title>Gracias por tu preferencia</title>" .
-    "<style>
+      "<head><title>Gracias por tu preferencia</title>" .
+      "<style>
 * {
   margin: 0;
   padding: 0;
@@ -95,31 +98,31 @@ img{
 }
 </style>
 </head>" .
-    "<body>" .
-    "<div class='contenedor'>" .
-    "<p>&nbsp;</p>" .
-    "<p>&nbsp;</p>" .
-    "<span>Felicitaciones <strong class='bold'>" . $name . " ...</strong></span>" .
-    "<p>&nbsp;</p>" .
-    "<p>Su compra esta en camino...</p> " .
-    "<p>&nbsp;</p>" .
-    "<p>&nbsp;</p>" .
-    "<p><strong>Su(s) producto(s): </strong> " . $namep . " </p>" .
-    "<p><strong>Aproximadamente llegara el dia: </strong> " . $new_time . " </p>" .
-    "<p>&nbsp;</p>" .
-    "<p>¡Gracias por su preferencia.</p>" .
-    "<p>&nbsp;</p>" .
-    "<p><span class='bold'> Un saludo de parte de toda la familia de la laja! </span></p>" .
-    "<p>&nbsp;</p>" .
-    "<p>" .
-    "<a title='lalaja' href='http://www.lacteoslalaja.com/'>" .
-    "<img src='http://www.lacteoslalaja.com/core/img/logo.png' alt='Logo' width='100px'/>" .
-    "</a>" .
-    "</p>" .
-    "<p><strong>En caso de incoveniente comunicate con nosotros por: (461) 6164147, o por email: lalajacelaya@gmail.com</strong> </p>" .
-    "</div>" .
-    "</body>" .
-    "</html>";
+      "<body>" .
+      "<div class='contenedor'>" .
+      "<p>&nbsp;</p>" .
+      "<p>&nbsp;</p>" .
+      "<span>Felicitaciones <strong class='bold'>" . $name . " ...</strong></span>" .
+      "<p>&nbsp;</p>" .
+      "<p>Su compra esta en camino...</p> " .
+      "<p>&nbsp;</p>" .
+      "<p>&nbsp;</p>" .
+      "<p><strong>Su(s) producto(s): </strong> " . $datos['nombre'] . " </p>" .
+      "<p><strong>Aproximadamente llegara el dia: </strong> " . $new_time . " </p>" .
+      "<p>&nbsp;</p>" .
+      "<p>¡Gracias por su preferencia.</p>" .
+      "<p>&nbsp;</p>" .
+      "<p><span class='bold'> Un saludo de parte de toda la familia de la laja! </span></p>" .
+      "<p>&nbsp;</p>" .
+      "<p>" .
+      "<a title='lalaja' href='http://www.lacteoslalaja.com/'>" .
+      "<img src='http://www.lacteoslalaja.com/core/img/logo.png' alt='Logo' width='100px'/>" .
+      "</a>" .
+      "</p>" .
+      "<p><strong>En caso de incoveniente comunicate con nosotros por: (461) 6164147, o por email: lalajacelaya@gmail.com</strong> </p>" .
+      "</div>" .
+      "</body>" .
+      "</html>";
 
 
     $sqlgrabar = "INSERT INTO compra(email, name, domicilio, CP, City, State, Country, telefono, fechapedido, fechaentrega, cantidad, producto, codigoDescuento, total) values ('$email', '$name','$domicilio','$CP','$City','$State','$country','$telefono','$date','$new_time','$cantidad','$product','$descuento','$total')";
@@ -146,7 +149,6 @@ img{
         $mail->Subject = 'Gracias por tu compra';
         $mail->Body = $mensajeCliente;
         $mail->send();
-
       } catch (Exception $e) {
         echo 'Mensaje ' . $mail->ErrorInfo;
       }
@@ -197,23 +199,26 @@ img{
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand logo" href="../index.php"><img src="http://www.lacteoslalaja.com/core/img/logo.png" alt="Logo"></a>
+        <a class="navbar-brand logo" href="./index.css"><img src="http://www.lacteoslalaja.com/core/img/logo.png" alt="Logo"></a>
       </div>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="nav navbar-nav navbar-right">
-          <li class="active"><a href="../index.php">Inicio</a></li>
+          <li class="active"><a href="./index.php">Inicio</a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Productos <i class="icon-angle-down"></i></a>
             <ul class="dropdown-menu">
-              <li><a href="./mockupcompra.html">Novedades</a></li>
+              <li><a href="./paginas/conocer_producto.php">Novedades</a></li>
               <li class="divider"></li>
-              <li><a href="#">Promociones</a></li>
+              <li><a href="./paginas/conocer_producto.php">Promociones</a></li>
               <li class="divider"></li>
-              <li><a href="#">General</a></li>
+              <li><a href="./paginas/conocer_producto.php">General</a></li>
             </ul>
           </li>
-          <li><a href="#">Contacto</a></li>
-          <li><a href=""><i class="fa fa-search"></i> Buscar</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+
+          <li><input type="text" id="buscador" class="form-control my-2"></input></li>
+          <li><i class="fa fa-search"></i></li>
+          <div id="respuesta"></div>
         </ul>
       </div>
     </div>
@@ -238,6 +243,10 @@ img{
               <li class="breadcrumb__item breadcrumb__item--completed">
                 <a class="breadcrumb__link" href="../index.php">Productos <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
               </li>
+              <li class="breadcrumb__item breadcrumb__item--current ">
+              <span class="breadcrumb__text"><b>Información</b></span>
+              <i class="fa fa-chevron-right" aria-hidden="true"></i>
+            </li>
               <li class="breadcrumb__item breadcrumb__item--completed">
                 <a class="breadcrumb__link" href="mockupcompra.php" style="display: block;">Información <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
               </li>
@@ -260,11 +269,11 @@ img{
                 <p><b>Fecha de orden: </b> <?php echo $date; ?></p>
                 <p><b>Fecha de entrega(estimada): </b> <?php echo $new_time; ?></p>
                 <h1><b>Costo</h1>
-                <p><b>Producto: </b> <?php echo $namep ?></p>
+                <p><b>Producto: </b> <?php echo $datos['nombre']; ?></p>
                 <p><b>Cantidad: </b> <?php echo $cantidad ?></p>
                 <p><b>Costo de Envió: </b> Si el precio de tu compra es mayor a 100$ el envio va de nuestra parte(Gratis)</p>
-                <p><b>Envio: </b> <?php echo $envio ?></p>
                 <p><b>Subtotal: </b> <?php echo $subtotal ?></p>
+                <p><b>Envio: </b> <?php echo $envio ?></p>
                 <p><b>Costo Total: </b> <?php echo $total; ?></p>
                 <br>
                 <p>Garantizamos el 100% de nuestras entregas si llegara a ocurrir un incoveniente</p>
