@@ -29,7 +29,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand logo" href="./index.css"><img
+                <a class="navbar-brand logo" href="/LaLaja/index.php"><img
                         src="http://www.lacteoslalaja.com/core/img/logo.png" alt="Logo"></a>
             </div>
             <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -80,7 +80,7 @@
         </div>
         <div class="typing-field">
             <div class="input-data">
-                <input id="data" type="text" placeholder="Type something here.." required>
+                <input id="data" type="text" placeholder="Escribe algo aqui.." required>
                 <button id="send-btn">Enviar</button>
             </div>
         </div>
