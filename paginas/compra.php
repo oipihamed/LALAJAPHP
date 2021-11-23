@@ -238,45 +238,45 @@ img{
           <nav aria-label="Ruta de Navegación">
             <ol class="breadcrumb" role="list">
               <li class="breadcrumb__item breadcrumb__item--completed">
-                <a class="breadcrumb__link" href="../index.php">Inicio <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                <a class="breadcrumb__link" href="../index.php">Inicio 
+                  <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
               </li>
               <li class="breadcrumb__item breadcrumb__item--completed">
-                <a class="breadcrumb__link" href="../index.php">Productos <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                <a class="breadcrumb__link" href="../index.php">Productos 
+                  <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
               </li>
-              <li class="breadcrumb__item breadcrumb__item--current ">
-              <span class="breadcrumb__text"><b>Información</b></span>
+              <li class="breadcrumb__item breadcrumb__item--completed ">
+              <a class="breadcrumb__link">Información</a>
               <i class="fa fa-chevron-right" aria-hidden="true"></i>
             </li>
-              <li class="breadcrumb__item breadcrumb__item--completed">
-                <a class="breadcrumb__link" href="mockupcompra.php" style="display: block;">Información <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-              </li>
               <li class="breadcrumb__item breadcrumb__item--current" aria-current="step">
                 <span class="breadcrumb__text"><b>Envío</b></span>
               </li>
             </ol>
           </nav>
           <div class="container" style="font-size:medium; border-radius:15px; font-family:inherit; font-size: inherit; background-color: #fafafa; box-shadow:4px 4px 10px rgba(0,0,0,0.06);">
-            <div class="status" style="font-size:medium; text-align: left">
+            <div class="status" style="font-size:large; text-align: left;  font-family:monospace" >
               <br>
               <b>
-                <h1 class="<?php echo $ordStatus; ?>" style="font-size:medium;"><?php echo $statusMsg; ?></h1>
+                <h1 class="<?php echo $ordStatus; ?>" style="font-size:medium; text-align: center;"><b><?php echo $statusMsg; ?></b></h1>
               </b>
               <?php if (!empty($email)) { ?>
-                <h3>Recuerda tomar captura de pantallas, por si acaso.</h3>
-                <h4>Información de la orden</h4>
+                <h3 style="text-align: center;">Recuerda tomar captura de pantallas, por si acaso.</h3>
+                <h4 style="text-align: center;"><b>Información de la orden</b></h4>
                 <p><b>Domicilio de entrega: </b> <?php echo $domicilio . ' ' . $CP . ' ' . $City . ' ' . $State . ' ' . $country; ?></p>
                 <p><b>Contacto: </b> <?php echo $email . ' ' . $telefono; ?></p>
                 <p><b>Fecha de orden: </b> <?php echo $date; ?></p>
                 <p><b>Fecha de entrega(estimada): </b> <?php echo $new_time; ?></p>
-                <h1><b>Costo</h1>
+                <h1 style="text-align: center;"><b>Costo</h1>
                 <p><b>Producto: </b> <?php echo $datos['nombre']; ?></p>
                 <p><b>Cantidad: </b> <?php echo $cantidad ?></p>
                 <p><b>Costo de Envió: </b> Si el precio de tu compra es mayor a 100$ el envio va de nuestra parte(Gratis)</p>
+                <br>
                 <p><b>Subtotal: </b> <?php echo $subtotal ?></p>
                 <p><b>Envio: </b> <?php echo $envio ?></p>
                 <p><b>Costo Total: </b> <?php echo $total; ?></p>
                 <br>
-                <p>Garantizamos el 100% de nuestras entregas si llegara a ocurrir un incoveniente</p>
+                <p style="text-align: center;">Garantizamos el 100% de nuestras entregas si llegara a ocurrir un incoveniente</p>
             </div>
             <a href="../index.php" type="button" class="btn btn-success btn-lg btn-block " style="font-size: large;"><i class="fa fa-cart-plus" aria-hidden="true"></i> Continua conocinedo nuestros productos</a>
           <?php } else { ?>
