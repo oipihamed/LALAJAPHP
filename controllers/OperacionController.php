@@ -80,7 +80,7 @@ require $dir.'/config/Conexion.php';
           
         }
         public function actualizar($tabla,$val,$condicion){
-            $sql= "UPDATE $tabla SET $val $condicion";
+            $sql= "UPDATE $tabla SET $val  $condicion";
             $con = new Conexion();
             $con->conectar();
             $conect= $con->get_conexion();

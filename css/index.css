@@ -6,8 +6,22 @@
 	line-height: 1;
 
   }
+  body{
+    overflow-x: hidden;
+  }
  
+.txt-alg-right{
+  text-align: right;
+  
+}
 
+.txt-alg-center{
+  text-align: center;
+}
+.txt-alg-left{
+  text-align: left;
+  position: fixed;
+}
 
 .bg-green{
    background-color: #8CBF3A; 
@@ -45,15 +59,7 @@ background-color: #252525;
     font-weight: bold;
   }
  
-  .media:hover{
-    color: goldenrod;
-    background-color: white;
-    box-shadow: 10px 10px 10px goldenrod;
-    font-size: 25px!important;
-    padding: 80px;
-    cursor: pointer;
-
-  }
+  
   .media.flipped {
    
     -webkit-transform: rotateY( 360deg );
@@ -136,3 +142,207 @@ background-color: #252525;
   background-color: rgb(98, 209, 68);
 }
 /*TOOL*/
+
+/* CON JS */
+
+
+
+.tooltip-info {
+  background: #8CBF3A;
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+  position: fixed;
+  visibility: hidden;
+  z-index: 4;
+}
+
+.tooltip-box:hover .tooltip-info {
+  visibility: visible;
+}
+
+.receta{
+  transition: all 1s;
+  border-radius: 10px;
+  width: 75%;
+  height:fit-content;
+  background: url("../images/recipe.jpg") 40% 21%/cover no-repeat;
+  position: fixed;
+  visibility: hidden;
+  color: black;
+  transform:translate(800%,-30%) ;
+  z-index: -1;
+  text-align: justify!important;
+}
+.receta-act{
+  border-radius: 0px 100px 100px 100px;
+  transition: all 1s;
+  width: 75%;
+  height:fit-content;
+  transform:translate(20%,-50%) ;
+  background: url("../images/recipe.jpg") 40% 21%/cover no-repeat;
+  position: fixed;
+  visibility: visible;
+  z-index: 2;
+  padding: 10px;
+color: black;
+text-align: justify!important;
+
+}
+.cl-receta{
+  color: black;
+  font-size: 50px;
+  padding: 10px;
+}
+.text-receta{
+  color: black;
+  font: 20px;
+  
+}
+
+.icon-img-com{
+  height: 60px;
+  margin: -11% 0px 0px -97%;
+  position: absolute;
+  z-index: 5;
+}
+.wrap-content-recipe{
+  border-radius: 20px;
+  border:4px groove black ;
+  margin: 50px;
+}
+.wrap-list-ing{
+  color: black;
+  background-color:rgba(243, 245, 243, 0.6) ;
+  padding: 10px;
+  border-radius: 10px;
+   text-align: justify;
+}
+.wrap-list-step{
+  background-color:rgba(193, 236, 193, 0.6) ;
+  height: 100%;
+  padding: 30px;
+  border-radius: 10px;
+  }
+  .wrap-list-step li{
+    list-style-image:url('../images/check_green_icon.png');
+  list-style-position: outside;
+  }
+
+.list-ing li::before{
+
+content:  url('../images/check_green_icon.png')'  ';
+}
+.ir-arriba {
+	display:block;
+  border-radius: 50%;
+  box-shadow:2px 2px 2px 2px rgba(24, 26, 24, 0.9);
+	padding:20px;
+	background:#024959;
+	font-size:20px;
+	color:#fff;
+	cursor:pointer;
+	position: fixed;
+	bottom:20px;
+	right:20px;
+  z-index: 2;
+  transition: all 1s;
+} 
+.abrir-chat {
+	display:block;
+  border-radius: 50%;
+  box-shadow:2px 2px 2px 2px rgba(24, 26, 24, 0.9);
+	padding:20px;
+	background:#024959;
+	font-size:20px;
+	color:#fff;
+	cursor:pointer;
+	position: fixed;
+	bottom:140px;
+	right:30px;
+  z-index: 3;
+  transition: all 1s;
+} 
+.icon-milk{
+  height: 60px;
+}
+.img-r{
+  height: 100px;
+  margin: 10px;
+ 
+}
+.img-al{
+height:200px ;
+width: 220px;
+position: absolute;
+transform: translate(10%,-50%);
+}
+.img-ing-su{
+  height:60px ;
+  width:60px;
+
+}
+.close-chat{
+  float: right;
+  font-size: 30px;
+  margin: 10px;
+  color: white;
+}
+.vaca-chat{
+  height: 20px;
+}
+@media only screen and (max-width: 950px)  {
+  .img-r{
+    height: 60px;
+    margin: 10px;
+   
+  }
+  .img-al{
+    height:140px ;
+    width:160px ;
+    position: absolute;
+    transform: translate(10%,-40%);
+    }
+  .cl-receta{
+    color: black;
+    font-size: 25px;
+    padding: 10px;
+  }
+  .receta{
+    transition: all 1s;
+    border-radius: 10px;
+    width: 80%;
+    height:fit-content;
+    background: url("../images/recipe.jpg") 40% 21%/cover no-repeat;
+    position: absolute;
+    visibility: hidden;
+    font-size: 1rem; 
+    transform:translate(800%,-45%) ;
+    z-index: -1;
+    text-align: justify!important;
+  }
+  .receta-act{
+    border-radius: 0px 100px 100px 100px;
+    transition: all 1s;
+    width: 80%;
+    height:fit-content;
+    transform:translate(20%,-45%) ;
+    background: url("../images/recipe.jpg") 40% 21%/cover no-repeat;
+    position: absolute;
+    visibility: visible;
+    z-index: 2;
+    padding: 10px;
+  font-size: 1rem;
+  
+  text-align: justify!important;
+  }
+  .receta-act h3,.receta-act h5,.receta-act h1,.receta-act h4{
+    font-size: 1.2rem!important;
+    font-weight: bolder;
+  }
+  
+  .list-ing li::before{
+
+    content:'  ';
+    }
+}
