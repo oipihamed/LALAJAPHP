@@ -39,17 +39,17 @@ html,body{
     position: fixed;
     z-index: 10;
 transition: all 1s;
-    transform: translate(390%, 5%);   
+    transform: translate(227%, 4%);   
 
 }
 .not-visible{
-    transform: translate(-400%, 5%); 
+    transform: translate(-400%, 4%); 
     visibility:hidden;
       
 }
 .visible{
     visibility: visible;
-    width: 20%;
+    width: 30%;
     
 }
 
@@ -166,4 +166,12 @@ transition: all 1s;
 }
 .typing-field .input-data button:hover{
     background: #557425;
+}
+
+@media only screen and (max-width: 950px)  {
+    .visible{
+        visibility: visible;
+        width: 60%;
+        transform:translate(60%, -3%) ;
+    }
 }

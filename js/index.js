@@ -7,30 +7,35 @@ $(document).ready(function () {
   ];
   $('.abchat').on('click',function()
   {
+    $('.abrir-chat').slideUp(300);
+   
     $('.wrapper-chatbot').removeClass('not-visible');
 $('.wrapper-chatbot').addClass('visible');
 
   });
   $('.close-chat').on('click',function()
 {
-  console.log("Hola mundo cerrar");
+  
   $('.wrapper-chatbot').removeClass('visible');
 $('.wrapper-chatbot').addClass('not-visible');
+$('.abrir-chat').slideDown(300);
   });
   //Srcorll smooth
  
 $('.ir-arriba').on('click',function(){
-  console.log("hola mundo");
+  
   $('body, html').animate({
     scrollTop: '0px'
-  }, 300);
+  }, 800);
 });
 
 $(window).scroll(function(){
   if( $(this).scrollTop() > 0 ){
     $('.ir-arriba').slideDown(300);
+    
   } else {
     $('.ir-arriba').slideUp(300);
+    
   }
 });
 //Scroll smooth
