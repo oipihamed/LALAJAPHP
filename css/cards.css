@@ -14,9 +14,13 @@ body {
 }
 
 a {
-  text-decoration: none;
+  text-decoration: none!important;
+  transition: all 1s;
 }
+a:hover{
 
+  cursor: pointer!important;
+}
 h1 {
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
@@ -287,7 +291,7 @@ h1 {
   } 
   .hr-style{
   background: #FFC312;
-	width: 90%;
+	width: 100%;
 	height: 5px;
 	border-radius: 50px;
   
@@ -295,10 +299,7 @@ h1 {
   #tex-act{
   background-color: lavender;
   }
-  .form_comentarios{
-    margin: 20px;
-    padding: 10px!important;
-  }
+  
   .form_comentarios .form-control{
     width: 90%;
     height: 80px;
@@ -306,37 +307,72 @@ h1 {
     min-height: 80px;
     max-height: 300px;
     
-    margin:10px;
   
   }
-  .media{
+  .col-com{
       
       padding-top: 20px;
      
   }
-  .media .nombre{
+  .col-com .nombre{
       color: gray!important;
      font-weight: bold;
+     font-size: 11px;
       text-align: justify;
+      font-style: italic;
       margin-left: 25px;
   }
-  
-  .media .nombre span{
-      font-size: 12px;
-     
+  .com-t{
+    color: gray;
+  }
+  .col-com .nombre span{
+      font-size: 10px;
+      top: 90px;
+      color: gray;
   } 
   .divcomentarios{
-  transition: "all 2s";
+    
+    width: 650px;
+    z-index: -1;
+    transform: translateY(-0px);
     background-color: #fff;
-    max-height: 300px;
+    max-height: 0px;
     border-radius: 10px;
     box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.2);
     margin-top: 10px;
-    position:relative;
+    position:absolute;
     overflow-y: scroll;
     overflow-x:hidden ;
+    transition: all 1s;
+
     
   }
+
+  .divcomentarios-active{
+    padding:27px ;
+    width: 98%;
+    z-index: 2;
+    transform: translateY(-320px);
+      background-color: #fff;
+      max-height: 300px;
+      border-radius: 10px;
+      box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.2);
+     
+      position:absolute;
+      overflow-y: scroll;
+      overflow-x:hidden ;
+      transition: all 1s;
+      
+    }
+  .divcomentarios-active::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  .divcomentarios-active::-webkit-scrollbar-thumb {
+    background: #FFC312;
+    border-radius: 5px;
+  }
+
   .divcomentarios::-webkit-scrollbar {
     width: 4px;
   }
@@ -345,7 +381,6 @@ h1 {
     background: #FFC312;
     border-radius: 5px;
   }
-
 
   /* CSS */
   .button-53 {
@@ -382,7 +417,8 @@ h1 {
   .button-53:after {
     content: '';
     position: absolute;
-    border: 1px solid #000000;
+    border: 2px solid #000000;
+    border-radius: 5px;
     bottom: 4px;
     left: 4px;
     width: calc(100% - 1px);
@@ -396,7 +432,7 @@ h1 {
   
   
 
-@media only screen and (max-width: 1000px) and (min-width: 400px) {
+@media only screen and (max-width: 1000px) and (min-width: 500px) {
   .card {
     float: left;
     padding: 0 1.7rem;

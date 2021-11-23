@@ -9,8 +9,9 @@
 
       $tabla="Producto";
       $val="numLikes=numLikes+1";
-      $condicion="idProducto= $idProducto";
-       $result=$op->actualizar($tabla,$val,$condition);
+      $condicion="WHERE idProducto= $idProducto";
+
+       $result=$op->actualizar($tabla,$val,$condicion);
        if($result){
        echo json_encode($result);
     }else{
