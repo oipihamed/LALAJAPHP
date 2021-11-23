@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="./css/stylemockup.css">
     <link rel="stylesheet" href="./css/cards.css">
     <link rel="stylesheet" href="./css/index.css">
-    <link rel="stylesheet" href="./css/chatbot.css">    
+    <link rel="stylesheet" href="./css/chatbot.css">
 </head>
 
 <body>
@@ -55,46 +55,46 @@
             </div>
         </div>
     </nav>
-    <div class="container-fluid">  
+    <div class="container-fluid">
         <div class="row ">
             <div class="container-fluid txt-wh">
                 <!--TOOL TIP-->
                 <span class="abrir-chat abchat"><i class="fa fa-question"></i></span>
-              <!--FIN TOOL--> 
-          <!--TOOL TIP-->
+                <!--FIN TOOL-->
+                <!--TOOL TIP-->
                 <span class="ir-arriba"><img src="images/milk-icon-min-arrow.png" class="icon-milk" alt=""></span>
-              <!--FIN TOOL--> 
+                <!--FIN TOOL-->
                 <div class="wrap-iconos">
-                       <!--CHAT BOT-->
-            <div class="wrapper-chatbot not-visible">
-        <div class="title">Chat de Ayuda<a class="fa fa-times close-chat" ></a></div>
-        <div class="form">
-            <div class="bot-inbox inbox">
-                <div class="icon">
-                    <img src="images/vaca-chat.png" class="vaca-chat"></img>
-                </div>
-                <div class="msg-header">
-                    <p>Hola amigo, ¿Como puedo ayudarte?</p>
-                </div>
-            </div>
-        </div>
-        <div class="typing-field">
-            <div class="input-data">
-                <input id="data" type="text" placeholder="Escribe algo aqui.." required>
-                <button id="send-btn">Enviar</button>
-            </div>
-        </div>
-    </div>
-    <!--FIN CHATBOT-->
+                    <!--CHAT BOT-->
+                    <div class="wrapper-chatbot not-visible">
+                        <div class="title">Chat de Ayuda<a class="fa fa-times close-chat"></a></div>
+                        <div class="form">
+                            <div class="bot-inbox inbox">
+                                <div class="icon">
+                                    <img src="images/vaca-chat.png" class="vaca-chat"></img>
+                                </div>
+                                <div class="msg-header">
+                                    <p>Hola amigo, ¿Como puedo ayudarte?</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="typing-field">
+                            <div class="input-data">
+                                <input id="data" type="text" placeholder="Escribe algo aqui.." required>
+                                <button id="send-btn">Enviar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--FIN CHATBOT-->
                     <h3>Lacteos La Laja te ofrece</h3>
                     <p>Distintos productos lácteos de alta calidad elaborados por manos guanajuatenses, en la región
                         Laja-Bajío.</p>
                 </div><br>
-                
+
                 <div class="row">
-                    <div class="row  icons"  id="tooltip_container">
+                    <div class="row  icons" id="tooltip_container">
                         <div class="media tooltip-box">
-                        <span class="tooltip-info">
+                            <span class="tooltip-info">
                                 <i class="fa fa-eye" aria-hidden="true"></i>
                                 Dar click para ver recetas
                             </span>
@@ -107,13 +107,13 @@
                                 <p class="">Amplia variedad de quesos, así como distintas presentaciones para deleitar
                                     tu paldar.</p>
                             </div>
-                            
+
 
                         </div>
                         <div class="receta ">
-                        
+
                             <div class="row justify-content-md-center">
-                            
+
                                 <div class="col-sm-6 col-md-6 col-lg-6 col-6 txt-alg-left">
                                     <i class="fa fa-times-circle-o cl-receta" aria-hidden="true"></i>
                                 </div>
@@ -123,7 +123,7 @@
                                 </div>
                             </div>
                             <img src="images/dedos-queso.png" class="img-al" alt="">
-                            
+
                             <div class="row justify-content-md-center wrap-content-recipe">
                                 <div class="col-md-12 recipe">
                                     <div class="text-receta">
@@ -140,13 +140,14 @@
                                     <h5>INGREDIENTES PARA 4 PERSONAS</h5>
                                     <div class="ingredientes-l">
                                         <ul class="list-ing">
-                                            <li>400 gr <a href="paginas/mockupcompra.php?id_p=1"><strong class="n tooltip-box">Queso
-                                            <span class="tooltip-info">
-                        <img src="images/img-1.jpg" class="img-ing-su" alt="">
-                            </span>
-                                            </strong>
-                                            </a>
-                                          </li>
+                                            <li>400 gr <a href="paginas/mockupcompra.php?id_p=1"><strong
+                                                        class="n tooltip-box">Queso
+                                                        <span class="tooltip-info">
+                                                            <img src="images/img-1.jpg" class="img-ing-su" alt="">
+                                                        </span>
+                                                    </strong>
+                                                </a>
+                                            </li>
                                             <li>1 taza <strong>Harina</strong></li>
                                             <li>2 <strong>Huevos</strong></li>
                                             <li>2 tazas de <strong>Pan Molido</strong> extra crunch</li>
@@ -174,7 +175,7 @@
                                         </li>
                                     </ol>
 
-                                    
+
                                 </div>
 
                             </div>
@@ -277,7 +278,7 @@
                             <a href="#!" class="text-reset">Reclutamiento</a>
                         </p>
                         <p>
-                            <a  class="text-reset abchat" >Ayuda y sugerencias</a>
+                            <a class="text-reset abchat">Ayuda y sugerencias</a>
                         </p>
                     </div>
                     <!-- Grid column -->
