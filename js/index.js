@@ -3,7 +3,8 @@ $(document).ready(function () {
   const productos = [
     { nombre: 'Queso Oaxaca 1 KG', id: 1, img: 'img-1' },
     { nombre: 'Yogurt 4 KG', id: 2, img: 'img-2' },
-    { nombre: 'Queso Panela 1.6 KG', id: 3, img: 'img-3' }
+    { nombre: 'Queso Panela 1.6 KG', id: 3, img: 'img-3' },
+    { nombre: 'Boli Lari 1 KG', id: 4, img: 'img-4' }
   ];
   $('.abchat').on('click',function()
   {
@@ -23,7 +24,7 @@ $('.abrir-chat').slideDown(300);
   //Srcorll smooth
  
 $('.ir-arriba').on('click',function(){
-  
+  console.log("Arriba");
   $('body, html').animate({
     scrollTop: '0px'
   }, 800);
@@ -92,11 +93,11 @@ $(window).scroll(function(){
 
         respuesta.innerHTML += `<div class="row align-items-center busc-card">
       <div class="col-sm-6 ">
-      <img class="img-bus" src="images/${producto.img}.jpg" style="height:90px;"></img>
+      <img class="img-bus" src="/LaLaja/images/${producto.img}.jpg" style="height:90px;"></img>
       </div>
      
       <div class="col-sm-6 col-bus">
-      <a class="icono-busc-a" href="paginas/mockupcompra.php?id_p=${producto.id}">${producto.nombre}</br</a>
+      <a class="icono-busc-a" href="/LaLaja/paginas/mockupcompra.php?id_p=${producto.id}">${producto.nombre}</br</a>
       </div>
      
       </div>
@@ -118,11 +119,11 @@ $(window).scroll(function(){
 
     // start ajax code
     $.ajax({
-        url: 'controllers/message.php',
+        url: '/LaLaja/controllers/message.php',
         type: 'POST',
         data: 'text='+$value,
         success: function(result){
-            $replay = '<div class="bot-inbox inbox"><div class="icon"><img src="images/vaca-chat.png" class="vaca-chat"></img></div><div class="msg-header"><p>'+ result +'</p></div></div>';
+            $replay = '<div class="bot-inbox inbox"><div class="icon"><img src="/LaLaja/images/vaca-chat.png" class="vaca-chat"></img></div><div class="msg-header"><p>'+ result +'</p></div></div>';
             $(".form").append($replay);
             // when chat goes down the scroll bar automatically comes to the bottom
             $(".form").scrollTop($(".form")[0].scrollHeight);
@@ -136,7 +137,7 @@ $(window).scroll(function(){
 function mostrarArticulos() {
 
   $.ajax({
-    url: 'controllers/ProductoController.php',
+    url: '/LaLaja/controllers/ProductoController.php',
     type: 'post',
     cache: false,
     processData: false,
@@ -168,13 +169,13 @@ function mostrarArticulos() {
                
                     <div class="content">
                      
-                        <h3 class="title"><a href="paginas/conocer_producto.php?id_p=${producto.idProducto}">${producto.nombre} ${producto.peso}</a></h3>
+                        <h3 class="title"><a href="/LaLaja/paginas/conocer_producto.php?id_p=${producto.idProducto}">${producto.nombre} ${producto.peso}</a></h3>
                         <p class="text">${producto.descripcion}</p>
                         <label for="show-menu-${producto.idProducto}" class="menu-button"><span></span></label>                       
                     </div>
                     <input type="checkbox" id="show-menu-${producto.idProducto}" />
                     <ul class="menu-content">
-                        <li><a href="paginas/mockupcompra.php?id_p=${producto.idProducto}" class="fa fa-shopping-cart"></a></li>
+                        <li><a href="/LaLaja/paginas/mockupcompra.php?id_p=${producto.idProducto}" class="fa fa-shopping-cart"></a></li>
                         <li><a onClick="javascript:darLike(${producto.idProducto})" class="fa fa-heart-o"><span id="sp-${producto.idProducto}">${producto.numLikes}</span></a></li>
                         <li><a onClick="javascript:verComentarios(${producto.idProducto})" class="fa fa-comment-o"><span>${producto.totalComentarios}</span></a></li>
                         <div class="divcomentarios" id="comentario${producto.idProducto}"></div>
@@ -200,7 +201,7 @@ function mostrarArticulos() {
 
 function darLike(idProducto) {
   $.ajax({
-    url: `controllers/ProductodarLike.php?idProducto=${idProducto}`,
+    url: `/LaLaja/controllers/ProductodarLike.php?idProducto=${idProducto}`,
     data: { 'idProducto': idProducto },
     method: 'POST',
     datatype: 'json',
@@ -219,7 +220,7 @@ function verComentarios(idProducto) {
   if (html == "") {
 
     $.ajax({
-      url: `controllers/ProductoVerComentarios.php`,
+      url: `/LaLaja/controllers/ProductoVerComentarios.php`,
       data: { 'idProducto': idProducto },
       method: 'POST',
       datatype: 'json',
@@ -294,7 +295,7 @@ function insertarComentarios(idProducto) {
   console.log(nombre);
 
   $.ajax({
-    url: `controllers/ProductoInsertarComentarios.php`,
+    url: `/LaLaja/controllers/ProductoInsertarComentarios.php`,
     data: { 'idProducto': idProducto, 'contenido': contenido, 'nombre': nombre },
     method: 'POST',
     datatype: 'json',
