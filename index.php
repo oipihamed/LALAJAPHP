@@ -59,10 +59,10 @@
         <div class="row ">
             <div class="container-fluid txt-wh">
                 <!--TOOL TIP-->
-                <span class="abrir-chat abchat"><i class="fa fa-question"></i></span>
+                <span data-toggle="tooltip" data-placement="top" title="ABRIR CHAT DE AYUDA" class="abrir-chat abchat" ><i class="fa fa-question" ></i></span>
                 <!--FIN TOOL-->
                 <!--TOOL TIP-->
-                <span class="ir-arriba"><img src="/LaLaja/images/milk-icon-min-arrow.png" class="icon-milk" alt=""></span>
+                <span class="ir-arriba"><img src="/LaLaja/images/milk-icon-min-arrow.png" class="icon-milk" alt="" data-toggle="tooltip" data-placement="top" title="IR ARRIBA"></span>
                 <!--FIN TOOL-->
                 <div class="wrap-iconos">
                     <!--CHAT BOT-->
@@ -341,6 +341,7 @@
         integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous">
     </script>
     <script src="./js/index.js"></script>
+    <script src="./js/main.js"></script>
     <script src="./js/cards.js"></script>
 </body>
 

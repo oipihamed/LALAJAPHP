@@ -60,10 +60,10 @@
     </nav>
     <div class="container-fluid" id="tooltip_container">
          <!--TOOL TIP-->
-         <span class="abrir-chat abchat"><i class="fa fa-question"></i></span>
+         <span class="abrir-chat abchat" data-toggle="tooltip" data-placement="top" title="ABRIR CHAT DE AYUDA"><i class="fa fa-question"></i></span>
                 <!--FIN TOOL-->
                 <!--TOOL TIP-->
-                <span class="ir-arriba"><img src="/LaLaja/images/milk-icon-min-arrow.png" class="icon-milk" alt=""></span>
+                <span class="ir-arriba"><img src="/LaLaja/images/milk-icon-min-arrow.png" class="icon-milk" data-toggle="tooltip" data-placement="top" title="IR ARRIBA" alt=""></span>
                 <!--FIN TOOL-->
           <!--CHAT BOT-->
           <div class="wrapper-chatbot not-visible">
@@ -219,7 +219,7 @@
         integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous">
     </script>
     <script src="/LaLaja/js/index.js"></script>
-    <script src="/LaLaja/js/cards.js"></script>
+    <script src="/LaLaja/js/productos.js"></script>
 </body>
 
 </html>

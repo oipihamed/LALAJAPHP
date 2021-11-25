@@ -1,7 +1,7 @@
-(function($) {
+$(document).ready(function () {
 
-	"use strict";
+	mostrarArticulos('ORDER BY numLikes desc LIMIT 4','');
+});
 
-	$('[data-toggle="tooltip"]').tooltip()
 
-})(jQuery);
+  

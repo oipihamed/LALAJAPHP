@@ -3,7 +3,7 @@
     $dir=dirname( __DIR__ );
     require $dir.'/models/Producto.php';
     require $dir.'/controllers/OperacionController.php';
-    //$tipoFun=$_POST['tipoFuncion'];
+    
     //Variables de extraccion de informacion
     $result;
     $u= new Producto();
@@ -13,7 +13,9 @@
     $tabla=" Producto p ";
     $inner="";
     $condicion="";
-    $orden=" ORDER BY numLikes desc LIMIT 4 ";
+    $orden="";
+    $orden=$_POST['orden'];
+    $condicion=$_POST['where'];
      $result =$op->buscar($columnas,$tabla,$inner,$condicion,$orden);
    
             echo json_encode($result);

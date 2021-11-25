@@ -4,8 +4,23 @@ $(document).ready(function () {
     { nombre: 'Queso Oaxaca 1 KG', id: 1, img: 'img-1' },
     { nombre: 'Yogurt 4 KG', id: 2, img: 'img-2' },
     { nombre: 'Queso Panela 1.6 KG', id: 3, img: 'img-3' },
-    { nombre: 'Boli Lari 1 KG', id: 4, img: 'img-4' }
-  ];
+    { nombre: 'Boli Lari 1 L', id: 4, img: 'img-4' },
+    { nombre: 'Queso Oaxaca 200 GR', id: 5, img: 'img-5' },
+    { nombre: 'Queso Oaxaca Rayado 1 KG', id: 6, img: 'img-6' },
+    { nombre: 'Queso Panela 800 GR', id: 7, img: 'img-7' },
+    { nombre: 'Queso Asadero Gudchis 1 KG', id: 8, img: 'img-8' },
+    { nombre: 'Queso Asadero Rayado Gudchis 1 KG', id: 9, img: 'img-9' },
+    { nombre: 'Queso Doblecrema 1 KG', id: 10, img: 'img-10' },
+    { nombre: 'Queso Doblecrema 2.5 KG', id: 11, img: 'img-11' },
+    { nombre: 'Liquesco 1 KG', id: 12, img: 'img-12' }, 
+    { nombre: 'Queso Frecal Rayado 1 KG', id: 13, img: 'img-13' },
+    { nombre: 'Crema 1 L', id: 14, img: 'img-14' },
+    { nombre: 'Yoghurt Lari 1 L', id: 15, img: 'img-15' },
+    { nombre: 'Yoghurt Lari 1 G', id: 16, img: 'img-16' }
+    ];
+  const buscador = document.querySelector('#buscador');
+  const respuesta = document.querySelector('#respuesta');
+
   $('.abchat').on('click',function()
   {
     $('.abrir-chat').slideUp(300);
@@ -80,9 +95,7 @@ $(window).scroll(function(){
 
   });
 
-  mostrarArticulos();
-  const buscador = document.querySelector('#buscador');
-  const respuesta = document.querySelector('#respuesta');
+
 
   const filtrar = () => {
     respuesta.innerHTML = "";
@@ -104,7 +117,19 @@ $(window).scroll(function(){
       `;
 
       }
-
+    }
+    if( respuesta.innerHTML==""){
+      respuesta.innerHTML += `<div class="row align-items-center busc-card">
+      <div class="col-sm-6 ">
+      <i class="img-bus fa fa-question"  style="height:90px;"></i>
+      </div>
+     
+      <div class="col-sm-6 col-bus">
+      <a class="icono-busc-a" href="/LaLaja/paginas/productos.php">NO EXISTE</a>
+      </div>
+     
+      </div>
+      `;
     }
   };
 
@@ -134,14 +159,13 @@ $(window).scroll(function(){
 });
 
 
-function mostrarArticulos() {
-
+function mostrarArticulos(orden,where) {
+console.log(orden+","+where);
   $.ajax({
     url: '/LaLaja/controllers/ProductoController.php',
-    type: 'post',
-    cache: false,
-    processData: false,
-    contentType: false,
+    data:{'orden':orden,'where':''+where},
+    method: 'POST',
+    datatype: 'json',
     success: function (respuesta) {
 
       var template = `<h1>Productos</h1>
@@ -169,15 +193,15 @@ function mostrarArticulos() {
                
                     <div class="content">
                      
-                        <h3 class="title"><a href="/LaLaja/paginas/conocer_producto.php?id_p=${producto.idProducto}">${producto.nombre} ${producto.peso}</a></h3>
+                        <h3 class="title"><a href="/LaLaja/paginas/conocer_producto.php?id_p=${producto.idProducto}"   data-toggle="tooltip" data-placement="top" title="VER MAS INFORMACION.">${producto.nombre} ${producto.peso}</a></h3>
                         <p class="text">${producto.descripcion}</p>
                         <label for="show-menu-${producto.idProducto}" class="menu-button"><span></span></label>                       
                     </div>
-                    <input type="checkbox" id="show-menu-${producto.idProducto}" />
+                    <input type="checkbox" id="show-menu-${producto.idProducto}" data-toggle="tooltip" data-placement="top" title="ABRIR MENU DE OPCIONES"/>
                     <ul class="menu-content">
-                        <li><a href="/LaLaja/paginas/mockupcompra.php?id_p=${producto.idProducto}" class="fa fa-shopping-cart"></a></li>
-                        <li><a onClick="javascript:darLike(${producto.idProducto})" class="fa fa-heart-o"><span id="sp-${producto.idProducto}">${producto.numLikes}</span></a></li>
-                        <li><a onClick="javascript:verComentarios(${producto.idProducto})" class="fa fa-comment-o"><span>${producto.totalComentarios}</span></a></li>
+                        <li><a href="/LaLaja/paginas/mockupcompra.php?id_p=${producto.idProducto}" class="fa fa-shopping-cart" data-toggle="tooltip" data-placement="top" title="COMPRAR"></a></li>
+                        <li><a onClick="javascript:darLike(${producto.idProducto})" class="fa fa-heart-o" data-toggle="tooltip" data-placement="top" title="DAR LIKE"><span id="sp-${producto.idProducto}">${producto.numLikes}</span></a></li>
+                        <li><a onClick="javascript:verComentarios(${producto.idProducto})" class="fa fa-comment-o" data-toggle="tooltip" data-placement="top" title="VER COMENTARIOS"><span>${producto.totalComentarios}</span></a></li>
                         <div class="divcomentarios" id="comentario${producto.idProducto}"></div>
                     </ul>
                    
@@ -259,7 +283,7 @@ function verComentarios(idProducto) {
               <input class="form-control" type="text" name="cvEntrega" id="nombre${idProducto}" placeholder="Nombre" value="">
              <br>
               <textarea class="form-control contenido" name="contenido" id="contenido${idProducto}"  placeholder="Comentario" required></textarea>
-              <button   class="button-53" role="button" onClick="javascript:insertarComentarios(${idProducto})" > <img class="icon-img-com" src="images/vaca-escribiendo.png"> Comentar</button>
+              <button   class="button-53" role="button" onClick="javascript:insertarComentarios(${idProducto})" data-toggle="tooltip" data-placement="top" title="ENVIAR COMENTARIO"> <img class="icon-img-com" src="/LALAJA/images/vaca-escribiendo.png"> Comentar</button>
          </div> 
         
       </div>
