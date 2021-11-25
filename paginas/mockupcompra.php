@@ -16,16 +16,7 @@
     } else {
       $statusMsg = "Error al momento de subir formulario, por favor vuelva a intentarlo.";
     };
-
-    if ($ip_p== 1) {
-      $img = "../images/img-1.jpg";
-    } else if ($ip_p == 2) {
-      $img = "../images/img-2.jpg";
-    } else if ($ip_p== 3) {
-      $img = "../images/img-3.jpg";
-    }elseif($ip_p== 4){
-      $img = "../images/img-4.jpg";
-    };
+    $img=$datos['imagen'].".jpg";
 
 ?><!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -85,14 +76,14 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Productos <i class="icon-angle-down"></i></a>
             <ul class="dropdown-menu">
-              <li><a href="./paginas/conocer_producto.php">Novedades</a></li>
+              <li><a href="/LaLaja/paginas/productos.php">Novedades</a></li>
               <li class="divider"></li>
-              <li><a href="./paginas/conocer_producto.php">Promociones</a></li>
+              <li><a href="/LaLaja/paginas/productos.php">Promociones</a></li>
               <li class="divider"></li>
-              <li><a href="./paginas/conocer_producto.php">General</a></li>
+              <li><a href="/LaLaja/paginas/productos.php">General</a></li>
             </ul>
           </li>
-          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="/LaLaja/paginas/contacto.html">Contacto</a></li>
 
           <li><input type="text" id="buscador" class="form-control my-2"></input></li>
           <li><i class="fa fa-search"></i></li>
@@ -113,10 +104,10 @@
     </div>-->
 
   <!--TOOL TIP-->
-  <span class="abrir-chat abchat"><i class="fa fa-question"></i></span>
+  <span class="abrir-chat abchat" data-toggle="tooltip" data-placement="top" title="ABRIR CHAT DE AYUDA"><i class="fa fa-question"></i></span>
               <!--FIN TOOL--> 
           <!--TOOL TIP-->
-                <span class="ir-arriba"><img src="/LaLaja/images/milk-icon-min-arrow.png" class="icon-milk" alt=""></span>
+                <span class="ir-arriba"><img src="/LaLaja/images/milk-icon-min-arrow.png" class="icon-milk" alt="" data-toggle="tooltip" data-placement="top" title="IR ARRIBA"></span>
               <!--FIN TOOL--> 
 
 
@@ -137,7 +128,7 @@
                         <div class="typing-field">
                             <div class="input-data">
                                 <input id="data" type="text" placeholder="Escribe algo aqui.." required>
-                                <button id="send-btn">Enviar</button>
+                                <button id="send-btn" >Enviar</button>
                             </div>
                         </div>
                     </div>
@@ -160,10 +151,10 @@
         <nav aria-label="Ruta de Navegación">
           <ol class="breadcrumb" role="list">
             <li class="breadcrumb__item breadcrumb__item--completed">
-              <a class="breadcrumb__link" href="../index.php">Inicio <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+              <a class="breadcrumb__link" href="../index.php" data-toggle="tooltip" data-placement="top" title="INICIO">Inicio <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
             </li>
             <li class="breadcrumb__item breadcrumb__item--completed">
-              <a class="breadcrumb__link" href="../index.php">Productos <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+              <a class="breadcrumb__link" href="/LaLaja/paginas/productos.php" data-toggle="tooltip" data-placement="top" title="Productos">Productos <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
             </li>
             <li class="breadcrumb__item breadcrumb__item--current breadcrumb__item--completed" aria-current="step">
               <span class="breadcrumb__text"><b>Información</b></span>
@@ -178,35 +169,35 @@
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputEmail">Email</label>
-                <input type="email" class="form-control" id="inputEmail" placeholder="Ejemplo@lalaja.com" name="email" required>
+                <input type="email" class="form-control" id="inputEmail" placeholder="Ejemplo@lalaja.com" name="email" data-toggle="tooltip" data-placement="top" title="INGRESAR EMAIL" required>
               </div>
               <div class="form-group col-md-6">
                 <label for="inputName">Nombre y Apellido</label>
-                <input type="text" class="form-control" id="inputName" placeholder="Juan pérez" name="full_name" required>
+                <input type="text" class="form-control" id="inputName" placeholder="Juan pérez" name="full_name" data-toggle="tooltip" data-placement="top" title="INGRESA NOMBRE Y APELLIDOS" required>
               </div>
             </div>
             <div class="form-group col-md-6">
               <label for="inputEnter">Empresa</label>
-              <input type="text" class="form-control" id="inputEnter" name="empresa" placeholder="empresa(opcional)">
+              <input type="text" class="form-control" id="inputEnter" name="empresa" placeholder="empresa(opcional)" data-toggle="tooltip" data-placement="top" title="INGRESA EMPRESA (OPCIONAL)">
             </div>
             <div class="form-group col-md-6">
               <label for="inputStreet">Calle y Numero de casa</label>
-              <input type="text" class="form-control" id="inputStreet" name="domicilio" placeholder="Calle y Numero de casa" required>
+              <input type="text" class="form-control" id="inputStreet" name="domicilio" placeholder="Calle y Numero de casa" data-toggle="tooltip" data-placement="top" title="CALLE Y NUMERO DE DOMICIOLIO" required>
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputAp">Apartamento, Local, etc</label>
-                <input type="text" class="form-control" id="inputAp" name="tipoV" placeholder="(Opcional)">
+                <input type="text" class="form-control" id="inputAp" name="tipoV" placeholder="(Opcional)" data-toggle="tooltip" data-placement="top" title="APARTAMENTO, LOCAL, ETC. (OPCIONAL)">
               </div>
               <div class="form-group col-md-6">
                 <label for="inputCP">Codigo Postal</label>
-                <input type="text" class="form-control" id="inputCP" name="CP" placeholder="Codigo Postal" required>
+                <input type="text" class="form-control" id="inputCP" name="CP" placeholder="Codigo Postal" data-toggle="tooltip" data-placement="top" title="CODIGO POSTAL" required>
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputState">Municipio</label>
-                <select type="text" class="form-control" id="inputCity" name="City" aria-placeholder="Ciudad" required>
+                <select type="text" class="form-control" id="inputCity" name="City" aria-placeholder="Ciudad" data-toggle="tooltip" data-placement="top" title="SELECCIONA TU CIUDAD" required>
                   <option selected>Escoger...</option>
                   <option>Abasolo</option>
                   <option>Acámbaro</option>
@@ -258,7 +249,7 @@
               </div>
               <div class="form-group col-md-6">
                 <label for="inputState">Estado</label>
-                <select type="text" class="form-control" id="inputState" name="State" aria-placeholder="Estado" required>
+                <select type="text" class="form-control" id="inputState" name="State" aria-placeholder="Estado" data-toggle="tooltip" data-placement="top" title="SELECCIONA TU ESTADO" required>
                   <option>Guanajuato</option>
                 </select>
               </div>
@@ -266,13 +257,13 @@
             <div cl ass="form-row">
               <div class="form-group col-md-6">
                 <label for="inputCountry">Pais/Region</label>
-                <select type="text" class="form-control" id="inputCountry" name="Country" aria-placeholder="País" required>
+                <select type="text" class="form-control" id="inputCountry" name="Country" aria-placeholder="País" data-toggle="tooltip" data-placement="top" title="SELECCIONA TU PAIS" required>
                   <option>México</option>
                 </select>
               </div>
               <div class="form-group col-md-6">
                 <label for="inputTel">Teléfono</label>
-                <input type="text" class="form-control" id="inputTel" name="telefono" placeholder="Teléfono" required>
+                <input type="text" class="form-control" id="inputTel" name="telefono" placeholder="Teléfono" data-toggle="tooltip" data-placement="top" title="INGRESA TU NUMERO DE TELEFONO" required>
               </div>
             </div>
 
@@ -282,7 +273,7 @@
             <div class="w3-dark-gray" style="width:100%; border-radius:15px; font-family:inherit; font-size: inherit; box-shadow:4px 4px 10px rgba(0,0,0,0.06);">
               &nbsp;
               <div class="w3-container w3-center">
-                <a href="#"><img src="<?php echo $img; ?>" style="border-radius: 8px;" alt="imagen producto" width="300" height="200"></a>
+                <a href="#"><img src="/LaLaja/images/<?php echo $img; ?>" style="border-radius: 8px;" alt="imagen producto" width="300" height="200"></a>
 
                 <p><?php echo $datos['nombre']; ?> <?php echo $datos['peso']; ?></p>
                 <div class="w3-section">

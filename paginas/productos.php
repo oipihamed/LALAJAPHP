@@ -14,11 +14,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
     <link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css'>
     <script src='https://www.google.com/recaptcha/api.js'></script>
-    <link rel="stylesheet" href="./css/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="./css/stylemockup.css">
-    <link rel="stylesheet" href="./css/cards.css">
-    <link rel="stylesheet" href="./css/index.css">
-    <link rel="stylesheet" href="./css/chatbot.css">
+    <link rel="stylesheet" href="/LaLaja/css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/LaLaja/css/stylemockup.css">
+    <link rel="stylesheet" href="/LaLaja/css/cards.css">
+    <link rel="stylesheet" href="/LaLaja/css/index.css">
+    <link rel="stylesheet" href="/LaLaja/css/chatbot.css">
 </head>
 
 <body>
@@ -37,16 +37,16 @@
             </div>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="./index.php">Inicio</a></li>
+                    <li class="active"><a href="/LaLaja/index.php">Inicio</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Productos <i
                                 class="icon-angle-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="./paginas/conocer_producto.php">Novedades</a></li>
+                            <li><a href="/LaLaja/paginas/productos.php">Novedades</a></li>
                             <li class="divider"></li>
-                            <li><a href="./paginas/conocer_producto.php">Promociones</a></li>
+                            <li><a href="/LaLaja/paginas/productos.php">Promociones</a></li>
                             <li class="divider"></li>
-                            <li><a href="./paginas/conocer_producto.php">General</a></li>
+                            <li><a href="/LaLaja/paginas/productos.php">General</a></li>
                         </ul>
                     </li>
                     <li><a href="contacto.html">Contacto</a></li>
@@ -60,10 +60,10 @@
     </nav>
     <div class="container-fluid" id="tooltip_container">
          <!--TOOL TIP-->
-         <span class="abrir-chat abchat"><i class="fa fa-question"></i></span>
+         <span class="abrir-chat abchat" data-toggle="tooltip" data-placement="top" title="ABRIR CHAT DE AYUDA"><i class="fa fa-question"></i></span>
                 <!--FIN TOOL-->
                 <!--TOOL TIP-->
-                <span class="ir-arriba"><img src="images/milk-icon-min-arrow.png" class="icon-milk" alt=""></span>
+                <span class="ir-arriba"><img src="/LaLaja/images/milk-icon-min-arrow.png" class="icon-milk" data-toggle="tooltip" data-placement="top" title="IR ARRIBA" alt=""></span>
                 <!--FIN TOOL-->
           <!--CHAT BOT-->
           <div class="wrapper-chatbot not-visible">
@@ -71,7 +71,7 @@
                         <div class="form">
                             <div class="bot-inbox inbox">
                                 <div class="icon">
-                                    <img src="images/vaca-chat.png" class="vaca-chat"></img>
+                                    <img src="/LaLaja/images/vaca-chat.png" class="vaca-chat"></img>
                                 </div>
                                 <div class="msg-header">
                                     <p>Hola amigo, ¿Como puedo ayudarte?</p>
@@ -211,15 +211,15 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
-    <script src="./js/jquery-3.5.1.js"></script>
+    <script src="/LaLaja/js/jquery-3.5.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
         integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
         integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous">
     </script>
-    <script src="./js/index.js"></script>
-    <script src="./js/cards.js"></script>
+    <script src="/LaLaja/js/index.js"></script>
+    <script src="/LaLaja/js/productos.js"></script>
 </body>
 
 </html>

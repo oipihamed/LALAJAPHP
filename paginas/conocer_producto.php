@@ -99,10 +99,10 @@ $id = $row["idProducto"];
           <nav aria-label="Ruta de Navegación">
             <ol class="breadcrumb" role="list">
               <li class="breadcrumb__item breadcrumb__item--completed">
-                <a class="breadcrumb__link" href="../index.php">Inicio <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                <a class="breadcrumb__link" href="/LaLaja/index.php">Inicio <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
               </li>
               <li class="breadcrumb__item breadcrumb__item--completed">
-                <a class="breadcrumb__link" href="../index.php">Productos <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                <a class="breadcrumb__link" href="/LaLaja/paginas/productos.php">Productos <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
               </li>
               <li class="breadcrumb__item breadcrumb__item--current" aria-current="step">
                 <span class="breadcrumb__text"><b><?php echo $producto; ?></b></span>

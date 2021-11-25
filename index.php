@@ -34,16 +34,16 @@
             </div>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="./index.php">Inicio</a></li>
+                    <li class="active"><a href="/LaLaja/index.php">Inicio</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Productos <i
                                 class="icon-angle-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="./paginas/conocer_producto.php">Novedades</a></li>
+                            <li><a href="/LaLaja/paginas/productos.php">Novedades</a></li>
                             <li class="divider"></li>
-                            <li><a href="./paginas/conocer_producto.php">Promociones</a></li>
+                            <li><a href="/LaLaja/paginas/productos.php">Promociones</a></li>
                             <li class="divider"></li>
-                            <li><a href="./paginas/conocer_producto.php">General</a></li>
+                            <li><a href="/LaLaja/paginas/productos.php">General</a></li>
                         </ul>
                     </li>
                     <li><a href="contacto.html">Contacto</a></li>
@@ -59,10 +59,10 @@
         <div class="row ">
             <div class="container-fluid txt-wh">
                 <!--TOOL TIP-->
-                <span class="abrir-chat abchat"><i class="fa fa-question"></i></span>
+                <span data-toggle="tooltip" data-placement="top" title="ABRIR CHAT DE AYUDA" class="abrir-chat abchat" ><i class="fa fa-question" ></i></span>
                 <!--FIN TOOL-->
                 <!--TOOL TIP-->
-                <span class="ir-arriba"><img src="images/milk-icon-min-arrow.png" class="icon-milk" alt=""></span>
+                <span class="ir-arriba"><img src="/LaLaja/images/milk-icon-min-arrow.png" class="icon-milk" alt="" data-toggle="tooltip" data-placement="top" title="IR ARRIBA"></span>
                 <!--FIN TOOL-->
                 <div class="wrap-iconos">
                     <!--CHAT BOT-->
@@ -341,6 +341,7 @@
         integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous">
     </script>
     <script src="./js/index.js"></script>
+    <script src="./js/main.js"></script>
     <script src="./js/cards.js"></script>
 </body>
 
