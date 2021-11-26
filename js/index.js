@@ -176,7 +176,8 @@ console.log(respuesta);
 
       if (JSON.parse(respuesta) == "-1") {
         console.log(respuesta);
-        template += `<img class="img-sad" src="/LaLaja/images/sad.png"></img><h3>No se encontro</h3>`;
+        template += `<img class="img-sad" src="/LaLaja/images/sad.png"></img>
+        <h3 class="red">NO SE ENCONTRO EL PRODUCTO</h3>`;
 
       } else {
         var productos = JSON.parse(respuesta);

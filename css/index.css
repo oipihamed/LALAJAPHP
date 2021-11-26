@@ -56,6 +56,10 @@ background-color: #252525;
     color: white;
     text-shadow: 5px 5px  #024959;
   }
+  .red{
+    color: rgb(255, 0, 0);
+    font-weight: 900;
+  }
   .media
  {
     padding: 20px;
