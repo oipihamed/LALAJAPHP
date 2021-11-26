@@ -220,6 +220,7 @@
         </div>
     </div>
     <div class="row" id="row-card-not">
+        
     </div>
     </div>
     </div>

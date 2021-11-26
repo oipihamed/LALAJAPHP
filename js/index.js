@@ -201,9 +201,9 @@ console.log(respuesta);
                         <span class="tooltip-info"><i class="fa fa-eye" aria-hidden="true"></i> Click en Titulo para Ver mas</span>
                         </a></h3>
                         <p class="text">${producto.descripcion}</p>
-                        <label for="show-menu-${producto.idProducto}" class="menu-button"><span></span></label>                       
+                        <label for="show-menu-${producto.idProducto}" class="menu-button" ><span></span></label>                       
                     </div>
-                    <input type="checkbox" id="show-menu-${producto.idProducto}" />
+                    <input type="checkbox" id="show-menu-${producto.idProducto}" checked />
                     <ul class="menu-content">
                         <li class="tooltip-box"> <span class="tooltip-info"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Comprar</span><a href="/LaLaja/paginas/mockupcompra.php?id_p=${producto.idProducto}" class="fa fa-shopping-cart" ></a></li>
                         <li class="tooltip-box"> <span class="tooltip-info"><i class="fa fa-heart-o" aria-hidden="true"></i> Dar like</span><a onClick="javascript:darLike(${producto.idProducto})" class="fa fa-heart-o"><span id="sp-${producto.idProducto}">${producto.numLikes}</span></a></li>
