@@ -1,5 +1,7 @@
 
 $(document).ready(function () {
+
+  
   const productos = [
     { nombre: 'Queso Oaxaca 1 KG', id: 1, img: 'img-1' },
     { nombre: 'Yogurt 4 KG', id: 2, img: 'img-2' },
@@ -26,8 +28,7 @@ $(document).ready(function () {
     $('.abrir-chat').slideUp(300);
    
     $('.wrapper-chatbot').removeClass('not-visible');
-$('.wrapper-chatbot').addClass('visible');
-
+    $('.wrapper-chatbot').addClass('visible');
   });
   $('.close-chat').on('click',function()
 {
@@ -62,13 +63,13 @@ $(window).scroll(function(){
     let y = e.clientY;
     var target= e.target.className.split(' ');
     var targetP=e.target.parentNode.className.split(' ');
-    if (target[1] === 'tooltip-box') {
-      e.target.children[0].style.top = (y + 15) + 'px';
-      e.target.children[0].style.left = (x + 15) + 'px';
+     if (target[1] === 'tooltip-box') {
+      e.target.children[0].style.top = y+y*.02 + 'px';
+      e.target.children[0].style.left = x+x*.02 + 'px';
     }
     if (targetP[1] === 'tooltip-box') {
-      e.target.parentNode.children[0].style.top = (y + 15) + 'px';
-      e.target.parentNode.children[0].style.left = (x + 15) + 'px';
+      e.target.parentNode.children[0].style.top = y+y*.02 + 'px';
+      e.target.parentNode.children[0].style.left = x+x*.02 + 'px';
     }
   });
   //ToolTip
@@ -158,7 +159,7 @@ $(window).scroll(function(){
   //Enviar mensajes chatbot
 });
 
-
+//Funcion para mostrar articulos
 function mostrarArticulos(orden,where) {
 console.log(orden+","+where);
   $.ajax({
@@ -167,14 +168,15 @@ console.log(orden+","+where);
     method: 'POST',
     datatype: 'json',
     success: function (respuesta) {
-
-      var template = `<h1>Productos</h1>
+console.log(respuesta);
+      var template = `
       <div class="row-card">
         
       `;
 
       if (JSON.parse(respuesta) == "-1") {
-        template = "<p> Sin datos</p>";
+        console.log(respuesta);
+        template += "<h3> No se encontro el producto</h3>";
       } else {
         var productos = JSON.parse(respuesta);
         var numCom = 0;
@@ -192,16 +194,18 @@ console.log(orden+","+where);
                 <div class="data">
                
                     <div class="content">
-                     
-                        <h3 class="title"><a href="/LaLaja/paginas/conocer_producto.php?id_p=${producto.idProducto}"   data-toggle="tooltip" data-placement="top" title="VER MAS INFORMACION.">${producto.nombre} ${producto.peso}</a></h3>
+                        <h3 class="title">                
+                        <a class="tooltip-box" href="/LaLaja/paginas/conocer_producto.php?id_p=${producto.idProducto}">${producto.nombre} ${producto.peso}
+                        <span class="tooltip-info"><i class="fa fa-eye" aria-hidden="true"></i> Click en Titulo para Ver mas</span>
+                        </a></h3>
                         <p class="text">${producto.descripcion}</p>
                         <label for="show-menu-${producto.idProducto}" class="menu-button"><span></span></label>                       
                     </div>
-                    <input type="checkbox" id="show-menu-${producto.idProducto}" data-toggle="tooltip" data-placement="top" title="ABRIR MENU DE OPCIONES"/>
+                    <input type="checkbox" id="show-menu-${producto.idProducto}" />
                     <ul class="menu-content">
-                        <li><a href="/LaLaja/paginas/mockupcompra.php?id_p=${producto.idProducto}" class="fa fa-shopping-cart" data-toggle="tooltip" data-placement="top" title="COMPRAR"></a></li>
-                        <li><a onClick="javascript:darLike(${producto.idProducto})" class="fa fa-heart-o" data-toggle="tooltip" data-placement="top" title="DAR LIKE"><span id="sp-${producto.idProducto}">${producto.numLikes}</span></a></li>
-                        <li><a onClick="javascript:verComentarios(${producto.idProducto})" class="fa fa-comment-o" data-toggle="tooltip" data-placement="top" title="VER COMENTARIOS"><span>${producto.totalComentarios}</span></a></li>
+                        <li class="tooltip-box"> <span class="tooltip-info"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Comprar</span><a href="/LaLaja/paginas/mockupcompra.php?id_p=${producto.idProducto}" class="fa fa-shopping-cart" ></a></li>
+                        <li class="tooltip-box"> <span class="tooltip-info"><i class="fa fa-heart-o" aria-hidden="true"></i> Dar like</span><a onClick="javascript:darLike(${producto.idProducto})" class="fa fa-heart-o"><span id="sp-${producto.idProducto}">${producto.numLikes}</span></a></li>
+                        <li class="tooltip-box"> <span class="tooltip-info"><i class="fa fa-comment-o" aria-hidden="true"></i> Comentar</span><a onClick="javascript:verComentarios(${producto.idProducto})" class="fa fa-comment-o"><span>${producto.totalComentarios}</span></a></li>
                         <div class="divcomentarios" id="comentario${producto.idProducto}"></div>
                     </ul>
                    
@@ -211,10 +215,11 @@ console.log(orden+","+where);
            
         </div>`;
         });
-        template += `</div>`;
-        $('#row-card-prod').html(template);
-
+    
       }
+      template += `</div>`;
+        
+      $('#row-card-prod').html(template);
     },
     error: function (XMLHttpRequest, textStatus, errorThrown) {
       console.log("Error CTNPN: " + errorThrown + textStatus + XMLHttpRequest);
@@ -222,7 +227,66 @@ console.log(orden+","+where);
     }
   });
 }
-
+//Fin de funcion para mostrar articulos
+//Funcion para llenar generar carrousel
+function generarCarrousel(orden,where) {
+  console.log(orden+","+where);
+    $.ajax({
+      url: '/LaLaja/controllers/ProductoController.php',
+      data:{'orden':orden,'where':''+where},
+      method: 'POST',
+      datatype: 'json',
+      success: function (respuesta) {
+  
+        var template = ``;
+        
+        if (JSON.parse(respuesta) == "-1") {
+         
+          template = "";
+        } else {
+          var productos =JSON.parse(respuesta);
+          template += `<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">`;
+          productos.forEach((producto,i) => {
+            if(i==0){
+              template += `<li data-target="#carouselExampleIndicators" data-slide-to="${i}" class="active"></li>`;
+            }else{
+            template += `<li data-target="#carouselExampleIndicators" data-slide-to="${i}"></li>
+          `};
+          });
+          template+=`</ol><div class="carousel-inner">`;
+          productos.forEach((producto,i) => {
+            let a="";
+            if(i==0){
+              a=" active"
+            }
+            template+=`
+            
+            <div class="carousel-item${a}">
+                <img class="d-block w-100" src="/LaLaja/images/${producto.imagen}.jpg" alt="${producto.nombre}">
+            </div>`;
+          });
+          template += `</div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+          </a>
+      </div>`;
+          $('.row-ca').html(template);
+  
+        }
+      },
+      error: function (XMLHttpRequest, textStatus, errorThrown) {
+        console.log("Error CTNPN: " + errorThrown + textStatus + XMLHttpRequest);
+  
+      }
+    });
+  }
+//Fin funcion para llenar carrousel
 function darLike(idProducto) {
   $.ajax({
     url: `/LaLaja/controllers/ProductodarLike.php?idProducto=${idProducto}`,
@@ -231,7 +295,7 @@ function darLike(idProducto) {
     datatype: 'json',
     success: function (respuesta) {
 
-      mostrarArticulos();
+      mostrarArticulos('ORDER BY numLikes desc LIMIT 4','');
 
     }
   });
@@ -326,7 +390,7 @@ function insertarComentarios(idProducto) {
     success: function (respuesta) {
       if (JSON.parse(respuesta)) {
         $('#comentario' + idProducto).html("");
-        mostrarArticulos();
+        mostrarArticulos('ORDER BY numLikes desc LIMIT 4','');
       } else {
         alert("No se pudo agregar el dato");
       }

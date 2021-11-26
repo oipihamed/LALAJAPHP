@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 25, 2021 at 10:44 PM
+-- Generation Time: Nov 26, 2021 at 08:18 AM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -74,7 +74,8 @@ INSERT INTO `comentario` (`idComentario`, `contenido`, `fecha`, `idProducto`, `n
 (11, 'Me encanta.', '2021-10-29', 1, 'Daniel'),
 (25, 'CHIDO', '2021-11-20', 4, 'Omar'),
 (26, 'PAREEEEEEEECE, SIIIIII PAAAAREEEECE NOOO NO NOOOOOOO, QUE LO MUCHO QUE OFREZCOOOOO NO OFRECEEEEE TANTO Y POR ESO POOOOOOOOOOOOR ESO\n', '2021-11-20', 3, 'Pepe'),
-(27, 'NUNCA ENTENDI LA MANERA', '2021-11-20', 3, 'MADERO');
+(27, 'NUNCA ENTENDI LA MANERA', '2021-11-20', 3, 'MADERO'),
+(28, 'hola', '2021-11-25', 2, 'Omar');
 
 -- --------------------------------------------------------
 
@@ -157,7 +158,7 @@ CREATE TABLE `producto` (
 
 INSERT INTO `producto` (`nombre`, `peso`, `precio`, `imagen`, `descuento`, `tipo`, `estado`, `numLikes`, `descripcion`, `idProducto`) VALUES
 ('Queso Oaxaca', '1 KG', 100, 'img-1', 0.1, 1, 1, 57, 'Queso tipo oaxaca hecho puro de vaca.', 1),
-('Yoghurt Lari ', '4 KG', 150, 'img-2', 0.1, 2, 1, 58, 'Yoghurt hecho a base de leche de cabra en distintos sabores.', 2),
+('Yoghurt Lari ', '4 KG', 150, 'img-2', 0.1, 2, 1, 60, 'Yoghurt hecho a base de leche de cabra en distintos sabores.', 2),
 ('Queso Panela la laja \r\n', '1.6 KG', 50, 'img-3', 0.2, 1, 1, 39, 'Queso panela bajo en calorias, hecho con leche pura de vaca.', 3),
 ('Boli Lari ', '1 Kg', 40, 'img-4', 0.05, 2, 1, 12, 'Boli Lari', 4),
 ('Queso Oaxaca', '200 GR', 30, 'img-5', 0, 1, 1, 0, 'Queso tipo oaxaca hehco puro de vaca. El queso Oaxaca es el queso más internacional de México y el más apreciado por su textura elástica única y su sabor delicado y suave. Este queso resulta ideal para fundir o deshebrar, por el que también se le llama queso de hebra. Por esta razón, es el queso óptimo para la preparación de algunas de las especialidades gastronómicas mexicanas.', 5),
@@ -206,7 +207,7 @@ ALTER TABLE `producto`
 -- AUTO_INCREMENT for table `comentario`
 --
 ALTER TABLE `comentario`
-  MODIFY `idComentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `idComentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `compra`
