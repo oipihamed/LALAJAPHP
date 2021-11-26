@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="./css/chatbot.css">
 </head>
 
-<body>
+<body id="tooltip_container">
 
     <nav id="myNavbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
@@ -62,7 +62,7 @@
                 <span data-toggle="tooltip" data-placement="top" title="ABRIR CHAT DE AYUDA" class="abrir-chat abchat" ><i class="fa fa-question" ></i></span>
                 <!--FIN TOOL-->
                 <!--TOOL TIP-->
-                <span class="ir-arriba"><img src="/LaLaja/images/milk-icon-min-arrow.png" class="icon-milk" alt="" data-toggle="tooltip" data-placement="top" title="IR ARRIBA"></span>
+                <span class="ir-arriba"  data-toggle="tooltip" data-placement="top" title="IR ARRIBA"><img src="/LaLaja/images/milk-icon-min-arrow.png" class="icon-milk" alt=""></span>
                 <!--FIN TOOL-->
                 <div class="wrap-iconos">
                     <!--CHAT BOT-->
@@ -92,11 +92,11 @@
                 </div><br>
 
                 <div class="row">
-                    <div class="row  icons" id="tooltip_container">
+                    <div class="row  icons" >
                         <div class="media tooltip-box">
                             <span class="tooltip-info">
                                 <i class="fa fa-eye" aria-hidden="true"></i>
-                                Dar click para ver recetas
+                                 Dar click para ver recetas
                             </span>
                             <div class="pull-left">
                                 <i class="icon-medium"><img class="img-i" src="images/queso.png"></i>
@@ -182,7 +182,11 @@
                         </div>
                     </div>
 
-                    <div class="media">
+                    <div class="media tooltip-box">
+                    <span class="tooltip-info">
+                                <i class="fa fa-eye" aria-hidden="true"></i>
+                                 Dar click para ver recetas
+                            </span>
                         <div class="pull-left">
                             <i class="icon-medium"><img class="img-i"
                                     src="http://www.lacteoslalaja.com/core/img/crema.png"></i>
@@ -193,7 +197,8 @@
                         </div>
                     </div>
 
-                    <div class="media">
+                    <div class="media tooltip-box"><span class="tooltip-info"><i class="fa fa-eye" aria-hidden="true"></i> Dar click para er recetas</span>
+                  
                         <div class="pull-left">
                             <i class="icon-medium"><img class="img-i"
                                     src="http://www.lacteoslalaja.com/core/img/yogh.png"></i>
@@ -210,6 +215,7 @@
     </div>
 
     <div class="row green-back">
+    <h1 class="title-p">PRODUCTOS MAS GUSTADOS!!!!</h1>
         <div class="row" id="row-card-prod">
         </div>
     </div>

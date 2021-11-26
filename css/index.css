@@ -46,6 +46,16 @@ background-color: #252525;
   .show{
     display: block;
   }
+  .row-ca{
+    margin-top: 10px;
+  }
+  .title-p{
+    font-weight: bolder;
+    font-size: 50px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+    text-shadow: 5px 5px  #024959;
+  }
   .media
  {
     padding: 20px;
@@ -151,14 +161,19 @@ background-color: #252525;
   background: #8CBF3A;
   padding: 10px;
   color: white;
+  font-size: 14px;
   border-radius: 5px;
   position: fixed;
   visibility: hidden;
-  z-index: 4;
+  z-index: 10;
+  transition: all .2s;
+  
 }
 
 .tooltip-box:hover .tooltip-info {
   visibility: visible;
+  transition: all .1s;
+  
 }
 
 .receta{
@@ -300,10 +315,31 @@ transform: translate(10%,-50%);
   color: white;
 }
 
-
 .vaca-chat{
   height: 20px;
 }
+
+.col-12-p{
+  align-items: center;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  padding: 10px;
+  margin-bottom: 10px;
+ z-index: 6;
+  background-color: goldenrod ;
+  border:2px solid whitesmoke ;
+  height: 80px;
+
+}
+
+
+.bt53-search{
+  margin-bottom: 50px;
+  background-color: transparent;
+}
+
+
 @media only screen and (max-width: 950px)  {
   .img-r{
     height: 60px;
@@ -358,4 +394,5 @@ transform: translate(10%,-50%);
 
     content:'  ';
     }
+
 }

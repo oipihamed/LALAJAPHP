@@ -29,7 +29,6 @@ require $dir.'/config/Conexion.php';
             $con->conectar();
             $conect= $con->get_conexion();
             $result=mysqli_query($conect,$sql);
-           
             $num_rows=mysqli_num_rows($result);
             if($num_rows>0){
                 while($row=mysqli_fetch_array($result)){
