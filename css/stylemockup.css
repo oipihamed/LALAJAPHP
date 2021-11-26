@@ -2,10 +2,6 @@
 @import url(http://fonts.googleapis.com/css?family=Fjalla+One);
 html,
 
-.status {
-	background-image: url("https://clipground.com/images/cute-notebook-paper-clipart-4.jpg");
-}
-
 body {
     height: 90%;
     font-family: 'Fjalla One';
