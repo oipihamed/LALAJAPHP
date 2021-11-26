@@ -18,7 +18,7 @@ function mostrarTipo(){
     if(buscar!=="" || tipo!==""){
     where+="WHERE";
     if(buscar!==""){
-        where+=" nombre LIKE '%"+buscar+"%'";
+        where+=" CONCAT(nombre,' ',peso) LIKE '%"+buscar+"%'";
         if(tipo!==""){
             where+=" AND tipo="+tipo;
         }

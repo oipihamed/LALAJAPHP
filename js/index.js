@@ -176,7 +176,8 @@ console.log(respuesta);
 
       if (JSON.parse(respuesta) == "-1") {
         console.log(respuesta);
-        template += "<h3> No se encontro el producto</h3>";
+        template += `<img class="img-sad" src="/LaLaja/images/sad.png"></img><h3>No se encontro</h3>`;
+
       } else {
         var productos = JSON.parse(respuesta);
         var numCom = 0;
@@ -218,7 +219,7 @@ console.log(respuesta);
     
       }
       template += `</div>`;
-        
+        console.log(template);
       $('#row-card-prod').html(template);
     },
     error: function (XMLHttpRequest, textStatus, errorThrown) {
