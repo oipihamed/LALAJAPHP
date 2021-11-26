@@ -290,7 +290,10 @@
                 </div>
 
                 <div class="container" style="opacity: 0; display: none;">
+                  <input type="number" class="form-control" id="id" name="id" value="<?php echo $datos['idProducto']; ?>" required>
                   <input type="number" class="form-control" id="price" name="price" value="<?php echo $datos['precio']; ?>" required>
+                  <input type="number" class="form-control" id="descuento" name="descuento" value="<?php echo $datos['descuento'] ?>" required>
+
                 </div>
 
                 <div class="w3-section">
