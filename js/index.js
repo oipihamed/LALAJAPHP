@@ -176,7 +176,9 @@ console.log(respuesta);
 
       if (JSON.parse(respuesta) == "-1") {
         console.log(respuesta);
-        template += "<h3> No se encontro el producto</h3>";
+        template += `<img class="img-sad" src="/LaLaja/images/sad.png"></img>
+        <h3 class="red">NO SE ENCONTRO EL PRODUCTO</h3>`;
+
       } else {
         var productos = JSON.parse(respuesta);
         var numCom = 0;
@@ -199,9 +201,9 @@ console.log(respuesta);
                         <span class="tooltip-info"><i class="fa fa-eye" aria-hidden="true"></i> Click en Titulo para Ver mas</span>
                         </a></h3>
                         <p class="text">${producto.descripcion}</p>
-                        <label for="show-menu-${producto.idProducto}" class="menu-button"><span></span></label>                       
+                        <label for="show-menu-${producto.idProducto}" class="menu-button" ><span></span></label>                       
                     </div>
-                    <input type="checkbox" id="show-menu-${producto.idProducto}" />
+                    <input type="checkbox" id="show-menu-${producto.idProducto}" checked />
                     <ul class="menu-content">
                         <li class="tooltip-box"> <span class="tooltip-info"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Comprar</span><a href="/LaLaja/paginas/mockupcompra.php?id_p=${producto.idProducto}" class="fa fa-shopping-cart" ></a></li>
                         <li class="tooltip-box"> <span class="tooltip-info"><i class="fa fa-heart-o" aria-hidden="true"></i> Dar like</span><a onClick="javascript:darLike(${producto.idProducto})" class="fa fa-heart-o"><span id="sp-${producto.idProducto}">${producto.numLikes}</span></a></li>
@@ -218,7 +220,7 @@ console.log(respuesta);
     
       }
       template += `</div>`;
-        
+        console.log(template);
       $('#row-card-prod').html(template);
     },
     error: function (XMLHttpRequest, textStatus, errorThrown) {
