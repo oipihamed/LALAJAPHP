@@ -270,7 +270,7 @@ $img = $datos['imagen'] . ".jpg";
 
           </div>
 
-          <div class="receta ">
+          <div style="width:500px; height: 500px; padding: top 200px right 100px;" class="receta ">
                   <div class="row justify-content-md-center">
 
                     <div class="col-sm-6 col-md-6 col-lg-6 col-6 txt-alg-left">
@@ -281,12 +281,12 @@ $img = $datos['imagen'] . ".jpg";
                     </div>
 
                   <div class="col-sm-18 col-md-18 col-lg-18 col-18 txt-alg-center">
-                  <?php if($ip_p = 1 || $ip_p = 3 || $ip_p = 5 || $ip_p = 6 || $ip_p = 7 || $ip_p = 8 || $ip_p = 9 || $ip_p = 10 || $ip_p = 11 || $ip_p = 12 || $ip_p = 13 )  { ?>
+                  <?php if($ip_p == 1 || $ip_p == 3 || $ip_p == 5 || $ip_p == 6 || $ip_p == 7 || $ip_p == 8 || $ip_p == 9 || $ip_p == 10 || $ip_p == 11 || $ip_p == 12 || $ip_p == 13 )  { ?>
                       <img style="width:200px; height:360px;" src="../images/nutricional-queso.png">
-                    <?php } else if ( $ip_p = 2 || $ip_p = 4 || $ip_p = 15 || $ip_p = 16 ) { ?> 
-                      <img src="../images/nutricional-yo.png">
-                    <?php } else if($ip_p = 14) { ?>
-                      <img src="../images/nutricional-crema.png">
+                    <?php } else if ( $ip_p == 2 || $ip_p == 4 || $ip_p == 15 || $ip_p == 16 ) { ?> 
+                      <img style="width:200px; height:360px;" src="../images/nutricional-yo.png">
+                    <?php } else if($ip_p == 14) { ?>
+                      <img style="width:200px; height:360px;" src="../images/nutricional-crema.png">
                     <?php }  ?>
                   </div>
                   </div>
