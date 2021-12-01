@@ -1,24 +1,25 @@
 <?php
-  require_once ('../models/Producto.php');
-  require_once('./conexion.php');
-  $ip_p=0;
-  if(isset($_POST['id_p'])){
-    $ip_p=$_POST['id_p'];
-  }else{
-    $ip_p=$_GET['id_p'];
-  }
+require_once('../models/Producto.php');
+require_once('./conexion.php');
+$ip_p = 0;
+if (isset($_POST['id_p'])) {
+  $ip_p = $_POST['id_p'];
+} else {
+  $ip_p = $_GET['id_p'];
+}
 
-  $sqlgrabar = "SELECT * FROM producto WHERE IdProducto = '$ip_p'";
-    if (mysqli_query($conn, $sqlgrabar)) {
-      $ordStatus = 'success';
-      $resultado = mysqli_query($conn, $sqlgrabar);
-      $datos=mysqli_fetch_array($resultado);
-    } else {
-      $statusMsg = "Error al momento de subir formulario, por favor vuelva a intentarlo.";
-    };
-    $img=$datos['imagen'].".jpg";
+$sqlgrabar = "SELECT * FROM producto WHERE IdProducto = '$ip_p'";
+if (mysqli_query($conn, $sqlgrabar)) {
+  $ordStatus = 'success';
+  $resultado = mysqli_query($conn, $sqlgrabar);
+  $datos = mysqli_fetch_array($resultado);
+} else {
+  $statusMsg = "Error al momento de subir formulario, por favor vuelva a intentarlo.";
+};
+$img = $datos['imagen'] . ".jpg";
 
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -105,34 +106,34 @@
 
   <!--TOOL TIP-->
   <span class="abrir-chat abchat" data-toggle="tooltip" data-placement="top" title="ABRIR CHAT DE AYUDA"><i class="fa fa-question"></i></span>
-              <!--FIN TOOL--> 
-          <!--TOOL TIP-->
-                <span class="ir-arriba"><img src="/LaLaja/images/milk-icon-min-arrow.png" class="icon-milk" alt="" data-toggle="tooltip" data-placement="top" title="IR ARRIBA"></span>
-              <!--FIN TOOL--> 
+  <!--FIN TOOL-->
+  <!--TOOL TIP-->
+  <span class="ir-arriba"><img src="/LaLaja/images/milk-icon-min-arrow.png" class="icon-milk" alt="" data-toggle="tooltip" data-placement="top" title="IR ARRIBA"></span>
+  <!--FIN TOOL-->
 
 
   <div class="row">
-<!--CHAT BOT-->
-<div class="wrapper-chatbot not-visible">
-                        <div class="title">Chat de Ayuda<a class="fa fa-times close-chat"></a></div>
-                        <div class="form">
-                            <div class="bot-inbox inbox">
-                                <div class="icon">
-                                    <img src="/LaLaja/images/vaca-chat.png" class="vaca-chat"></img>
-                                </div>
-                                <div class="msg-header">
-                                    <p>Hola amigo, ¿Como puedo ayudarte?</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="typing-field">
-                            <div class="input-data">
-                                <input id="data" type="text" placeholder="Escribe algo aqui.." required>
-                                <button id="send-btn" >Enviar</button>
-                            </div>
-                        </div>
-                    </div>
-                    <!--FIN CHATBOT-->
+    <!--CHAT BOT-->
+    <div class="wrapper-chatbot not-visible">
+      <div class="title">Chat de Ayuda<a class="fa fa-times close-chat"></a></div>
+      <div class="form">
+        <div class="bot-inbox inbox">
+          <div class="icon">
+            <img src="/LaLaja/images/vaca-chat.png" class="vaca-chat"></img>
+          </div>
+          <div class="msg-header">
+            <p>Hola amigo, ¿Como puedo ayudarte?</p>
+          </div>
+        </div>
+      </div>
+      <div class="typing-field">
+        <div class="input-data">
+          <input id="data" type="text" placeholder="Escribe algo aqui.." required>
+          <button id="send-btn">Enviar</button>
+        </div>
+      </div>
+    </div>
+    <!--FIN CHATBOT-->
 
 
 
@@ -173,21 +174,21 @@
               </div>
               <div class="form-group col-md-6">
                 <label for="inputName">Nombre y Apellido</label>
-                <input type="text" class="form-control" id="inputName" placeholder="Juan pérez" name="full_name" data-toggle="tooltip" data-placement="top" title="INGRESA NOMBRE Y APELLIDOS" required>
+                <input type="text" class="form-control" id="inputName" placeholder="Ingresa tu(s) nombre(s) y apellido(s)" name="full_name" data-toggle="tooltip" data-placement="top" title="INGRESA NOMBRE Y APELLIDOS" required>
               </div>
             </div>
             <div class="form-group col-md-6">
               <label for="inputEnter">Empresa</label>
-              <input type="text" class="form-control" id="inputEnter" name="empresa" placeholder="empresa(opcional)" data-toggle="tooltip" data-placement="top" title="INGRESA EMPRESA (OPCIONAL)">
+              <input type="text" class="form-control" id="inputEnter" name="empresa" placeholder="Empresa (opcional) se puede dejar en blanco" data-toggle="tooltip" data-placement="top" title="INGRESA EMPRESA (OPCIONAL)">
             </div>
             <div class="form-group col-md-6">
               <label for="inputStreet">Calle y Numero de casa</label>
-              <input type="text" class="form-control" id="inputStreet" name="domicilio" placeholder="Calle y Numero de casa" data-toggle="tooltip" data-placement="top" title="CALLE Y NUMERO DE DOMICIOLIO" required>
+              <input type="text" class="form-control" id="inputStreet" name="domicilio" placeholder="Calle y Numero de casa" data-toggle="tooltip" data-placement="top" title="CALLE Y NUMERO DE DOMICILIO" required>
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputAp">Apartamento, Local, etc</label>
-                <input type="text" class="form-control" id="inputAp" name="tipoV" placeholder="(Opcional)" data-toggle="tooltip" data-placement="top" title="APARTAMENTO, LOCAL, ETC. (OPCIONAL)">
+                <input type="text" class="form-control" id="inputAp" name="tipoV" placeholder="(Opcional) se puede dejar en blanco" data-toggle="tooltip" data-placement="top" title="Esta Parte es opcional">
               </div>
               <div class="form-group col-md-6">
                 <label for="inputCP">Codigo Postal</label>
@@ -269,13 +270,43 @@
 
           </div>
 
+          <div class="receta ">
+                  <div class="row justify-content-md-center">
+
+                    <div class="col-sm-6 col-md-6 col-lg-6 col-6 txt-alg-left">
+                      <i class="fa fa-times-circle-o cl-receta" aria-hidden="true"></i>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-12 txt-alg-right">
+                      <i class="icon-medium"><img class="img-r" src="../images/science-cow.png"></i>
+                    </div>
+
+                  <div class="col-sm-18 col-md-18 col-lg-18 col-18 txt-alg-center">
+                  <?php if($ip_p = 1 || $ip_p = 3 || $ip_p = 5 || $ip_p = 6 || $ip_p = 7 || $ip_p = 8 || $ip_p = 9 || $ip_p = 10 || $ip_p = 11 || $ip_p = 12 || $ip_p = 13 )  { ?>
+                      <img style="width:200px; height:360px;" src="../images/nutricional-queso.png">
+                    <?php } else if ( $ip_p = 2 || $ip_p = 4 || $ip_p = 15 || $ip_p = 16 ) { ?> 
+                      <img src="../images/nutricional-yo.png">
+                    <?php } else if($ip_p = 14) { ?>
+                      <img src="../images/nutricional-crema.png">
+                    <?php }  ?>
+                  </div>
+                  </div>
+          </div>
+
           <div class="col-sm-12 col-md-4"><br>
             <div class="w3-dark-gray" style="width:100%; border-radius:15px; font-family:inherit; font-size: inherit; box-shadow:4px 4px 10px rgba(0,0,0,0.06);">
               &nbsp;
               <div class="w3-container w3-center">
-                <a href="#"><img src="/LaLaja/images/<?php echo $img; ?>" style="border-radius: 8px;" alt="imagen producto" width="300" height="200"></a>
+                <div class="media tooltip-box">
+                  <div class="pull-left">
+                    <img src="/LaLaja/images/<?php echo $img; ?>" style="border-radius: 8px;" alt="imagen producto" width="300" height="200">
+                  </div>
+                  <span class="tooltip-info">
+                    <i class="fa fa-eye" aria-hidden="true"></i>
+                    Click para ver tabla nutricional
+                  </span>
+                </div>
 
-                <p><?php echo $datos['nombre']; ?> <?php echo $datos['peso']; ?></p>
+                <h1><?php echo $datos['nombre']; ?> <?php echo $datos['peso']; ?></h1>
                 <div class="w3-section">
                   <p><b><?php echo $datos['descripcion']; ?></b></p>
                   <p><b>¿Tienes un codigo de descuento?</b></p>
@@ -420,7 +451,7 @@
     </footer>
   </div>
 
-  
+
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
