@@ -31,8 +31,7 @@ h1 {
 .card {
   float: left;
   padding: 0 1.7rem;
-  width: 45%;
-  margin: 20px;
+  width: 25%;
 }
 .card .menu-content {
   margin: 0;
@@ -100,53 +99,54 @@ h1 {
   transform: translateY(-60px);
 }
 
-.example-1 .wrapper {
-  background: url(../images/leche.jpg) 20% 1%/cover no-repeat;
+.example-2 .wrapper {
+  background: url(../images/leche.jpg) 50% 1%/cover no-repeat;
+
 }
 .img-2 {
-  background: url(../images/img-2.jpg) 20% 1%/cover no-repeat!important;
+  background: url(../images/img-2.jpg) 50% 1%/cover no-repeat!important;
 }
 .img-4 {
-  background: url(../images/img-4.jpg) 20% 1%/cover no-repeat!important;
+  background: url(../images/img-4.jpg) 50% 1%/cover no-repeat!important;
 }
 .img-5 {
-  background: url(../images/img-5.jpg) 20% 1%/cover no-repeat!important;
+  background: url(../images/img-5.jpg) 50% 1%/cover no-repeat!important;
 }
 .img-6 {
-  background: url(../images/img-6.jpg) 20% 1%/cover no-repeat!important;
+  background: url(../images/img-6.jpg) 50% 1%/cover no-repeat!important;
 }
 .img-7 {
-  background: url(../images/img-7.jpg) 20% 1%/cover no-repeat!important;
+  background: url(../images/img-7.jpg) 50% 1%/cover no-repeat!important;
 }
 .img-8 {
-  background: url(../images/img-8.jpg) 20% 1%/cover no-repeat!important;
+  background: url(../images/img-8.jpg) 50% 1%/cover no-repeat!important;
 }
 .img-9 {
-  background: url(../images/img-9.jpg) 20% 1%/cover no-repeat!important;
+  background: url(../images/img-9.jpg) 50% 1%/cover no-repeat!important;
 }
 .img-10 {
-  background: url(../images/img-10.jpg) 20% 1%/cover no-repeat!important;
+  background: url(../images/img-10.jpg) 50% 1%/cover no-repeat!important;
 }
 .img-11 {
-  background: url(../images/img-11.jpg) 20% 1%/cover no-repeat!important;
+  background: url(../images/img-11.jpg) 50% 1%/cover no-repeat!important;
 }
 .img-12 {
-  background: url(../images/img-12.jpg) 20% 1%/cover no-repeat!important;
+  background: url(../images/img-12.jpg) 50% 1%/cover no-repeat!important;
 }
 .img-13 {
-  background: url(../images/img-13.jpg) 20% 1%/cover no-repeat!important;
+  background: url(../images/img-13.jpg) 50% 1%/cover no-repeat!important;
 }
 .img-14 {
-  background: url(../images/img-14.jpg) 20% 1%/cover no-repeat!important;
+  background: url(../images/img-14.jpg) 50% 1%/cover no-repeat!important;
 }
 .img-15 {
-  background: url(../images/img-15.jpg) 20% 1%/cover no-repeat!important;
+  background: url(../images/img-15.jpg) 50% 1%/cover no-repeat!important;
 }
 .img-16 {
-  background: url(../images/img-16.jpg) 20% 1%/cover no-repeat!important;
+  background: url(../images/img-16.jpg) 50% 1%/cover no-repeat!important;
 }
 .img-1 {
-  background: url(../images/img-1.jpg) 20% 1%/cover no-repeat!important;
+  background: url(../images/img-1.jpg) 50% 1%/cover no-repeat!important;
 }
 .example-1 .date {
   position: absolute;
@@ -245,9 +245,13 @@ h1 {
 .img-3 {
   background: url(../images/img-3.jpg) center/cover no-repeat!important;
 }
+.example-2{
+  width: 100%!important;
+}
 .example-2 .wrapper:hover .menu-content span {
   transform: translate(-50%, -10px);
   opacity: 1;
+ 
 }
 .example-2 .header {
   color: #fff;
