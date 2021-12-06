@@ -85,7 +85,6 @@ $img = $datos['imagen'] . ".jpg";
             </ul>
           </li>
           <li><a href="/LaLaja/paginas/nosotros.php">Nosotros</a></li>
-          <li><a href="/LaLaja/paginas/contacto.html">Contacto</a></li>
 
           <li><input type="text" id="buscador" class="form-control my-2"></input></li>
           <li><i class="fa fa-search"></i></li>

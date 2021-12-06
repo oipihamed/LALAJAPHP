@@ -27,10 +27,13 @@ h1 {
   font-weight: 300;
 }
 
-
+#row-card-prod{
+  margin-top: 80px!important;
+}
 .card {
+  
   float: left;
-  padding: 0 1.7rem;
+  padding: 10px 1.7rem;
   width: 25%;
 }
 .card .menu-content {
