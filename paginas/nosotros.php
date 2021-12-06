@@ -8,17 +8,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
+    <title>Nosotros</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
     <link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css'>
     <script src='https://www.google.com/recaptcha/api.js'></script>
     <link rel="stylesheet" href="/LaLaja/css/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="/LaLaja/css/stylemockup.css">
+    <link rel="stylesheet" href="/LaLaja/css/stylemockup.css">
     <link rel="stylesheet" href="/LaLaja/css/cards.css">
     <link rel="stylesheet" href="/LaLaja/css/index.css">
     <link rel="stylesheet" href="/LaLaja/css/chatbot.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -91,59 +93,184 @@
         <!--FIN CHATBOT-->
 
         <div class="row">
-            <div class="col-12-p">
-            <label for="txtBuscar">Nombre del producto:</label>
-                <input type="email" class="form-control" placeholder="Nombre del producto" id="txtBuscar">
-                <label for="selTipo">Tipo de producto:</label>
-                <select class="form-control" aria-label="Default select example" id="selTipo">
-                    <option value="" selected>Cualquier tipo</option>
-                    <option value="1" selected>Queso</option>
-                    <option value="2">Yoghurt</option>
-                    <option value="3">Crema</option>
-                </select>
-                <label for="selOrden">Ordenar por:</label>
-                <select class="form-control" aria-label="Default select example" id="selOrden">
-                    <option value="numLikes" selected>Numero de Likes</option>
+        
+            
+        </div>
+        </div>
 
-                    <option value="totalComentarios">Numero de comentarios</option>
-                    <option value="precio">Precio</option>
-                    <option value="descuento">Descuento</option>
-                    <option value="peso">Peso</option>
-                    <option value="tipo">Tipo</option>
-                    <option value="nombre">Nombre</option>
+        <div class="row green-back">
+            <h1>CONÓCENOS</h1>
+        </div>
+        <div class="row grey-back cont">
+            <br>
+            <div id="myCarousel" class="carousel slide center" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+            </ol>
 
-                </select>
-                <label for="selAsc">Tipo orden:</label>
-                <select class="form-control" aria-label="Default select example" id="selAsc">
-                    <option value="asc" selected>Ascendente</option>
-                    <option value="desc">Descendente</option>
-               
+            <!-- Wrapper for slides -->
+            <div class="container">
+                <div class="row row-cols-12">
+                    <div class="col-md-4">
+                    </div>
+                    <div class="col-md-5">
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <img class="carousel-img" src="../images/acerca-04.png" widht="800px">
+                            </div>
 
-                </select>
-                <button class="button-53 bt53-search" role="button" onClick="javascript:mostrarTipo()"
-                    data-toggle="tooltip" data-placement="top" title="BUSCAR PRODUCTOS"> <i class="fa fa-search"></i>
-                    Buscar</button>
+                            <div class="item">
+                                <img class="carousel-img" src="../images/acerca-02.png" widht="800px" >
+                            </div>
 
+                            <div class="item">
+                                <img class="carousel-img" src="../images/acerca-01.png" widht="800px" >
+                            </div>
+
+                            <div class="item center">
+                                <img class="carousel-img" src="../images/acerca-03.png" widht="800px" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
-
-
+            </div>
         </div>
         <div class="row green-back">
-
-            <div class="row" id="row-card-prod">
-
+            <h1>¿QUIÉNES SOMOS?</h1>
+        </div>
+        <div class="row grey-back cont">
+            <div class="container">
+                <div class="row-col-12">
+                    <div class="col-md-6">
+                        <br>
+                        <br>
+                        <div class="panel-group">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                    <a data-toggle="collapse" href="#collapse1"><h4>Responsabilidad</h4></a>
+                                    </h4>
+                                </div>
+                                <div id="collapse1" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <p style="text-align:justify;">
+                                            Respondiendo cada uno a su deber, implica una conducta consciente y 
+                                            comprometida con sus labores y con el cumplimiento oportuno de estos.
+                                        </p>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                    <a data-toggle="collapse" href="#collapse2"><h4>Trabajo en Equipo</h4></a>
+                                    </h4>
+                                </div>
+                                <div id="collapse2" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <p style="text-align:justify;">
+                                            El trabajo en equipo como elemento constitutivo de la solidaridad colaborando 
+                                            en proyectos comunes y multiplicando esfuerzos.
+                                        </p>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                    <a data-toggle="collapse" href="#collapse3"><h4>Respeto</h4></a>
+                                    </h4>
+                                </div>
+                                <div id="collapse3" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <p style="text-align:justify;">
+                                            Trato digno a todas las personas. Con una conducta prudente, en la que se ponga 
+                                            en práctica las normas y reglamentos establecidos.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="just">
+                            <p style="text-align:justify;">
+                            Somos una empresa 100% mexicana, dedicada a producción y comercialización de productos 
+                            lácteos, contamos con más de 21 años de experiencia, trabajando a diario para ofrecer 
+                            productos de confianza.
+                            </p>
+                            <p style="text-align:justify;">
+                                <b>MISIÓN.</b> Ofrecer a las familias productos lácteos de calidad con estrictas 
+                                normas de higiene, a través de un equipo de trabajo competitivo y responsable con 
+                                su comunidad.
+                            </p>
+                            <p style="text-align:justify;">
+                                <b>VISIÓN.</b> Producir y comercializar productos lácteos de calidad y de este modo 
+                                permanecer en la mente y gusto de los consumidores, posicionándonos como una empresa 
+                                líder.
+                            </p>
+                            <p style="text-align:justify;">
+                                <b>VALORES.</b> Los valores que promueve Productos Lácteos La laja, son entendidos 
+                                como principios de carácter universal que al ser ejecutados, se convierten en hábitos 
+                                y permiten a la persona su perfeccionamiento a nivel individual con proyección social.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+        <div class="row green-back">
+            <h1>PRODUCTOS LÁCTEOS LA LAJA</h1>
+        </div>
+        <div class="row grey-back cont row-col-12">
+            <div class="col-md-1">
 
-
-
-
+            </div>
+            <div class="col-md-9">
+                <br>
+                <ul>
+                    <li style="text-align:justify;">
+                        <img src="../images/check_green_icon.png" alt="">
+                            Inicio en 1986 por una inquietud para desarrollar un negocio del sector alimenticio, 
+                            la empresa surge en el rancho la Laja municipio de Celaya, Guanajuato, de ahí su origen 
+                            del nombre de la empresa.
+                            <br>
+                    </li>
+                    <br>
+                    <li style="text-align:justify;">
+                        <img src="../images/check_green_icon.png" alt="">
+                        En 1993 se inició la construcción de la primera parte de la empresa en la que actualmente estamos ubicados.
+                        <br>
+                    </li>
+                    <br>
+                    <li style="text-align:justify;">
+                        <img src="../images/check_green_icon.png" alt="">
+                        Productos Lácteos La Laja es una empresa que con su participación se ha expandido en la Ciudad de México, 
+                        Michoacán, Querétaro y Guanajuato. Las marcas y/o productos que manejamos responden a las necesidades de 
+                        cada uno de nuestros clientes ofreciendo precio y calidad.
+                    </li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+        
     <footer class="footer">
         <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
             <!-- Left -->
             <div class="me-5 d-none d-lg-block">
-                <span>Conectanos por nuestras redes sociales:</span>
             </div>
             <!-- Left -->
 

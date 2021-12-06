@@ -236,3 +236,15 @@ footer {
 .cantidad{
 	margin-right: 20px !important;
 }
+.carousel-img{
+	width: 800px!important;
+}
+
+.cont{
+	padding-top: 5% !important;
+	padding-bottom: 5% !important;
+}
+
+.just{
+	text-align: justify!important;
+}

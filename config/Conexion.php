@@ -1,8 +1,8 @@
 <?php
     class Conexion{
         private $host= "localhost";
-        private $usuario= "gds0231";
-        private $clave= "gds0231";
+        private $usuario= "root";
+        private $clave= "";
         private $db= "lalaja";
         private $conexion;
 

@@ -214,6 +214,7 @@ img{
               <li><a href="./paginas/conocer_producto.php">General</a></li>
             </ul>
           </li>
+          <li><a href="nosotros.php">Nosotros</a></li>
           <li><a href="contacto.html">Contacto</a></li>
 
           <li><input type="text" id="buscador" class="form-control my-2"></input></li>

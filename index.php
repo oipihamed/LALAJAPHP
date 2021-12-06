@@ -46,6 +46,7 @@
                             <li><a href="/LaLaja/paginas/productos.php">General</a></li>
                         </ul>
                     </li>
+                    <li><a href="/lalaja/paginas/nosotros.php">Nosotros</a></li>
                     <li><a href="contacto.html">Contacto</a></li>
 
                     <li><input type="text" id="buscador" class="form-control my-2" ></input></li>

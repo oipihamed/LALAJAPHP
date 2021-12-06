@@ -1,7 +1,7 @@
 <?php
    
 // connecting to database
-$conn = mysqli_connect("localhost", "gds0231", "gds0231", "lalaja") or die("Database Error");
+$conn = mysqli_connect("localhost", "root", "", "lalaja") or die("Database Error");
 
 
 // getting user message through ajax
