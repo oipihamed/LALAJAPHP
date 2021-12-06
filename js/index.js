@@ -1,7 +1,7 @@
 
 $(document).ready(function () {
+  document.getElementById("buscador").focus();
 
-  
   const productos = [
     { nombre: 'Queso Oaxaca 1 KG', id: 1, img: 'img-1' },
     { nombre: 'Yogurt 4 KG', id: 2, img: 'img-2' },
@@ -14,62 +14,60 @@ $(document).ready(function () {
     { nombre: 'Queso Asadero Rayado Gudchis 1 KG', id: 9, img: 'img-9' },
     { nombre: 'Queso Doblecrema 1 KG', id: 10, img: 'img-10' },
     { nombre: 'Queso Doblecrema 2.5 KG', id: 11, img: 'img-11' },
-    { nombre: 'Liquesco 1 KG', id: 12, img: 'img-12' }, 
+    { nombre: 'Liquesco 1 KG', id: 12, img: 'img-12' },
     { nombre: 'Queso Frecal Rayado 1 KG', id: 13, img: 'img-13' },
     { nombre: 'Crema 1 L', id: 14, img: 'img-14' },
     { nombre: 'Yoghurt Lari 1 L', id: 15, img: 'img-15' },
     { nombre: 'Yoghurt Lari 1 G', id: 16, img: 'img-16' }
-    ];
+  ];
   const buscador = document.querySelector('#buscador');
   const respuesta = document.querySelector('#respuesta');
 
-  $('.abchat').on('click',function()
-  {
+  $('.abchat').on('click', function () {
     $('.abrir-chat').slideUp(300);
-   
+
     $('.wrapper-chatbot').removeClass('not-visible');
     $('.wrapper-chatbot').addClass('visible');
   });
-  $('.close-chat').on('click',function()
-{
-  
-  $('.wrapper-chatbot').removeClass('visible');
-$('.wrapper-chatbot').addClass('not-visible');
-$('.abrir-chat').slideDown(300);
+  $('.close-chat').on('click', function () {
+
+    $('.wrapper-chatbot').removeClass('visible');
+    $('.wrapper-chatbot').addClass('not-visible');
+    $('.abrir-chat').slideDown(300);
   });
   //Srcorll smooth
- 
-$('.ir-arriba').on('click',function(){
-  console.log("Arriba");
-  $('body, html').animate({
-    scrollTop: '0px'
-  }, 800);
-});
 
-$(window).scroll(function(){
-  if( $(this).scrollTop() > 0 ){
-    $('.ir-arriba').slideDown(300);
-    
-  } else {
-    $('.ir-arriba').slideUp(300);
-    
-  }
-});
-//Scroll smooth
+  $('.ir-arriba').on('click', function () {
+    console.log("Arriba");
+    $('body, html').animate({
+      scrollTop: '0px'
+    }, 800);
+  });
+
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 0) {
+      $('.ir-arriba').slideDown(300);
+
+    } else {
+      $('.ir-arriba').slideUp(300);
+
+    }
+  });
+  //Scroll smooth
   //Tooltip
   document.getElementById('tooltip_container').addEventListener('mousemove', (e) => {
 
     let x = e.clientX;
     let y = e.clientY;
-    var target= e.target.className.split(' ');
-    var targetP=e.target.parentNode.className.split(' ');
-     if (target[1] === 'tooltip-box') {
-      e.target.children[0].style.top = y+y*.02 + 'px';
-      e.target.children[0].style.left = x+x*.02 + 'px';
+    var target = e.target.className.split(' ');
+    var targetP = e.target.parentNode.className.split(' ');
+    if (target[1] === 'tooltip-box') {
+      e.target.children[0].style.top = y + y * .02 + 'px';
+      e.target.children[0].style.left = x + x * .02 + 'px';
     }
     if (targetP[1] === 'tooltip-box') {
-      e.target.parentNode.children[0].style.top = y+y*.02 + 'px';
-      e.target.parentNode.children[0].style.left = x+x*.02 + 'px';
+      e.target.parentNode.children[0].style.top = y + y * .02 + 'px';
+      e.target.parentNode.children[0].style.left = x + x * .02 + 'px';
     }
   });
   //ToolTip
@@ -119,7 +117,7 @@ $(window).scroll(function(){
 
       }
     }
-    if( respuesta.innerHTML==""){
+    if (respuesta.innerHTML == "") {
       respuesta.innerHTML += `<div class="row align-items-center busc-card">
       <div class="col-sm-6 ">
       <i class="img-bus fa fa-question"  style="height:90px;"></i>
@@ -137,38 +135,38 @@ $(window).scroll(function(){
   buscador.addEventListener('keyup', filtrar);
 
   //Enviar mensajes chatbot
-  $("#send-btn").on("click", function(){
+  $("#send-btn").on("click", function () {
     $value = $("#data").val();
-    $msg = '<div class="user-inbox inbox"><div class="msg-header"><p>'+ $value +'</p></div></div>';
+    $msg = '<div class="user-inbox inbox"><div class="msg-header"><p>' + $value + '</p></div></div>';
     $(".form").append($msg);
     $("#data").val('');
 
     // start ajax code
     $.ajax({
-        url: '/LaLaja/controllers/message.php',
-        type: 'POST',
-        data: 'text='+$value,
-        success: function(result){
-            $replay = '<div class="bot-inbox inbox"><div class="icon"><img src="/LaLaja/images/vaca-chat.png" class="vaca-chat"></img></div><div class="msg-header"><p>'+ result +'</p></div></div>';
-            $(".form").append($replay);
-            // when chat goes down the scroll bar automatically comes to the bottom
-            $(".form").scrollTop($(".form")[0].scrollHeight);
-        }
+      url: '/LaLaja/controllers/message.php',
+      type: 'POST',
+      data: 'text=' + $value,
+      success: function (result) {
+        $replay = '<div class="bot-inbox inbox"><div class="icon"><img src="/LaLaja/images/vaca-chat.png" class="vaca-chat"></img></div><div class="msg-header"><p>' + result + '</p></div></div>';
+        $(".form").append($replay);
+        // when chat goes down the scroll bar automatically comes to the bottom
+        $(".form").scrollTop($(".form")[0].scrollHeight);
+      }
     });
-});
+  });
   //Enviar mensajes chatbot
 });
 
 //Funcion para mostrar articulos
-function mostrarArticulos(orden,where) {
-console.log(orden+","+where);
+function mostrarArticulos(orden, where) {
+  console.log(orden + "," + where);
   $.ajax({
     url: '/LaLaja/controllers/ProductoController.php',
-    data:{'orden':orden,'where':''+where},
+    data: { 'orden': orden, 'where': '' + where },
     method: 'POST',
     datatype: 'json',
     success: function (respuesta) {
-console.log(respuesta);
+      console.log(respuesta);
       var template = `
       <div class="row-card">
         
@@ -217,10 +215,10 @@ console.log(respuesta);
            
         </div>`;
         });
-    
+
       }
       template += `</div>`;
-        console.log(template);
+      console.log(template);
       $('#row-card-prod').html(template);
     },
     error: function (XMLHttpRequest, textStatus, errorThrown) {
@@ -231,44 +229,44 @@ console.log(respuesta);
 }
 //Fin de funcion para mostrar articulos
 //Funcion para llenar generar carrousel
-function generarCarrousel(orden,where) {
-  console.log(orden+","+where);
-    $.ajax({
-      url: '/LaLaja/controllers/ProductoController.php',
-      data:{'orden':orden,'where':''+where},
-      method: 'POST',
-      datatype: 'json',
-      success: function (respuesta) {
-  
-        var template = ``;
-        
-        if (JSON.parse(respuesta) == "-1") {
-         
-          template = "";
-        } else {
-          var productos =JSON.parse(respuesta);
-          template += `<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+function generarCarrousel(orden, where) {
+  console.log(orden + "," + where);
+  $.ajax({
+    url: '/LaLaja/controllers/ProductoController.php',
+    data: { 'orden': orden, 'where': '' + where },
+    method: 'POST',
+    datatype: 'json',
+    success: function (respuesta) {
+
+      var template = ``;
+
+      if (JSON.parse(respuesta) == "-1") {
+
+        template = "";
+      } else {
+        var productos = JSON.parse(respuesta);
+        template += `<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">`;
-          productos.forEach((producto,i) => {
-            if(i==0){
-              template += `<li data-target="#carouselExampleIndicators" data-slide-to="${i}" class="active"></li>`;
-            }else{
+        productos.forEach((producto, i) => {
+          if (i == 0) {
+            template += `<li data-target="#carouselExampleIndicators" data-slide-to="${i}" class="active"></li>`;
+          } else {
             template += `<li data-target="#carouselExampleIndicators" data-slide-to="${i}"></li>
           `};
-          });
-          template+=`</ol><div class="carousel-inner">`;
-          productos.forEach((producto,i) => {
-            let a="";
-            if(i==0){
-              a=" active"
-            }
-            template+=`
+        });
+        template += `</ol><div class="carousel-inner">`;
+        productos.forEach((producto, i) => {
+          let a = "";
+          if (i == 0) {
+            a = " active"
+          }
+          template += `
             
             <div class="carousel-item${a}">
                 <img class="d-block w-100" src="/LaLaja/images/${producto.imagen}.jpg" alt="${producto.nombre}">
             </div>`;
-          });
-          template += `</div>
+        });
+        template += `</div>
           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="sr-only">Previous</span>
@@ -278,16 +276,16 @@ function generarCarrousel(orden,where) {
               <span class="sr-only">Next</span>
           </a>
       </div>`;
-          $('.row-ca').html(template);
-  
-        }
-      },
-      error: function (XMLHttpRequest, textStatus, errorThrown) {
-        console.log("Error CTNPN: " + errorThrown + textStatus + XMLHttpRequest);
-  
+        $('.row-ca').html(template);
+
       }
-    });
-  }
+    },
+    error: function (XMLHttpRequest, textStatus, errorThrown) {
+      console.log("Error CTNPN: " + errorThrown + textStatus + XMLHttpRequest);
+
+    }
+  });
+}
 //Fin funcion para llenar carrousel
 function darLike(idProducto) {
   $.ajax({
@@ -297,7 +295,7 @@ function darLike(idProducto) {
     datatype: 'json',
     success: function (respuesta) {
 
-      mostrarArticulos('ORDER BY numLikes desc LIMIT 4','');
+      mostrarArticulos('ORDER BY numLikes desc LIMIT 4', '');
 
     }
   });
@@ -316,7 +314,7 @@ function verComentarios(idProducto) {
       datatype: 'json',
       success: function (respuesta) {
 
-        var template ="";
+        var template = "";
         var comentarios = "";
         var comentarios = JSON.parse(respuesta);
         console.log(comentarios);
@@ -392,7 +390,7 @@ function insertarComentarios(idProducto) {
     success: function (respuesta) {
       if (JSON.parse(respuesta)) {
         $('#comentario' + idProducto).html("");
-        mostrarArticulos('ORDER BY numLikes desc LIMIT 4','');
+        mostrarArticulos('ORDER BY numLikes desc LIMIT 4', '');
       } else {
         alert("No se pudo agregar el dato");
       }
@@ -403,6 +401,200 @@ function insertarComentarios(idProducto) {
 
 }
 
+
+function verReceta(tipo) {
+  var htmlReceta = "";
+  switch (tipo) {
+    case 1:
+      htmlReceta = `  <div class="row justify-content-md-center">
+
+  <div class="col-sm-6 col-md-6 col-lg-6 col-6 txt-alg-left">
+      <i class="fa fa-times-circle-o cl-receta" aria-hidden="true"></i>
+  </div>
+  <div class="col-sm-12 col-md-12 col-lg-12 col-12 txt-alg-right">
+      <i class="icon-medium"><img class="img-r" src="images/vaca-cocinando.png"></i>
+
+  </div>
+</div>
+<img src="images/dedos-queso.png" class="img-al" alt="">
+
+<div class="row justify-content-md-center wrap-content-recipe">
+  <div class="col-md-12 recipe">
+      <div class="text-receta">
+          <h3> DEDOS DE QUESO LA LAJA</h3>
+          <p>Esta receta de dedos de queso es ideal para los chiquitines, el queso
+              empanizado lleva unas especies italianas que le dan un sabor original,
+              pruébalas.</p>
+
+      </div>
+  </div>
+
+
+  <div class="col-md-6 col-lg-6 wrap-list-ing">
+      <h5>INGREDIENTES PARA 4 PERSONAS</h5>
+      <div class="ingredientes-l">
+          <ul class="list-ing">
+              <li>400 gr <a href="paginas/mockupcompra.php?id_p=1"><strong
+                          class="n tooltip-box">Queso Oaxaca
+                          <span class="tooltip-info">
+                              <img src="images/img-1.jpg" class="img-ing-su" alt="">
+                          </span>
+                      </strong>
+                  </a>
+              </li>
+              <li>1 taza <strong>Harina</strong></li>
+              <li>2 <strong>Huevos</strong></li>
+              <li>2 tazas de <strong>Pan Molido</strong> extra crunch</li>
+              <li> 1 cucharada <strong>Perejil finamente picado</strong></li>
+              <li>2 tazas <strong>Aceite</strong> </li>
+              <li><strong>Sal</strong> al gusto</li>
+              <li><strong>Pimienta</strong> al gusto</li>
+          </ul>
+
+      </div>
+  </div>
+  <div class="col-md-6 col-lg-6 wrap-list-step">
+      <h4>PASOS:</h4>
+      <ol>
+          <li>En un recipiente hondo mezcle los huevos y el agua.</li>
+          <li>En otro recipiente mezcle el pan molido, la sal de ajo, la albahaca, y el
+              orégano.</li>
+          <li>En un tercer recipiente hondo mezcle la harina y la maicena.</li>
+          <li>Caliente en un sartén grande el aceite hasta que esté listo para freír.</li>
+          <li>Corte el queso manchego en rectángulos (los dedos) y pase cada uno por la
+              mezcla de la harina, luego la de los huevos y por último la del pan molido.
+          </li>
+          <li>Fría cada dedo hasta que este dorado (aproximadamente 45 segundos) y seque
+              muy bien con una toalla de papel para remover la grasa.
+          </li>
+      </ol>
+
+
+  </div>
+
+</div>`;
+      break;
+    case 2:
+      htmlReceta = `  <div class="row justify-content-md-center">
+
+  <div class="col-sm-6 col-md-6 col-lg-6 col-6 txt-alg-left">
+      <i class="fa fa-times-circle-o cl-receta" aria-hidden="true"></i>
+  </div>
+  <div class="col-sm-12 col-md-12 col-lg-12 col-12 txt-alg-right">
+      <i class="icon-medium"><img class="img-r" src="images/vaca-cocinando.png"></i>
+
+  </div>
+</div>
+<img src="images/receta-2.png" class="img-al" alt="">
+
+<div class="row justify-content-md-center wrap-content-recipe">
+  <div class="col-md-12 recipe">
+      <div class="text-receta">
+          <h3> FRUTAS CON CREMA LA LAJA</h3>
+          <p>Receta fácil, rápida y económica para hacer en casa, con un nivel de dificultad extremadamente bajo, para preparar con los pequeños y compartir en familia. Ideal para disfrutar después de la comida.</p>
+
+      </div>
+  </div>
+
+
+  <div class="col-md-6 col-lg-6 wrap-list-ing">
+      <h5>INGREDIENTES PARA 10 PORCIONES</h5>
+      <div class="ingredientes-l">
+          <ul class="list-ing">
+              <li>1/2 litros de <a href="paginas/mockupcompra.php?id_p=14"><strong
+                          class="n tooltip-box">Crema Acida
+                          <span class="tooltip-info">
+                              <img src="images/img-14.jpg" class="img-ing-su" alt="">
+                          </span>
+                      </strong>
+                  </a>
+              </li>
+              <li>4 <strong>Manzanas</strong></li>
+              <li>4 <strong>Platanos</strong> </li>
+              <li> 1 lata de <strong>Piña en almibar, mediana</strong></li>
+              <li>3 cucharadas de<strong>Nuez</strong> entera. </li>
+           
+          </ul>
+
+      </div>
+  </div>
+  <div class="col-md-6 col-lg-6 wrap-list-step">
+      <h4>PASOS:</h4>
+      <ol>
+          <li>Lava la manzana, pícala en trozos pequeños y agrega en un tazón.</li>
+          <li>Pela el plátano ,córtalo en rebanadas y agrega junto con la manzana.</li>
+          <li>Agrega la piña en almíbar junto con un poco de almíbar.</li>
+          <li>Vacía la crema hasta que cubra la fruta.</li>
+          <li>Agregar las nueces picadas y mezcla.</li>
+          <li>Opcional: Si se va a comer después agrega un poco de azúcar glass para evitar que la fruta se oxide.</li>
+      </ol>
+
+
+  </div>
+
+</div>`;
+      break;
+    case 3: htmlReceta = `  <div class="row justify-content-md-center">
+
+    <div class="col-sm-6 col-md-6 col-lg-6 col-6 txt-alg-left">
+        <i class="fa fa-times-circle-o cl-receta" aria-hidden="true"></i>
+    </div>
+    <div class="col-sm-12 col-md-12 col-lg-12 col-12 txt-alg-right">
+        <i class="icon-medium"><img class="img-r" src="images/vaca-cocinando.png"></i>
+  
+    </div>
+  </div>
+  <img src="images/receta-3.png" class="img-al" alt="">
+  
+  <div class="row justify-content-md-center wrap-content-recipe">
+    <div class="col-md-12 recipe">
+        <div class="text-receta">
+            <h3> PALETAS DE YOGHURT CON GRANOLA</h3>
+            <p>PARA EL ANTOJITO DE LA TARDE EN ESTOS DÍAS CALUROSOS, TENEMOS UNA RICA OPCIÓN: PREPARA ESTAS PALETAS DE YOGURT CON GRANOLA PARA TI Y TU FAMILIA.</p>
+        </div>
+    </div>
+  
+  
+    <div class="col-md-6 col-lg-6 wrap-list-ing">
+        <h5>INGREDIENTES PARA 4 PORCIONES</h5>
+        <div class="ingredientes-l">
+            <ul class="list-ing">
+                <li>1 taza de <a href="paginas/mockupcompra.php?id_p=16"><strong
+                            class="n tooltip-box">Yoghurt Lari
+                            <span class="tooltip-info">
+                                <img src="images/img-16.jpg" class="img-ing-su" alt="">
+                            </span>
+                        </strong>
+                    </a>
+                </li>
+                <li>1 taza de <strong>Leche de Coco</strong></li>
+                <li>1/2 de <strong>Azucar</strong></li>
+                <li>1 cda. de <strong>extracto de vainilla</strong></li>
+                <li>1/2 taza de <strong>Granola</strong></li>
+            </ul>
+  
+        </div>
+    </div>
+    <div class="col-md-6 col-lg-6 wrap-list-step">
+        <h4>PASOS:</h4>
+        <ol>
+            <li>Licua la leche con el azúcar, el extracto de vainilla y el yoghurt.</li>
+            <li>Vierte en moldes para paleta y congélalas por una noche.</li>
+            <li>Para servir desmóldalas y pásalas ligeramente sobre la granola. Ofrece.</li>
+           
+        </ol>
+  
+  
+    </div>
+  
+  </div>`;
+      break;
+    default:
+      break;
+  }
+
+  $('.receta').html(htmlReceta);
+}
 /*
 $('.navbar-toggler').on('click',function(){
 

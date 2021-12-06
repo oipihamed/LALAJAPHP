@@ -9,12 +9,16 @@
   body{
     overflow-x: hidden;
   }
- 
+  .pd-10{
+    padding: 30px;
+  }
 .txt-alg-right{
   text-align: right;
   
 }
-
+.txt-justyfy{
+  text-align: justify;
+}
 .txt-alg-center{
   text-align: center;
 }
@@ -22,7 +26,9 @@
   text-align: left;
   position: fixed;
 }
-
+.f-s-20{
+  font-size: 20px;
+}
 .bg-green{
    background-color: #8CBF3A; 
 }
@@ -52,20 +58,25 @@ background-color: #252525;
   .title-p{
     font-weight: bolder;
     font-size: 50px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: white;
-    text-shadow: 5px 5px  #024959;
+   color: white;
+    text-shadow: 5px 5px  #0246555e;
   }
   .red{
     color: rgb(255, 0, 0);
     font-weight: 900;
   }
+ 
   .media
  {
     padding: 20px;
       border-radius: 10px;
       transition: all 2s;
       margin: 0px !important;
+  }
+  .media:hover{
+    background-color: #fafafa !important;
+    color: #FFC312!important;
+    transition: all 2s;
   }
   .media-heading{
     font-size: 50px;
@@ -93,7 +104,14 @@ background-color: #252525;
   }
   #buscador{
     margin: 5px 0px 5px 30px;
-   
+    transition: all 1s;
+    left: 0%;
+  }
+  #buscador:focus{
+    margin: 5px 0px 5px 30px;
+    background-color: rgb(211, 208, 208);
+    transition: all 1s;
+    box-shadow:3px 3px 3px 3px rgba(37, 0, 247, 0.295)!important;
   }
  .fa-search{
    margin-top:15px !important;
@@ -185,7 +203,7 @@ background-color: #252525;
   width: 75%;
   height:fit-content;
   background: url("../images/recipe.jpg") 40% 21%/cover no-repeat;
-  position: fixed;
+  position: absolute;
   visibility: hidden;
   color: black;
   transform:translate(800%,-30%) ;
@@ -199,7 +217,7 @@ background-color: #252525;
   height:fit-content;
   transform:translate(20%,-50%) ;
   background: url("../images/recipe.jpg") 40% 21%/cover no-repeat;
-  position: fixed;
+  position: absolute;
   visibility: visible;
   z-index: 2;
   padding: 10px;
@@ -301,7 +319,7 @@ content:  url('../images/check_green_icon.png')'  ';
  
 }
 .img-al{
-height:200px ;
+height:150px ;
 width: 220px;
 position: absolute;
 transform: translate(10%,-50%);
@@ -321,7 +339,10 @@ transform: translate(10%,-50%);
 .vaca-chat{
   height: 20px;
 }
-
+.comentario{
+  color: gray;
+  text-align: justify;
+}
 .col-12-p{
   align-items: center;
   width: 100%;
