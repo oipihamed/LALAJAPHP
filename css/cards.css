@@ -84,6 +84,9 @@ h1 {
   padding: 1em;
   position: relative;
   z-index: 1;
+text-align: justify;
+
+overflow-y: auto;
 }
 .card .author {
   font-size: 12px;
@@ -345,17 +348,12 @@ h1 {
   }
   
   .form_comentarios .form-control{
-    width: 90%;
-    height: 80px;
-    max-width: 100%;
-    min-height: 80px;
-    max-height: 300px;
-    
+    width: 100%; 
   
   }
   .col-com{
       
-      padding-top: 20px;
+      padding-top: 22px;
      
   }
   .col-com .nombre{
@@ -412,16 +410,16 @@ h1 {
     width: 4px;
   }
   
-  .divcomentarios-active::-webkit-scrollbar-thumb {
+  .divcomentarios-active::-webkit-scrollbar-thumb,.content::-webkit-scrollbar-thumb {
     background: #FFC312;
     border-radius: 5px;
   }
 
-  .divcomentarios::-webkit-scrollbar {
-    width: 4px;
+  .divcomentarios::-webkit-scrollbar,.content::-webkit-scrollbar  {
+    width: 7px;
   }
   
-  .divcomentarios::-webkit-scrollbar-thumb {
+  .divcomentarios::-webkit-scrollbar-thumb,.content::-webkit-scrollbar-thumb {
     background: #FFC312;
     border-radius: 5px;
   }
