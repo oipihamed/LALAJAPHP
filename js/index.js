@@ -330,24 +330,29 @@ function verComentarios(idProducto) {
                 <textarea class="form-control contenido" name="contenido" id="contenido${idProducto}"  placeholder="Comentario" required></textarea>
                 <button   class="button-53" role="button" onClick="javascript:insertarComentarios(${idProducto})" data-toggle="tooltip" data-placement="top" title="ENVIAR COMENTARIO"> <img class="icon-img-com" src="/LALAJA/images/vaca-escribiendo.png"> Comentar</button>
            </div> 
-          
+        
         </div>
-    </div>`;
+       
+    </div>
+    
+    `;
 
         if (comentarios !== "-1") {
 
           comentarios.forEach(comentario => {
             template += `
+            
         <div class="row">
         
         <div class="col-com col-md-12 col-sm-12 ">
+        <hr class="hr-style">
  <p class="t-e nombre">Escrito por: ${comentario.nombre} <span class="t-e">
                     ${comentario.fecha}</span> </p>
             <p class="t-e comentario">${comentario.contenido}</p>
          
         </div>
     </div>
-       <hr class="hr-style">
+    
     
         `;
           });//${comentario.idComentario}
