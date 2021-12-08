@@ -117,7 +117,7 @@ $(document).ready(function () {
 
       }
     }
-    if (respuesta.innerHTML == "") {
+    if (respuesta.innerHTML === "" && text !== "") {
       respuesta.innerHTML += `<div class="row align-items-center busc-card">
       <div class="col-sm-6 ">
       <i class="img-bus fa fa-question"  style="height:90px;"></i>
@@ -195,9 +195,9 @@ function mostrarArticulos(orden, where) {
                
                     <div class="content">
                         <h3 class="title">                
-                        <a class="tooltip-box" href="/LaLaja/paginas/conocer_producto.php?id_p=${producto.idProducto}">${producto.nombre} ${producto.peso}
+                         <a class="tooltip-box" href="/LaLaja/paginas/conocer_producto.php?id_p=${producto.idProducto}">${producto.nombre} ${producto.peso}
                         <span class="tooltip-info"><i class="fa fa-eye" aria-hidden="true"></i> Click en Titulo para Ver mas</span>
-                        </a></h3>
+                        <i class="fa fa-plus-circle" aria-hidden="true" style="color:#8CBF3A;"> </i>  </a></h3>
                         <p class="text">${producto.descripcion}</p>
                         <label for="show-menu-${producto.idProducto}" class="menu-button" ><span></span></label>                       
                     </div>
@@ -318,6 +318,21 @@ function verComentarios(idProducto) {
         var comentarios = "";
         var comentarios = JSON.parse(respuesta);
         console.log(comentarios);
+        template += `
+      
+        <div class="row">
+        <div class="col">
+           
+          <div  id="form-cm" class="form_comentarios d-flex justify-content-center">
+          
+                <input class="form-control" type="text" name="cvEntrega" id="nombre${idProducto}" placeholder="Nombre" value="">
+               <br>
+                <textarea class="form-control contenido" name="contenido" id="contenido${idProducto}"  placeholder="Comentario" required></textarea>
+                <button   class="button-53" role="button" onClick="javascript:insertarComentarios(${idProducto})" data-toggle="tooltip" data-placement="top" title="ENVIAR COMENTARIO"> <img class="icon-img-com" src="/LALAJA/images/vaca-escribiendo.png"> Comentar</button>
+           </div> 
+          
+        </div>
+    </div>`;
 
         if (comentarios !== "-1") {
 
@@ -337,21 +352,7 @@ function verComentarios(idProducto) {
         `;
           });//${comentario.idComentario}
         }
-        template += `
-      
-      <div class="row">
-      <div class="col">
-         
-        <div  id="form-cm" class="form_comentarios d-flex justify-content-center">
-        
-              <input class="form-control" type="text" name="cvEntrega" id="nombre${idProducto}" placeholder="Nombre" value="">
-             <br>
-              <textarea class="form-control contenido" name="contenido" id="contenido${idProducto}"  placeholder="Comentario" required></textarea>
-              <button   class="button-53" role="button" onClick="javascript:insertarComentarios(${idProducto})" data-toggle="tooltip" data-placement="top" title="ENVIAR COMENTARIO"> <img class="icon-img-com" src="/LALAJA/images/vaca-escribiendo.png"> Comentar</button>
-         </div> 
-        
-      </div>
-  </div>`;
+       
         $('#comentario' + idProducto).html(template);
 
         $('#comentario' + idProducto).removeClass("divcomentarios");
