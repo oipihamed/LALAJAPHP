@@ -205,14 +205,14 @@ img{
         <ul class="nav navbar-nav navbar-right">
           <li class="active"><a href="./index.php">Inicio</a></li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Productos <i class="icon-angle-down"></i></a>
-            <ul class="dropdown-menu">
+            <a href="/LaLaja/paginas/productos.php">Productos <i class="icon-angle-down"></i></a>
+         <!--   <ul class="dropdown-menu">
               <li><a href="./paginas/conocer_producto.php">Novedades</a></li>
               <li class="divider"></li>
               <li><a href="./paginas/conocer_producto.php">Promociones</a></li>
               <li class="divider"></li>
               <li><a href="./paginas/conocer_producto.php">General</a></li>
-            </ul>
+            </ul>-->
           </li>
           <li><a href="nosotros.php">Nosotros</a></li>
           <li><a href="contacto.html">Contacto</a></li>

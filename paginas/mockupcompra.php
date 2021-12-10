@@ -75,14 +75,14 @@ $img = $datos['imagen'] . ".jpg";
         <ul class="nav navbar-nav navbar-right">
           <li class="active"><a href="/LaLaja/index.php">Inicio</a></li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Productos <i class="icon-angle-down"></i></a>
-            <ul class="dropdown-menu">
+            <a href="/LaLaja/paginas/productos.php">Productos <i class="icon-angle-down"></i></a>
+         <!--     <ul class="dropdown-menu">
               <li><a href="/LaLaja/paginas/productos.php">Novedades</a></li>
               <li class="divider"></li>
               <li><a href="/LaLaja/paginas/productos.php">Promociones</a></li>
               <li class="divider"></li>
               <li><a href="/LaLaja/paginas/productos.php">General</a></li>
-            </ul>
+            </ul>-->
           </li>
           <li><a href="/LaLaja/paginas/nosotros.php">Nosotros</a></li>
 
